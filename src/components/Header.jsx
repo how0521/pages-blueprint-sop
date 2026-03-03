@@ -15,6 +15,7 @@ export default function Header({ isAdmin, onToggleAdmin }) {
             </h1>
             <p className="text-slate-500 text-xs leading-none mt-0.5">
               版本升級流程管理系統
+              <span className="ml-1.5 text-slate-600">v{__APP_VERSION__}</span>
             </p>
           </div>
         </div>

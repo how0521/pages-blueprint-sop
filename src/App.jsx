@@ -3,9 +3,12 @@ import Header from './components/Header';
 import SOPNavigator from './components/SOPNavigator';
 import AdminPanel from './components/AdminPanel';
 
+const GIST_FILE = 'pages-sop-config.json';
+const PUBLIC_GIST_ID = '1966a795b97f9716c32316c52fcc974f';
+
 const DEFAULT_SETTINGS = {
   migrationToolUrl: 'http://192.168.105.175:4999/migrate',
-  gistId: '',
+  gistId: PUBLIC_GIST_ID,
   githubToken: '',
 };
 
@@ -101,9 +104,6 @@ const DEFAULT_RULES = [
   },
 ];
 
-const GIST_FILE = 'pages-sop-config.json';
-const PUBLIC_GIST_ID = '1966a795b97f9716c32316c52fcc974f';
-
 export default function App() {
   const [isAdmin, setIsAdmin] = useState(false);
 
@@ -119,7 +119,14 @@ export default function App() {
   const [settings, setSettings] = useState(() => {
     try {
       const saved = localStorage.getItem('pages-sop-settings');
-      return saved ? { ...DEFAULT_SETTINGS, ...JSON.parse(saved) } : DEFAULT_SETTINGS;
+      if (!saved) return DEFAULT_SETTINGS;
+      const parsed = JSON.parse(saved);
+      return {
+        ...DEFAULT_SETTINGS,
+        ...parsed,
+        // 若舊版 localStorage 存了空 gistId，補回公開 Gist ID
+        gistId: parsed.gistId || PUBLIC_GIST_ID,
+      };
     } catch {
       return DEFAULT_SETTINGS;
     }
