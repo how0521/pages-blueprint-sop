@@ -3,7 +3,7 @@ import Header from './components/Header';
 import SOPNavigator from './components/SOPNavigator';
 import AdminPanel from './components/AdminPanel';
 
-const GIST_FILE = 'pages-sop-config.json';
+const GIST_FILE = 'rules.json';
 const PUBLIC_GIST_ID = '1966a795b97f9716c32316c52fcc974f';
 
 const DEFAULT_SETTINGS = {
