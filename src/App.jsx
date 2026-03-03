@@ -5,6 +5,8 @@ import AdminPanel from './components/AdminPanel';
 
 const DEFAULT_SETTINGS = {
   migrationToolUrl: 'http://192.168.105.175:4999/migrate',
+  gistId: '',
+  githubToken: '',
 };
 
 const DEFAULT_RULES = [
@@ -99,6 +101,8 @@ const DEFAULT_RULES = [
   },
 ];
 
+const GIST_FILE = 'pages-sop-config.json';
+
 export default function App() {
   const [isAdmin, setIsAdmin] = useState(false);
 
@@ -114,7 +118,7 @@ export default function App() {
   const [settings, setSettings] = useState(() => {
     try {
       const saved = localStorage.getItem('pages-sop-settings');
-      return saved ? JSON.parse(saved) : DEFAULT_SETTINGS;
+      return saved ? { ...DEFAULT_SETTINGS, ...JSON.parse(saved) } : DEFAULT_SETTINGS;
     } catch {
       return DEFAULT_SETTINGS;
     }
@@ -127,6 +131,40 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem('pages-sop-settings', JSON.stringify(settings));
   }, [settings]);
+
+  // 頁面載入時自動從 Gist 拉取最新設定
+  useEffect(() => {
+    let savedSettings;
+    try {
+      savedSettings = JSON.parse(localStorage.getItem('pages-sop-settings') || '{}');
+    } catch {
+      return;
+    }
+    if (!savedSettings.gistId) return;
+
+    const headers = savedSettings.githubToken
+      ? { Authorization: `Bearer ${savedSettings.githubToken}` }
+      : {};
+
+    fetch(`https://api.github.com/gists/${savedSettings.gistId}`, { headers })
+      .then(r => (r.ok ? r.json() : Promise.reject()))
+      .then(gist => {
+        const file = gist.files[GIST_FILE];
+        if (!file) return;
+        const data = JSON.parse(file.content);
+        if (data.rules) setRules(data.rules);
+        if (data.settings) {
+          setSettings(prev => ({
+            ...prev,
+            ...data.settings,
+            // 保留本機的 gistId 與 token，不被 Gist 內容覆蓋
+            gistId: prev.gistId,
+            githubToken: prev.githubToken,
+          }));
+        }
+      })
+      .catch(() => {}); // 自動同步失敗時靜默略過
+  }, []);
 
   const addRule = rule => setRules(prev => [...prev, rule]);
 
@@ -174,6 +212,100 @@ export default function App() {
     reader.readAsText(file);
   };
 
+  // currentSettings 為 GlobalSettings 傳入的即時表單值（含尚未儲存的 gistId/token）
+  const syncToGist = async (currentSettings) => {
+    const { gistId, githubToken } = currentSettings;
+    if (!gistId) return { ok: false, error: '請先設定 Gist ID' };
+    if (!githubToken) return { ok: false, error: '請先設定 GitHub Token' };
+
+    const { gistId: _g, githubToken: _t, ...publicSettings } = currentSettings;
+    const data = {
+      version: '1.0',
+      exportedAt: new Date().toISOString(),
+      rules,
+      settings: publicSettings,
+    };
+
+    try {
+      const res = await fetch(`https://api.github.com/gists/${gistId}`, {
+        method: 'PATCH',
+        headers: {
+          Authorization: `Bearer ${githubToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          files: { [GIST_FILE]: { content: JSON.stringify(data, null, 2) } },
+        }),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return { ok: true };
+    } catch (e) {
+      return { ok: false, error: e.message };
+    }
+  };
+
+  const loadFromGist = async (currentSettings) => {
+    const { gistId, githubToken } = currentSettings;
+    if (!gistId) return { ok: false, error: '請先設定 Gist ID' };
+
+    try {
+      const res = await fetch(`https://api.github.com/gists/${gistId}`, {
+        headers: githubToken ? { Authorization: `Bearer ${githubToken}` } : {},
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const gist = await res.json();
+      const file = gist.files[GIST_FILE];
+      if (!file) throw new Error(`Gist 中找不到 ${GIST_FILE}`);
+      const data = JSON.parse(file.content);
+      if (data.rules) setRules(data.rules);
+      if (data.settings) {
+        setSettings(prev => ({
+          ...prev,
+          ...data.settings,
+          gistId: prev.gistId,
+          githubToken: prev.githubToken,
+        }));
+      }
+      return { ok: true };
+    } catch (e) {
+      return { ok: false, error: e.message };
+    }
+  };
+
+  const createGist = async (currentSettings) => {
+    const { githubToken } = currentSettings;
+    if (!githubToken) return { ok: false, error: '請先設定 GitHub Token' };
+
+    const { gistId: _g, githubToken: _t, ...publicSettings } = currentSettings;
+    const data = {
+      version: '1.0',
+      exportedAt: new Date().toISOString(),
+      rules,
+      settings: publicSettings,
+    };
+
+    try {
+      const res = await fetch('https://api.github.com/gists', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${githubToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          description: 'PAGEs Blueprint SOP Config',
+          public: false,
+          files: { [GIST_FILE]: { content: JSON.stringify(data, null, 2) } },
+        }),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const gist = await res.json();
+      setSettings(prev => ({ ...prev, gistId: gist.id }));
+      return { ok: true, gistId: gist.id };
+    } catch (e) {
+      return { ok: false, error: e.message };
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-900">
       <Header isAdmin={isAdmin} onToggleAdmin={() => setIsAdmin(v => !v)} />
@@ -188,6 +320,9 @@ export default function App() {
             onUpdateSettings={updateSettings}
             onExport={exportData}
             onImport={importData}
+            onSyncToGist={syncToGist}
+            onLoadFromGist={loadFromGist}
+            onCreateGist={createGist}
           />
         ) : (
           <SOPNavigator rules={rules} settings={settings} />

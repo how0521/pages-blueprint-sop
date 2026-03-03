@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   Plus,
   Pencil,
@@ -12,6 +12,9 @@ import {
   Check,
   Database,
   Info,
+  Cloud,
+  Loader2,
+  RefreshCw,
 } from 'lucide-react';
 import VersionRuleForm from './VersionRuleForm';
 import { compareVersions } from '../utils/versionUtils';
@@ -31,9 +34,15 @@ function Badge({ children, variant = 'default' }) {
   );
 }
 
-function GlobalSettings({ settings, onUpdateSettings }) {
+function GlobalSettings({ settings, onUpdateSettings, onSyncToGist, onLoadFromGist, onCreateGist }) {
   const [form, setForm] = useState({ ...settings });
   const [saved, setSaved] = useState(false);
+  const [gistStatus, setGistStatus] = useState(null); // null | { type: 'loading'|'ok'|'error', msg: string }
+
+  // 當外部 settings 有變動（例如 createGist 寫入新的 gistId），同步更新表單
+  useEffect(() => {
+    setForm(prev => ({ ...prev, gistId: settings.gistId }));
+  }, [settings.gistId]);
 
   const handleSave = () => {
     onUpdateSettings(form);
@@ -41,8 +50,26 @@ function GlobalSettings({ settings, onUpdateSettings }) {
     setTimeout(() => setSaved(false), 2000);
   };
 
+  const handleGistAction = async (fn) => {
+    setGistStatus({ type: 'loading', msg: '' });
+    const result = await fn(form);
+    if (result.ok) {
+      setGistStatus({
+        type: 'ok',
+        msg: result.gistId ? `已建立！Gist ID 已自動填入，請記得儲存設定。` : '同步成功！',
+      });
+    } else {
+      setGistStatus({ type: 'error', msg: result.error || '發生未知錯誤' });
+    }
+    setTimeout(() => setGistStatus(null), 6000);
+  };
+
+  const inputClass =
+    'w-full bg-slate-700 border border-slate-600 text-slate-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm placeholder-slate-500 transition-colors';
+
   return (
     <div className="bg-slate-800 rounded-2xl border border-slate-700 p-6 space-y-6">
+      {/* 全域設定 */}
       <div className="flex items-center gap-2">
         <Settings2 size={16} className="text-slate-400" />
         <h3 className="text-slate-100 font-semibold">全域設定</h3>
@@ -57,7 +84,7 @@ function GlobalSettings({ settings, onUpdateSettings }) {
           value={form.migrationToolUrl}
           onChange={e => setForm({ ...form, migrationToolUrl: e.target.value })}
           placeholder="http://192.168.105.175:4999/migrate"
-          className="w-full bg-slate-700 border border-slate-600 text-slate-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm placeholder-slate-500 transition-colors"
+          className={inputClass}
         />
         <div className="flex items-start gap-2 text-xs text-slate-500 bg-slate-700/40 rounded-lg p-3">
           <Info size={13} className="flex-shrink-0 mt-0.5 text-blue-400" />
@@ -66,6 +93,101 @@ function GlobalSettings({ settings, onUpdateSettings }) {
             此連結套用至所有有 Migrate 需求的版本步驟。
           </span>
         </div>
+      </div>
+
+      {/* 跨裝置同步 */}
+      <div className="border-t border-slate-700 pt-6 space-y-4">
+        <div className="flex items-center gap-2">
+          <Cloud size={16} className="text-slate-400" />
+          <h3 className="text-slate-100 font-semibold">跨裝置同步</h3>
+          <span className="text-xs text-slate-500">（GitHub Gist）</span>
+        </div>
+
+        <div className="flex items-start gap-2 text-xs text-slate-500 bg-slate-700/40 rounded-lg p-3">
+          <Info size={13} className="flex-shrink-0 mt-0.5 text-blue-400" />
+          <span>
+            使用 GitHub Gist 儲存設定，其他裝置開啟頁面時會自動載入最新資料。
+            需要 GitHub Personal Access Token（勾選 <code className="text-slate-300">gist</code> 權限）。
+            Token 僅存於本機，不會上傳至 Gist。
+          </span>
+        </div>
+
+        <div className="space-y-3">
+          <div>
+            <label className="block text-xs font-medium text-slate-400 uppercase tracking-wide mb-1.5">
+              GitHub Token
+            </label>
+            <input
+              type="password"
+              value={form.githubToken || ''}
+              onChange={e => setForm({ ...form, githubToken: e.target.value })}
+              placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
+              className={inputClass}
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-medium text-slate-400 uppercase tracking-wide mb-1.5">
+              Gist ID
+            </label>
+            <input
+              type="text"
+              value={form.gistId || ''}
+              onChange={e => setForm({ ...form, gistId: e.target.value })}
+              placeholder="首次請點「建立新 Gist」，或貼上現有 Gist ID"
+              className={inputClass}
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          {!form.gistId && (
+            <button
+              onClick={() => handleGistAction(onCreateGist)}
+              disabled={!form.githubToken || gistStatus?.type === 'loading'}
+              className="flex items-center gap-2 px-4 py-2 bg-emerald-700 hover:bg-emerald-600 text-white rounded-xl text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              <Plus size={14} />
+              建立新 Gist
+            </button>
+          )}
+          <button
+            onClick={() => handleGistAction(onLoadFromGist)}
+            disabled={!form.gistId || gistStatus?.type === 'loading'}
+            className="flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-xl text-sm font-medium transition-colors border border-slate-600 disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            <RefreshCw size={14} />
+            從 Gist 載入
+          </button>
+          <button
+            onClick={() => handleGistAction(onSyncToGist)}
+            disabled={!form.gistId || !form.githubToken || gistStatus?.type === 'loading'}
+            className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-medium transition-colors shadow-lg shadow-blue-900/30 disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            {gistStatus?.type === 'loading' ? (
+              <Loader2 size={14} className="animate-spin" />
+            ) : (
+              <Upload size={14} />
+            )}
+            發布到 Gist
+          </button>
+        </div>
+
+        {gistStatus && (
+          <div
+            className={`flex items-start gap-2 text-sm rounded-lg p-3 ${
+              gistStatus.type === 'loading'
+                ? 'bg-blue-500/10 text-blue-400'
+                : gistStatus.type === 'ok'
+                ? 'bg-emerald-500/10 text-emerald-400'
+                : 'bg-red-500/10 text-red-400'
+            }`}
+          >
+            {gistStatus.type === 'loading' && <Loader2 size={14} className="animate-spin flex-shrink-0 mt-0.5" />}
+            {gistStatus.type === 'ok' && <Check size={14} className="flex-shrink-0 mt-0.5" />}
+            {gistStatus.type === 'error' && <AlertTriangle size={14} className="flex-shrink-0 mt-0.5" />}
+            <span>{gistStatus.type === 'loading' ? '處理中…' : gistStatus.msg}</span>
+          </div>
+        )}
       </div>
 
       <button
@@ -92,6 +214,9 @@ export default function AdminPanel({
   onUpdateSettings,
   onExport,
   onImport,
+  onSyncToGist,
+  onLoadFromGist,
+  onCreateGist,
 }) {
   const [activeTab, setActiveTab] = useState('rules');
   const [formMode, setFormMode] = useState(null); // null | 'add' | 'edit'
@@ -361,6 +486,9 @@ export default function AdminPanel({
         <GlobalSettings
           settings={settings}
           onUpdateSettings={onUpdateSettings}
+          onSyncToGist={onSyncToGist}
+          onLoadFromGist={onLoadFromGist}
+          onCreateGist={onCreateGist}
         />
       )}
     </div>
