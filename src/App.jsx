@@ -102,6 +102,7 @@ const DEFAULT_RULES = [
 ];
 
 const GIST_FILE = 'pages-sop-config.json';
+const PUBLIC_GIST_ID = '1966a795b97f9716c32316c52fcc974f';
 
 export default function App() {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -132,21 +133,9 @@ export default function App() {
     localStorage.setItem('pages-sop-settings', JSON.stringify(settings));
   }, [settings]);
 
-  // 頁面載入時自動從 Gist 拉取最新設定
+  // 頁面載入時自動從公開 Gist 拉取最新設定（所有用戶共用同一來源）
   useEffect(() => {
-    let savedSettings;
-    try {
-      savedSettings = JSON.parse(localStorage.getItem('pages-sop-settings') || '{}');
-    } catch {
-      return;
-    }
-    if (!savedSettings.gistId) return;
-
-    const headers = savedSettings.githubToken
-      ? { Authorization: `Bearer ${savedSettings.githubToken}` }
-      : {};
-
-    fetch(`https://api.github.com/gists/${savedSettings.gistId}`, { headers })
+    fetch(`https://api.github.com/gists/${PUBLIC_GIST_ID}`)
       .then(r => (r.ok ? r.json() : Promise.reject()))
       .then(gist => {
         const file = gist.files[GIST_FILE];
