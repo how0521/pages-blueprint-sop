@@ -25,7 +25,7 @@ function ProgressBar({ value, max }) {
   );
 }
 
-function StepCard({ step, index, isLast, migrationUrl, checkedItems, onCheck }) {
+function StepCard({ step, index, isLast, checkedItems, onCheck }) {
   const key = `${step.fromVersion}-${step.toVersion}`;
   const items = step.rule?.manualSteps ?? [];
   const doneCount = items.filter(it => checkedItems[`${key}-${it.id}`]).length;
@@ -69,10 +69,11 @@ function StepCard({ step, index, isLast, migrationUrl, checkedItems, onCheck }) 
                 <ChevronRight size={14} className="text-gray-400 dark:text-slate-500" />
                 <span className="text-gray-800 dark:text-slate-200 font-semibold text-sm">v{step.toVersion}</span>
               </div>
+              {/* 只顯示「需 Migrate」標籤，不再顯示各步驟的 migrate 連結 */}
               {hasMigration && (
                 <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/25 flex-shrink-0">
                   <AlertTriangle size={10} />
-                  需 Migrate
+                  含 Migrate
                 </span>
               )}
               {allDone && (
@@ -88,28 +89,6 @@ function StepCard({ step, index, isLast, migrationUrl, checkedItems, onCheck }) 
               </span>
             )}
           </div>
-
-          {/* Migration link banner */}
-          {hasMigration && (
-            <div className="px-5 py-3 bg-amber-500/8 border-b border-amber-500/15 flex items-center gap-3">
-              <div className="w-1 self-stretch rounded-full bg-amber-500/70 flex-shrink-0" />
-              <div className="flex-1 min-w-0">
-                <p className="text-xs text-amber-500/70 dark:text-amber-400/70 mb-1 leading-none">
-                  此升版區間需先執行資料遷移工具
-                </p>
-                <a
-                  href={migrationUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-amber-600 dark:text-amber-300 hover:text-amber-700 dark:hover:text-amber-200 font-semibold text-sm transition-colors group"
-                >
-                  <Link2 size={14} className="group-hover:rotate-12 transition-transform" />
-                  🔗 [點我] 前往 Migrate 工具
-                  <ExternalLink size={12} className="opacity-70" />
-                </a>
-              </div>
-            </div>
-          )}
 
           {/* Manual steps */}
           {step.rule && items.length > 0 && (
@@ -160,10 +139,17 @@ function StepCard({ step, index, isLast, migrationUrl, checkedItems, onCheck }) 
             </div>
           )}
 
-          {/* No manual steps */}
+          {/* No manual steps and no migration */}
           {step.rule && items.length === 0 && !hasMigration && (
             <div className="px-5 py-4">
               <p className="text-sm text-gray-400 dark:text-slate-500">此升版區間無需手動調整。</p>
+            </div>
+          )}
+
+          {/* Migration-only step (has migrate but no manual steps) */}
+          {step.rule && items.length === 0 && hasMigration && (
+            <div className="px-5 py-4">
+              <p className="text-sm text-gray-400 dark:text-slate-500">僅需執行 Migrate 工具，無額外手動步驟。</p>
             </div>
           )}
         </div>
@@ -240,6 +226,31 @@ export default function SOPTimeline({ steps, migrationUrl, fromVersion, toVersio
         {totalItems > 0 && (
           <ProgressBar value={checkedCount} max={totalItems} />
         )}
+
+        {/* ▼ 整段升版只顯示一次 Migrate 工具連結 ▼ */}
+        {hasMigration && (
+          <div className="mt-4 flex items-start gap-3 p-3.5 bg-amber-500/10 border border-amber-500/20 rounded-xl">
+            <div className="w-1 self-stretch rounded-full bg-amber-500 flex-shrink-0" />
+            <div className="flex-1 min-w-0">
+              <p className="text-xs text-amber-600 dark:text-amber-400 mb-1.5 font-medium">
+                步驟一：先執行一次 Migrate 工具（v{fromVersion} → v{toVersion}）
+              </p>
+              <a
+                href={migrationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-amber-700 dark:text-amber-300 hover:text-amber-800 dark:hover:text-amber-200 font-semibold text-sm transition-colors group"
+              >
+                <Link2 size={14} className="group-hover:rotate-12 transition-transform" />
+                🔗 [點我] 前往 Migrate 工具
+                <ExternalLink size={12} className="opacity-70" />
+              </a>
+              <p className="text-xs text-amber-500/70 dark:text-amber-500/60 mt-1.5">
+                執行完畢後，再依序完成下方各步驟的手動調整項目。
+              </p>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Timeline steps */}
@@ -250,7 +261,6 @@ export default function SOPTimeline({ steps, migrationUrl, fromVersion, toVersio
             step={step}
             index={index}
             isLast={index === steps.length - 1}
-            migrationUrl={migrationUrl}
             checkedItems={checkedItems}
             onCheck={handleCheck}
           />

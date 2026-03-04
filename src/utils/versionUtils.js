@@ -43,6 +43,26 @@ export function getUniqueVersions(rules) {
 }
 
 /**
+ * 取得所有規則的「起始版本」（可作為升版起點的版本）
+ * 只包含至少有一條規則從該版本出發的版本
+ */
+export function getFromVersions(rules) {
+  const set = new Set(rules.map(r => r.fromVersion));
+  return sortVersions([...set]);
+}
+
+/**
+ * 取得所有規則的「目標版本」中，大於 afterVersion 的部分
+ * 只包含至少有一條規則以該版本為終點的版本
+ */
+export function getToVersions(rules, afterVersion) {
+  const set = new Set(rules.map(r => r.toVersion));
+  const all = sortVersions([...set]);
+  if (!afterVersion) return all;
+  return all.filter(v => compareVersions(v, afterVersion) > 0);
+}
+
+/**
  * 根據來源/目標版本，以 BFS 在規則圖中尋找最少跳轉次數的路徑。
  * 直接使用規則邊（edge）建圖，不再依賴中間版本節點，
  * 因此若存在從 3.15 直達 3.20 的規則，就只會產生一個步驟。

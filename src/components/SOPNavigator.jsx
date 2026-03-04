@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ArrowRight, Compass, RefreshCw, AlertCircle } from 'lucide-react';
-import { getUniqueVersions, compareVersions, buildSOPSteps } from '../utils/versionUtils';
+import { getFromVersions, getToVersions, buildSOPSteps } from '../utils/versionUtils';
 import SOPTimeline from './SOPTimeline';
 
 const SELECT_ARROW = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E\")";
@@ -10,10 +10,9 @@ export default function SOPNavigator({ rules, settings }) {
   const [toVersion, setToVersion] = useState('');
   const [sopSteps, setSopSteps] = useState(null);
 
-  const allVersions = getUniqueVersions(rules);
-  const toVersions = fromVersion
-    ? allVersions.filter(v => compareVersions(v, fromVersion) > 0)
-    : allVersions;
+  // FROM 只列有規則出發的版本；TO 只列有規則到達且大於 FROM 的版本
+  const fromVersions = getFromVersions(rules);
+  const toVersions = getToVersions(rules, fromVersion);
 
   const handleFromChange = e => {
     setFromVersion(e.target.value);
@@ -81,7 +80,7 @@ export default function SOPNavigator({ rules, settings }) {
                   }}
                 >
                   <option value="">— 選擇版本 —</option>
-                  {allVersions.map(v => (
+                  {fromVersions.map(v => (
                     <option key={v} value={v}>
                       v{v}
                     </option>
