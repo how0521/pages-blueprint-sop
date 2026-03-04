@@ -3,6 +3,8 @@ import { ArrowRight, Compass, RefreshCw, AlertCircle } from 'lucide-react';
 import { getUniqueVersions, compareVersions, buildSOPSteps } from '../utils/versionUtils';
 import SOPTimeline from './SOPTimeline';
 
+const SELECT_ARROW = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E\")";
+
 export default function SOPNavigator({ rules, settings }) {
   const [fromVersion, setFromVersion] = useState('');
   const [toVersion, setToVersion] = useState('');
@@ -40,21 +42,21 @@ export default function SOPNavigator({ rules, settings }) {
   return (
     <div className="space-y-6">
       {/* Version Selector Card */}
-      <div className="bg-slate-800 rounded-2xl border border-slate-700 p-6 shadow-xl shadow-black/20">
+      <div className="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-slate-700 p-6 shadow-sm dark:shadow-xl dark:shadow-black/20">
         <div className="flex items-center gap-2.5 mb-6">
           <div className="w-7 h-7 rounded-lg bg-blue-500/20 flex items-center justify-center">
-            <Compass size={16} className="text-blue-400" />
+            <Compass size={16} className="text-blue-500 dark:text-blue-400" />
           </div>
           <div>
-            <h2 className="text-slate-100 font-semibold text-base">升版路徑選擇</h2>
-            <p className="text-slate-500 text-xs mt-0.5">選擇原始版本與目標版本，系統將自動生成完整 SOP</p>
+            <h2 className="text-gray-900 dark:text-slate-100 font-semibold text-base">升版路徑選擇</h2>
+            <p className="text-gray-500 dark:text-slate-500 text-xs mt-0.5">選擇原始版本與目標版本，系統將自動生成完整 SOP</p>
           </div>
         </div>
 
         {rules.length === 0 ? (
           <div className="flex items-center gap-3 p-4 bg-amber-500/10 border border-amber-500/20 rounded-xl">
-            <AlertCircle size={18} className="text-amber-400 flex-shrink-0" />
-            <p className="text-amber-300 text-sm">
+            <AlertCircle size={18} className="text-amber-500 dark:text-amber-400 flex-shrink-0" />
+            <p className="text-amber-700 dark:text-amber-300 text-sm">
               尚未設定任何版本規則，請切換至「管理員模式」新增規則。
             </p>
           </div>
@@ -63,14 +65,20 @@ export default function SOPNavigator({ rules, settings }) {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-end gap-3">
               {/* From Version */}
               <div className="flex-1">
-                <label className="block text-slate-400 text-xs font-medium uppercase tracking-wide mb-2">
+                <label className="block text-gray-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wide mb-2">
                   原始版本
                 </label>
                 <select
                   value={fromVersion}
                   onChange={handleFromChange}
-                  className="w-full bg-slate-700/80 border border-slate-600 text-slate-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all appearance-none cursor-pointer text-sm"
-                  style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E\")", backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center', backgroundSize: '16px', paddingRight: '40px' }}
+                  className="w-full bg-gray-50 dark:bg-slate-700/80 border border-gray-300 dark:border-slate-600 text-gray-900 dark:text-slate-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all appearance-none cursor-pointer text-sm"
+                  style={{
+                    backgroundImage: SELECT_ARROW,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'right 12px center',
+                    backgroundSize: '16px',
+                    paddingRight: '40px',
+                  }}
                 >
                   <option value="">— 選擇版本 —</option>
                   {allVersions.map(v => (
@@ -84,23 +92,29 @@ export default function SOPNavigator({ rules, settings }) {
               {/* Arrow Divider */}
               <div className="flex items-center justify-center sm:pb-1 py-1">
                 <div className="flex items-center gap-2">
-                  <div className="hidden sm:block w-4 h-px bg-slate-600" />
+                  <div className="hidden sm:block w-4 h-px bg-gray-300 dark:bg-slate-600" />
                   <ArrowRight size={18} className="text-blue-500" />
-                  <div className="hidden sm:block w-4 h-px bg-slate-600" />
+                  <div className="hidden sm:block w-4 h-px bg-gray-300 dark:bg-slate-600" />
                 </div>
               </div>
 
               {/* To Version */}
               <div className="flex-1">
-                <label className="block text-slate-400 text-xs font-medium uppercase tracking-wide mb-2">
+                <label className="block text-gray-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wide mb-2">
                   目標版本
                 </label>
                 <select
                   value={toVersion}
                   onChange={handleToChange}
                   disabled={!fromVersion}
-                  className="w-full bg-slate-700/80 border border-slate-600 text-slate-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all appearance-none cursor-pointer text-sm disabled:opacity-50 disabled:cursor-not-allowed"
-                  style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E\")", backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center', backgroundSize: '16px', paddingRight: '40px' }}
+                  className="w-full bg-gray-50 dark:bg-slate-700/80 border border-gray-300 dark:border-slate-600 text-gray-900 dark:text-slate-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all appearance-none cursor-pointer text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                  style={{
+                    backgroundImage: SELECT_ARROW,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'right 12px center',
+                    backgroundSize: '16px',
+                    paddingRight: '40px',
+                  }}
                 >
                   <option value="">— 選擇版本 —</option>
                   {toVersions.map(v => (
@@ -124,7 +138,7 @@ export default function SOPNavigator({ rules, settings }) {
               {sopSteps !== null && (
                 <button
                   onClick={handleReset}
-                  className="flex items-center gap-2 px-5 py-3 bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-xl font-medium transition-colors text-sm"
+                  className="flex items-center gap-2 px-5 py-3 bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 text-gray-700 dark:text-slate-300 rounded-xl font-medium transition-colors text-sm"
                 >
                   <RefreshCw size={14} />
                   重置
@@ -139,13 +153,13 @@ export default function SOPNavigator({ rules, settings }) {
       {sopSteps !== null && (
         <>
           {sopSteps.length === 0 ? (
-            <div className="bg-slate-800 rounded-2xl border border-slate-700 p-10 text-center">
-              <div className="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center mx-auto mb-3">
-                <AlertCircle size={22} className="text-slate-500" />
+            <div className="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-slate-700 p-10 text-center">
+              <div className="w-12 h-12 rounded-full bg-gray-100 dark:bg-slate-700 flex items-center justify-center mx-auto mb-3">
+                <AlertCircle size={22} className="text-gray-400 dark:text-slate-500" />
               </div>
-              <p className="text-slate-300 font-medium mb-1">找不到升版路徑</p>
-              <p className="text-slate-500 text-sm">
-                {fromVersion} → {toVersion} 之間沒有可用的版本節點，請聯繫管理員補充規則。
+              <p className="text-gray-800 dark:text-slate-300 font-medium mb-1">找不到升版路徑</p>
+              <p className="text-gray-500 dark:text-slate-500 text-sm">
+                {fromVersion} → {toVersion} 之間沒有可用的版本規則，請聯繫管理員補充。
               </p>
             </div>
           ) : (

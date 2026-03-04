@@ -21,9 +21,9 @@ import { compareVersions } from '../utils/versionUtils';
 
 function Badge({ children, variant = 'default' }) {
   const styles = {
-    default: 'bg-slate-700 text-slate-400 border-slate-600',
-    amber: 'bg-amber-500/15 text-amber-400 border-amber-500/25',
-    blue: 'bg-blue-500/15 text-blue-400 border-blue-500/25',
+    default: 'bg-gray-100 dark:bg-slate-700 text-gray-500 dark:text-slate-400 border-gray-200 dark:border-slate-600',
+    amber: 'bg-amber-500/15 text-amber-600 dark:text-amber-400 border-amber-500/25',
+    blue: 'bg-blue-500/15 text-blue-600 dark:text-blue-400 border-blue-500/25',
   };
   return (
     <span
@@ -37,9 +37,8 @@ function Badge({ children, variant = 'default' }) {
 function GlobalSettings({ settings, onUpdateSettings, onSyncToGist, onLoadFromGist, onCreateGist }) {
   const [form, setForm] = useState({ ...settings });
   const [saved, setSaved] = useState(false);
-  const [gistStatus, setGistStatus] = useState(null); // null | { type: 'loading'|'ok'|'error', msg: string }
+  const [gistStatus, setGistStatus] = useState(null);
 
-  // 當外部 settings 有變動（例如 createGist 寫入新的 gistId），同步更新表單
   useEffect(() => {
     setForm(prev => ({ ...prev, gistId: settings.gistId }));
   }, [settings.gistId]);
@@ -65,18 +64,18 @@ function GlobalSettings({ settings, onUpdateSettings, onSyncToGist, onLoadFromGi
   };
 
   const inputClass =
-    'w-full bg-slate-700 border border-slate-600 text-slate-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm placeholder-slate-500 transition-colors';
+    'w-full bg-gray-50 dark:bg-slate-700 border border-gray-300 dark:border-slate-600 text-gray-900 dark:text-slate-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm placeholder-gray-400 dark:placeholder-slate-500 transition-colors';
 
   return (
-    <div className="bg-slate-800 rounded-2xl border border-slate-700 p-6 space-y-6">
+    <div className="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-slate-700 p-6 space-y-6">
       {/* 全域設定 */}
       <div className="flex items-center gap-2">
-        <Settings2 size={16} className="text-slate-400" />
-        <h3 className="text-slate-100 font-semibold">全域設定</h3>
+        <Settings2 size={16} className="text-gray-500 dark:text-slate-400" />
+        <h3 className="text-gray-900 dark:text-slate-100 font-semibold">全域設定</h3>
       </div>
 
       <div className="space-y-2">
-        <label className="block text-xs font-medium text-slate-400 uppercase tracking-wide">
+        <label className="block text-xs font-medium text-gray-500 dark:text-slate-400 uppercase tracking-wide">
           Migrate 工具網址
         </label>
         <input
@@ -86,8 +85,8 @@ function GlobalSettings({ settings, onUpdateSettings, onSyncToGist, onLoadFromGi
           placeholder="http://192.168.105.175:4999/migrate"
           className={inputClass}
         />
-        <div className="flex items-start gap-2 text-xs text-slate-500 bg-slate-700/40 rounded-lg p-3">
-          <Info size={13} className="flex-shrink-0 mt-0.5 text-blue-400" />
+        <div className="flex items-start gap-2 text-xs text-gray-500 dark:text-slate-500 bg-gray-50 dark:bg-slate-700/40 rounded-lg p-3">
+          <Info size={13} className="flex-shrink-0 mt-0.5 text-blue-500 dark:text-blue-400" />
           <span>
             當版本升版規則標記為「需 Migrate」時，SOP 中將顯示此連結。
             此連結套用至所有有 Migrate 需求的版本步驟。
@@ -96,25 +95,25 @@ function GlobalSettings({ settings, onUpdateSettings, onSyncToGist, onLoadFromGi
       </div>
 
       {/* 跨裝置同步 */}
-      <div className="border-t border-slate-700 pt-6 space-y-4">
+      <div className="border-t border-gray-200 dark:border-slate-700 pt-6 space-y-4">
         <div className="flex items-center gap-2">
-          <Cloud size={16} className="text-slate-400" />
-          <h3 className="text-slate-100 font-semibold">跨裝置同步</h3>
-          <span className="text-xs text-slate-500">（GitHub Gist）</span>
+          <Cloud size={16} className="text-gray-500 dark:text-slate-400" />
+          <h3 className="text-gray-900 dark:text-slate-100 font-semibold">跨裝置同步</h3>
+          <span className="text-xs text-gray-400 dark:text-slate-500">（GitHub Gist）</span>
         </div>
 
-        <div className="flex items-start gap-2 text-xs text-slate-500 bg-slate-700/40 rounded-lg p-3">
-          <Info size={13} className="flex-shrink-0 mt-0.5 text-blue-400" />
+        <div className="flex items-start gap-2 text-xs text-gray-500 dark:text-slate-500 bg-gray-50 dark:bg-slate-700/40 rounded-lg p-3">
+          <Info size={13} className="flex-shrink-0 mt-0.5 text-blue-500 dark:text-blue-400" />
           <span>
             使用 GitHub Gist 儲存設定，其他裝置開啟頁面時會自動載入最新資料。
-            需要 GitHub Personal Access Token（勾選 <code className="text-slate-300">gist</code> 權限）。
+            需要 GitHub Personal Access Token（勾選 <code className="text-gray-700 dark:text-slate-300">gist</code> 權限）。
             Token 僅存於本機，不會上傳至 Gist。
           </span>
         </div>
 
         <div className="space-y-3">
           <div>
-            <label className="block text-xs font-medium text-slate-400 uppercase tracking-wide mb-1.5">
+            <label className="block text-xs font-medium text-gray-500 dark:text-slate-400 uppercase tracking-wide mb-1.5">
               GitHub Token
             </label>
             <input
@@ -126,7 +125,7 @@ function GlobalSettings({ settings, onUpdateSettings, onSyncToGist, onLoadFromGi
             />
           </div>
           <div>
-            <label className="block text-xs font-medium text-slate-400 uppercase tracking-wide mb-1.5">
+            <label className="block text-xs font-medium text-gray-500 dark:text-slate-400 uppercase tracking-wide mb-1.5">
               Gist ID
             </label>
             <input
@@ -153,7 +152,7 @@ function GlobalSettings({ settings, onUpdateSettings, onSyncToGist, onLoadFromGi
           <button
             onClick={() => handleGistAction(onLoadFromGist)}
             disabled={!form.gistId || gistStatus?.type === 'loading'}
-            className="flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-xl text-sm font-medium transition-colors border border-slate-600 disabled:opacity-40 disabled:cursor-not-allowed"
+            className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 text-gray-700 dark:text-slate-300 rounded-xl text-sm font-medium transition-colors border border-gray-200 dark:border-slate-600 disabled:opacity-40 disabled:cursor-not-allowed"
           >
             <RefreshCw size={14} />
             從 Gist 載入
@@ -176,10 +175,10 @@ function GlobalSettings({ settings, onUpdateSettings, onSyncToGist, onLoadFromGi
           <div
             className={`flex items-start gap-2 text-sm rounded-lg p-3 ${
               gistStatus.type === 'loading'
-                ? 'bg-blue-500/10 text-blue-400'
+                ? 'bg-blue-500/10 text-blue-600 dark:text-blue-400'
                 : gistStatus.type === 'ok'
-                ? 'bg-emerald-500/10 text-emerald-400'
-                : 'bg-red-500/10 text-red-400'
+                ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
+                : 'bg-red-500/10 text-red-600 dark:text-red-400'
             }`}
           >
             {gistStatus.type === 'loading' && <Loader2 size={14} className="animate-spin flex-shrink-0 mt-0.5" />}
@@ -219,7 +218,7 @@ export default function AdminPanel({
   onCreateGist,
 }) {
   const [activeTab, setActiveTab] = useState('rules');
-  const [formMode, setFormMode] = useState(null); // null | 'add' | 'edit'
+  const [formMode, setFormMode] = useState(null);
   const [editingRule, setEditingRule] = useState(null);
   const fileInputRef = useRef(null);
 
@@ -259,7 +258,6 @@ export default function AdminPanel({
     }
   };
 
-  // Sort rules by fromVersion, then toVersion
   const sortedRules = [...rules].sort((a, b) => {
     const cmp = compareVersions(a.fromVersion, b.fromVersion);
     return cmp !== 0 ? cmp : compareVersions(a.toVersion, b.toVersion);
@@ -272,22 +270,22 @@ export default function AdminPanel({
       {/* Admin header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-slate-100 font-bold text-xl">管理員維護模式</h2>
-          <p className="text-slate-400 text-sm mt-1">
+          <h2 className="text-gray-900 dark:text-slate-100 font-bold text-xl">管理員維護模式</h2>
+          <p className="text-gray-500 dark:text-slate-400 text-sm mt-1">
             管理升版規則與全域工具設定
           </p>
         </div>
         <div className="flex gap-2 flex-wrap">
           <button
             onClick={onExport}
-            className="flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-xl text-sm font-medium transition-colors border border-slate-600"
+            className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 text-gray-700 dark:text-slate-300 rounded-xl text-sm font-medium transition-colors border border-gray-200 dark:border-slate-600"
           >
             <Download size={14} />
             匯出 JSON
           </button>
           <button
             onClick={handleImportClick}
-            className="flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-xl text-sm font-medium transition-colors border border-slate-600"
+            className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 text-gray-700 dark:text-slate-300 rounded-xl text-sm font-medium transition-colors border border-gray-200 dark:border-slate-600"
           >
             <Upload size={14} />
             匯入 JSON
@@ -304,24 +302,24 @@ export default function AdminPanel({
 
       {/* Stats cards */}
       <div className="grid grid-cols-3 gap-3">
-        <div className="bg-slate-800 rounded-xl border border-slate-700 p-4 text-center">
-          <div className="text-2xl font-bold text-slate-100">{rules.length}</div>
-          <div className="text-xs text-slate-500 mt-0.5">升版規則</div>
+        <div className="bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 p-4 text-center">
+          <div className="text-2xl font-bold text-gray-900 dark:text-slate-100">{rules.length}</div>
+          <div className="text-xs text-gray-500 dark:text-slate-500 mt-0.5">升版規則</div>
         </div>
-        <div className="bg-slate-800 rounded-xl border border-slate-700 p-4 text-center">
-          <div className="text-2xl font-bold text-amber-400">{migrationCount}</div>
-          <div className="text-xs text-slate-500 mt-0.5">需 Migrate</div>
+        <div className="bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 p-4 text-center">
+          <div className="text-2xl font-bold text-amber-500 dark:text-amber-400">{migrationCount}</div>
+          <div className="text-xs text-gray-500 dark:text-slate-500 mt-0.5">需 Migrate</div>
         </div>
-        <div className="bg-slate-800 rounded-xl border border-slate-700 p-4 text-center">
-          <div className="text-2xl font-bold text-blue-400">
+        <div className="bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 p-4 text-center">
+          <div className="text-2xl font-bold text-blue-500 dark:text-blue-400">
             {rules.reduce((a, r) => a + (r.manualSteps?.length ?? 0), 0)}
           </div>
-          <div className="text-xs text-slate-500 mt-0.5">手動步驟總計</div>
+          <div className="text-xs text-gray-500 dark:text-slate-500 mt-0.5">手動步驟總計</div>
         </div>
       </div>
 
       {/* Tabs */}
-      <div className="flex border-b border-slate-700 gap-1">
+      <div className="flex border-b border-gray-200 dark:border-slate-700 gap-1">
         {[
           {
             id: 'rules',
@@ -347,14 +345,14 @@ export default function AdminPanel({
             }}
             className={`flex items-center gap-2 px-5 py-3 text-sm font-medium border-b-2 -mb-px transition-colors ${
               activeTab === tab.id
-                ? 'border-blue-500 text-blue-400'
-                : 'border-transparent text-slate-400 hover:text-slate-300'
+                ? 'border-blue-500 text-blue-600 dark:text-blue-400'
+                : 'border-transparent text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:hover:text-slate-300'
             }`}
           >
             {tab.icon}
             {tab.label}
             {tab.count !== null && (
-              <span className="px-1.5 py-0.5 text-xs bg-slate-700 text-slate-400 rounded-full">
+              <span className="px-1.5 py-0.5 text-xs bg-gray-100 dark:bg-slate-700 text-gray-500 dark:text-slate-400 rounded-full">
                 {tab.count}
               </span>
             )}
@@ -384,28 +382,28 @@ export default function AdminPanel({
                 </button>
               </div>
 
-              <div className="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-slate-700 overflow-hidden">
                 {sortedRules.length === 0 ? (
-                  <div className="flex flex-col items-center py-16 text-slate-600">
+                  <div className="flex flex-col items-center py-16 text-gray-400 dark:text-slate-600">
                     <Database size={32} className="mb-3 opacity-50" />
-                    <p className="font-medium text-slate-500">尚無任何規則</p>
+                    <p className="font-medium text-gray-500 dark:text-slate-500">尚無任何規則</p>
                     <p className="text-sm mt-1">點擊上方「新增規則」開始設定</p>
                   </div>
                 ) : (
                   <div className="overflow-x-auto">
                     <table className="w-full">
                       <thead>
-                        <tr className="bg-slate-900/60 border-b border-slate-700">
-                          <th className="text-left px-5 py-3 text-xs text-slate-400 font-medium uppercase tracking-wide whitespace-nowrap">
+                        <tr className="bg-gray-50 dark:bg-slate-900/60 border-b border-gray-200 dark:border-slate-700">
+                          <th className="text-left px-5 py-3 text-xs text-gray-500 dark:text-slate-400 font-medium uppercase tracking-wide whitespace-nowrap">
                             版本路徑
                           </th>
-                          <th className="text-center px-4 py-3 text-xs text-slate-400 font-medium uppercase tracking-wide whitespace-nowrap">
+                          <th className="text-center px-4 py-3 text-xs text-gray-500 dark:text-slate-400 font-medium uppercase tracking-wide whitespace-nowrap">
                             需 Migrate
                           </th>
-                          <th className="text-center px-4 py-3 text-xs text-slate-400 font-medium uppercase tracking-wide whitespace-nowrap">
+                          <th className="text-center px-4 py-3 text-xs text-gray-500 dark:text-slate-400 font-medium uppercase tracking-wide whitespace-nowrap">
                             手動步驟
                           </th>
-                          <th className="text-right px-5 py-3 text-xs text-slate-400 font-medium uppercase tracking-wide whitespace-nowrap">
+                          <th className="text-right px-5 py-3 text-xs text-gray-500 dark:text-slate-400 font-medium uppercase tracking-wide whitespace-nowrap">
                             操作
                           </th>
                         </tr>
@@ -414,22 +412,22 @@ export default function AdminPanel({
                         {sortedRules.map((rule, index) => (
                           <tr
                             key={rule.id}
-                            className={`hover:bg-slate-700/30 transition-colors ${
+                            className={`hover:bg-gray-50 dark:hover:bg-slate-700/30 transition-colors ${
                               index < sortedRules.length - 1
-                                ? 'border-b border-slate-700/50'
+                                ? 'border-b border-gray-100 dark:border-slate-700/50'
                                 : ''
                             }`}
                           >
                             <td className="px-5 py-3.5">
                               <div className="flex items-center gap-2">
-                                <span className="font-mono text-sm text-slate-200 font-semibold">
+                                <span className="font-mono text-sm text-gray-800 dark:text-slate-200 font-semibold">
                                   v{rule.fromVersion}
                                 </span>
                                 <ChevronRight
                                   size={13}
-                                  className="text-slate-600"
+                                  className="text-gray-400 dark:text-slate-600"
                                 />
-                                <span className="font-mono text-sm text-slate-200 font-semibold">
+                                <span className="font-mono text-sm text-gray-800 dark:text-slate-200 font-semibold">
                                   v{rule.toVersion}
                                 </span>
                               </div>
@@ -441,13 +439,13 @@ export default function AdminPanel({
                                   是
                                 </Badge>
                               ) : (
-                                <span className="text-slate-700 text-sm select-none">
+                                <span className="text-gray-300 dark:text-slate-700 text-sm select-none">
                                   —
                                 </span>
                               )}
                             </td>
                             <td className="px-4 py-3.5 text-center">
-                              <span className="text-slate-400 text-sm font-mono">
+                              <span className="text-gray-500 dark:text-slate-400 text-sm font-mono">
                                 {rule.manualSteps?.length ?? 0}
                               </span>
                             </td>
@@ -455,14 +453,14 @@ export default function AdminPanel({
                               <div className="flex items-center justify-end gap-1.5">
                                 <button
                                   onClick={() => handleEdit(rule)}
-                                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs text-slate-400 hover:text-slate-100 bg-slate-700 hover:bg-slate-600 rounded-lg transition-colors"
+                                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:hover:text-slate-100 bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 rounded-lg transition-colors"
                                 >
                                   <Pencil size={12} />
                                   編輯
                                 </button>
                                 <button
                                   onClick={() => handleDelete(rule.id)}
-                                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs text-slate-500 hover:text-red-300 bg-slate-700 hover:bg-red-900/30 rounded-lg transition-colors"
+                                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs text-gray-400 dark:text-slate-500 hover:text-red-600 dark:hover:text-red-300 bg-gray-100 dark:bg-slate-700 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-lg transition-colors"
                                 >
                                   <Trash2 size={12} />
                                   刪除

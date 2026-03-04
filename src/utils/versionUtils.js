@@ -43,33 +43,44 @@ export function getUniqueVersions(rules) {
 }
 
 /**
- * 根據來源/目標版本，從規則庫中建立完整的 SOP 步驟路徑
- * 返回每個版本跳轉的步驟，含對應規則（若無規則則為 null）
+ * 根據來源/目標版本，以 BFS 在規則圖中尋找最少跳轉次數的路徑。
+ * 直接使用規則邊（edge）建圖，不再依賴中間版本節點，
+ * 因此若存在從 3.15 直達 3.20 的規則，就只會產生一個步驟。
  */
 export function buildSOPSteps(rules, fromVersion, toVersion) {
   if (!fromVersion || !toVersion) return [];
   if (compareVersions(fromVersion, toVersion) >= 0) return [];
 
-  const allVersions = getUniqueVersions(rules);
+  // 建立有向圖：fromVersion → 該版本出發的所有規則
+  const graph = {};
+  rules.forEach(rule => {
+    if (!graph[rule.fromVersion]) graph[rule.fromVersion] = [];
+    graph[rule.fromVersion].push(rule);
+  });
 
-  // 篩選出在 [fromVersion, toVersion] 範圍內的版本
-  const versionsInRange = allVersions.filter(
-    v =>
-      compareVersions(v, fromVersion) >= 0 &&
-      compareVersions(v, toVersion) <= 0
-  );
+  // BFS：找出跳轉次數最少的路徑
+  const queue = [[fromVersion, []]]; // [目前版本, 已走路徑]
+  const visited = new Set([fromVersion]);
 
-  if (versionsInRange.length < 2) return [];
+  while (queue.length > 0) {
+    const [current, path] = queue.shift();
+    const outgoing = (graph[current] || []).filter(
+      r => compareVersions(r.toVersion, toVersion) <= 0
+    );
 
-  const steps = [];
-  for (let i = 0; i < versionsInRange.length - 1; i++) {
-    const from = versionsInRange[i];
-    const to = versionsInRange[i + 1];
-    const rule =
-      rules.find(r => r.fromVersion === from && r.toVersion === to) || null;
-    steps.push({ fromVersion: from, toVersion: to, rule });
+    for (const rule of outgoing) {
+      const step = { fromVersion: rule.fromVersion, toVersion: rule.toVersion, rule };
+      if (rule.toVersion === toVersion) {
+        return [...path, step];
+      }
+      if (!visited.has(rule.toVersion)) {
+        visited.add(rule.toVersion);
+        queue.push([rule.toVersion, [...path, step]]);
+      }
+    }
   }
-  return steps;
+
+  return []; // 找不到路徑
 }
 
 /**

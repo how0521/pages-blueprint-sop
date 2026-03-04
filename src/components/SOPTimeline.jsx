@@ -12,13 +12,13 @@ function ProgressBar({ value, max }) {
   const pct = max === 0 ? 0 : Math.round((value / max) * 100);
   return (
     <div className="flex items-center gap-3">
-      <div className="flex-1 h-1.5 bg-slate-700 rounded-full overflow-hidden">
+      <div className="flex-1 h-1.5 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
         <div
           className="h-full bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full transition-all duration-500"
           style={{ width: `${pct}%` }}
         />
       </div>
-      <span className="text-xs text-slate-400 w-12 text-right font-mono">
+      <span className="text-xs text-gray-500 dark:text-slate-400 w-12 text-right font-mono">
         {value}/{max}
       </span>
     </div>
@@ -48,7 +48,7 @@ function StepCard({ step, index, isLast, migrationUrl, checkedItems, onCheck }) 
           {allDone ? <CheckCircle2 size={17} /> : index + 1}
         </div>
         {!isLast && (
-          <div className="w-px flex-1 mt-2 bg-gradient-to-b from-slate-600 to-slate-700/30 min-h-[24px]" />
+          <div className="w-px flex-1 mt-2 bg-gradient-to-b from-gray-300 to-gray-200/30 dark:from-slate-600 dark:to-slate-700/30 min-h-[24px]" />
         )}
       </div>
 
@@ -57,33 +57,33 @@ function StepCard({ step, index, isLast, migrationUrl, checkedItems, onCheck }) 
         <div
           className={`rounded-2xl border overflow-hidden transition-all duration-200 ${
             allDone
-              ? 'border-emerald-700/40 bg-slate-800/60'
-              : 'border-slate-700 bg-slate-800'
+              ? 'border-emerald-300 dark:border-emerald-700/40 bg-emerald-50/50 dark:bg-slate-800/60'
+              : 'border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800'
           }`}
         >
           {/* Card header */}
-          <div className="px-5 py-3.5 flex items-center justify-between border-b border-slate-700/60">
+          <div className="px-5 py-3.5 flex items-center justify-between border-b border-gray-100 dark:border-slate-700/60">
             <div className="flex items-center gap-2.5 min-w-0">
               <div className="flex items-center gap-1.5 font-mono">
-                <span className="text-slate-200 font-semibold text-sm">v{step.fromVersion}</span>
-                <ChevronRight size={14} className="text-slate-500" />
-                <span className="text-slate-200 font-semibold text-sm">v{step.toVersion}</span>
+                <span className="text-gray-800 dark:text-slate-200 font-semibold text-sm">v{step.fromVersion}</span>
+                <ChevronRight size={14} className="text-gray-400 dark:text-slate-500" />
+                <span className="text-gray-800 dark:text-slate-200 font-semibold text-sm">v{step.toVersion}</span>
               </div>
               {hasMigration && (
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-amber-500/15 text-amber-400 border border-amber-500/25 flex-shrink-0">
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/25 flex-shrink-0">
                   <AlertTriangle size={10} />
                   需 Migrate
                 </span>
               )}
               {allDone && (
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-500/15 text-emerald-400 border border-emerald-500/25 flex-shrink-0">
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25 flex-shrink-0">
                   <CheckCircle2 size={10} />
                   完成
                 </span>
               )}
             </div>
             {items.length > 0 && (
-              <span className="text-xs text-slate-500 flex-shrink-0 ml-2">
+              <span className="text-xs text-gray-400 dark:text-slate-500 flex-shrink-0 ml-2">
                 {doneCount}/{items.length}
               </span>
             )}
@@ -94,14 +94,14 @@ function StepCard({ step, index, isLast, migrationUrl, checkedItems, onCheck }) 
             <div className="px-5 py-3 bg-amber-500/8 border-b border-amber-500/15 flex items-center gap-3">
               <div className="w-1 self-stretch rounded-full bg-amber-500/70 flex-shrink-0" />
               <div className="flex-1 min-w-0">
-                <p className="text-xs text-amber-400/70 mb-1 leading-none">
+                <p className="text-xs text-amber-500/70 dark:text-amber-400/70 mb-1 leading-none">
                   此升版區間需先執行資料遷移工具
                 </p>
                 <a
                   href={migrationUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-amber-300 hover:text-amber-200 font-semibold text-sm transition-colors group"
+                  className="inline-flex items-center gap-1.5 text-amber-600 dark:text-amber-300 hover:text-amber-700 dark:hover:text-amber-200 font-semibold text-sm transition-colors group"
                 >
                   <Link2 size={14} className="group-hover:rotate-12 transition-transform" />
                   🔗 [點我] 前往 Migrate 工具
@@ -115,8 +115,8 @@ function StepCard({ step, index, isLast, migrationUrl, checkedItems, onCheck }) 
           {step.rule && items.length > 0 && (
             <div className="px-5 py-4">
               <div className="flex items-center gap-2 mb-3">
-                <ClipboardList size={13} className="text-slate-500" />
-                <span className="text-xs text-slate-500 font-medium uppercase tracking-widest">
+                <ClipboardList size={13} className="text-gray-400 dark:text-slate-500" />
+                <span className="text-xs text-gray-400 dark:text-slate-500 font-medium uppercase tracking-widest">
                   手動調整項目
                 </span>
               </div>
@@ -138,8 +138,8 @@ function StepCard({ step, index, isLast, migrationUrl, checkedItems, onCheck }) 
                       <span
                         className={`text-sm leading-relaxed transition-colors ${
                           isChecked
-                            ? 'line-through text-slate-600'
-                            : 'text-slate-300 group-hover:text-slate-100'
+                            ? 'line-through text-gray-300 dark:text-slate-600'
+                            : 'text-gray-700 dark:text-slate-300 group-hover:text-gray-900 dark:group-hover:text-slate-100'
                         }`}
                       >
                         {item.description}
@@ -154,7 +154,7 @@ function StepCard({ step, index, isLast, migrationUrl, checkedItems, onCheck }) 
           {/* No rule defined */}
           {!step.rule && (
             <div className="px-5 py-4">
-              <p className="text-sm text-slate-600 italic">
+              <p className="text-sm text-gray-400 dark:text-slate-600 italic">
                 此版本區間尚未定義升版規則，請聯繫管理員補充。
               </p>
             </div>
@@ -163,7 +163,7 @@ function StepCard({ step, index, isLast, migrationUrl, checkedItems, onCheck }) 
           {/* No manual steps */}
           {step.rule && items.length === 0 && !hasMigration && (
             <div className="px-5 py-4">
-              <p className="text-sm text-slate-500">此升版區間無需手動調整。</p>
+              <p className="text-sm text-gray-400 dark:text-slate-500">此升版區間無需手動調整。</p>
             </div>
           )}
         </div>
@@ -193,34 +193,34 @@ export default function SOPTimeline({ steps, migrationUrl, fromVersion, toVersio
       <div
         className={`rounded-2xl border p-5 transition-colors ${
           allDone
-            ? 'bg-emerald-900/20 border-emerald-700/40'
-            : 'bg-slate-800 border-slate-700'
+            ? 'bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-700/40'
+            : 'bg-white dark:bg-slate-800 border-gray-200 dark:border-slate-700'
         }`}
       >
         <div className="flex items-start justify-between gap-4 mb-3">
           <div>
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-slate-400 text-sm">升版路徑</span>
-              <span className="font-mono font-semibold text-slate-100">
+              <span className="text-gray-500 dark:text-slate-400 text-sm">升版路徑</span>
+              <span className="font-mono font-semibold text-gray-900 dark:text-slate-100">
                 v{fromVersion}
               </span>
-              <ChevronRight size={14} className="text-slate-500" />
-              <span className="font-mono font-semibold text-slate-100">
+              <ChevronRight size={14} className="text-gray-400 dark:text-slate-500" />
+              <span className="font-mono font-semibold text-gray-900 dark:text-slate-100">
                 v{toVersion}
               </span>
             </div>
             <div className="flex items-center flex-wrap gap-2 mt-1.5">
-              <span className="text-xs text-slate-500">
+              <span className="text-xs text-gray-500 dark:text-slate-500">
                 共 {steps.length} 個升版區間
               </span>
               {hasMigration && (
-                <span className="inline-flex items-center gap-1 text-xs text-amber-400">
+                <span className="inline-flex items-center gap-1 text-xs text-amber-600 dark:text-amber-400">
                   <AlertTriangle size={11} />
                   包含需執行 Migrate 的步驟
                 </span>
               )}
               {allDone && (
-                <span className="inline-flex items-center gap-1 text-xs text-emerald-400 font-medium">
+                <span className="inline-flex items-center gap-1 text-xs text-emerald-600 dark:text-emerald-400 font-medium">
                   <CheckCircle2 size={11} />
                   全部完成！
                 </span>
@@ -229,10 +229,10 @@ export default function SOPTimeline({ steps, migrationUrl, fromVersion, toVersio
           </div>
           {totalItems > 0 && (
             <div className="text-right flex-shrink-0">
-              <div className="text-xs text-slate-500 mb-1">手動項目進度</div>
-              <div className="text-xl font-bold font-mono text-slate-100">
+              <div className="text-xs text-gray-500 dark:text-slate-500 mb-1">手動項目進度</div>
+              <div className="text-xl font-bold font-mono text-gray-900 dark:text-slate-100">
                 {Math.round((checkedCount / totalItems) * 100)}
-                <span className="text-sm font-normal text-slate-500">%</span>
+                <span className="text-sm font-normal text-gray-500 dark:text-slate-500">%</span>
               </div>
             </div>
           )}

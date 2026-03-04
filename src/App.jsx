@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import SOPNavigator from './components/SOPNavigator';
 import AdminPanel from './components/AdminPanel';
+import ChangelogView from './components/ChangelogView';
 
 const GIST_FILE = 'rules.json';
 const PUBLIC_GIST_ID = '1966a795b97f9716c32316c52fcc974f';
@@ -105,7 +106,27 @@ const DEFAULT_RULES = [
 ];
 
 export default function App() {
-  const [isAdmin, setIsAdmin] = useState(false);
+  // 'navigator' | 'changelog' | 'admin'
+  const [view, setView] = useState('navigator');
+
+  const [isDark, setIsDark] = useState(() => {
+    try {
+      const saved = localStorage.getItem('pages-sop-theme');
+      return saved !== null ? JSON.parse(saved) : true;
+    } catch {
+      return true;
+    }
+  });
+
+  // 套用 dark class 到 <html>，讓 Tailwind dark: 變體生效
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    localStorage.setItem('pages-sop-theme', JSON.stringify(isDark));
+  }, [isDark]);
 
   const [rules, setRules] = useState(() => {
     try {
@@ -124,7 +145,6 @@ export default function App() {
       return {
         ...DEFAULT_SETTINGS,
         ...parsed,
-        // 若舊版 localStorage 存了空 gistId，補回公開 Gist ID
         gistId: parsed.gistId || PUBLIC_GIST_ID,
       };
     } catch {
@@ -140,7 +160,7 @@ export default function App() {
     localStorage.setItem('pages-sop-settings', JSON.stringify(settings));
   }, [settings]);
 
-  // 頁面載入時自動從公開 Gist 拉取最新設定（所有用戶共用同一來源）
+  // 頁面載入時自動從公開 Gist 拉取最新設定
   useEffect(() => {
     fetch(`https://api.github.com/gists/${PUBLIC_GIST_ID}`)
       .then(r => (r.ok ? r.json() : Promise.reject()))
@@ -153,13 +173,12 @@ export default function App() {
           setSettings(prev => ({
             ...prev,
             ...data.settings,
-            // 保留本機的 gistId 與 token，不被 Gist 內容覆蓋
             gistId: prev.gistId,
             githubToken: prev.githubToken,
           }));
         }
       })
-      .catch(() => {}); // 自動同步失敗時靜默略過
+      .catch(() => {});
   }, []);
 
   const addRule = rule => setRules(prev => [...prev, rule]);
@@ -208,7 +227,6 @@ export default function App() {
     reader.readAsText(file);
   };
 
-  // currentSettings 為 GlobalSettings 傳入的即時表單值（含尚未儲存的 gistId/token）
   const syncToGist = async (currentSettings) => {
     const { gistId, githubToken } = currentSettings;
     if (!gistId) return { ok: false, error: '請先設定 Gist ID' };
@@ -303,10 +321,15 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900">
-      <Header isAdmin={isAdmin} onToggleAdmin={() => setIsAdmin(v => !v)} />
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-900 transition-colors duration-200">
+      <Header
+        view={view}
+        onSetView={setView}
+        isDark={isDark}
+        onToggleTheme={() => setIsDark(v => !v)}
+      />
       <main className="max-w-4xl mx-auto px-4 py-8">
-        {isAdmin ? (
+        {view === 'admin' ? (
           <AdminPanel
             rules={rules}
             settings={settings}
@@ -320,6 +343,8 @@ export default function App() {
             onLoadFromGist={loadFromGist}
             onCreateGist={createGist}
           />
+        ) : view === 'changelog' ? (
+          <ChangelogView rules={rules} />
         ) : (
           <SOPNavigator rules={rules} settings={settings} />
         )}
