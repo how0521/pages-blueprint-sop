@@ -70,12 +70,6 @@ function StepCard({ step, index, isLast, checkedItems, onCheck }) {
                 <span className="text-gray-800 dark:text-slate-200 font-semibold text-sm">v{step.toVersion}</span>
               </div>
               {/* 只顯示「需 Migrate」標籤，不再顯示各步驟的 migrate 連結 */}
-              {hasMigration && (
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/25 flex-shrink-0">
-                  <AlertTriangle size={10} />
-                  含 Migrate
-                </span>
-              )}
               {allDone && (
                 <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25 flex-shrink-0">
                   <CheckCircle2 size={10} />
@@ -149,7 +143,7 @@ function StepCard({ step, index, isLast, checkedItems, onCheck }) {
           {/* Migration-only step (has migrate but no manual steps) */}
           {step.rule && items.length === 0 && hasMigration && (
             <div className="px-5 py-4">
-              <p className="text-sm text-gray-400 dark:text-slate-500">僅需執行 Migrate 工具，無額外手動步驟。</p>
+              <p className="text-sm text-gray-400 dark:text-slate-500">此升版區間無需手動調整。</p>
             </div>
           )}
         </div>
