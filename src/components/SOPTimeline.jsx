@@ -247,19 +247,24 @@ export default function SOPTimeline({ steps, migrationUrl, fromVersion, toVersio
         )}
       </div>
 
-      {/* Timeline steps */}
-      <div>
-        {steps.map((step, index) => (
-          <StepCard
-            key={`${step.fromVersion}-${step.toVersion}`}
-            step={step}
-            index={index}
-            isLast={index === steps.length - 1}
-            checkedItems={checkedItems}
-            onCheck={handleCheck}
-          />
-        ))}
-      </div>
+      {/* Timeline steps — 只顯示有手動調整項目的步驟 */}
+      {(() => {
+        const visibleSteps = steps.filter(s => (s.rule?.manualSteps?.length ?? 0) > 0);
+        return visibleSteps.length > 0 ? (
+          <div>
+            {visibleSteps.map((step, index) => (
+              <StepCard
+                key={`${step.fromVersion}-${step.toVersion}`}
+                step={step}
+                index={index}
+                isLast={index === visibleSteps.length - 1}
+                checkedItems={checkedItems}
+                onCheck={handleCheck}
+              />
+            ))}
+          </div>
+        ) : null;
+      })()}
     </div>
   );
 }
