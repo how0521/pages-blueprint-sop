@@ -1,0 +1,30 @@
+{
+    "語音聊天室入口": {
+        "parameters": {
+            "displayNoNetworkTitle": "{{displayNoNetworkTitle}}",
+            "displayNoNetworkSubtitle": "{{displayNoNetworkSubtitle}}",
+            "displayEnteringRoom": "{{displayEnteringRoom}}",
+            "displayCreatingRoomButton": "{{displayCreatingRoomButton}}",
+            "displayNoChatRoomRefreshButton": "{{displayNoChatRoomRefreshButton}}"
+        }
+    },
+    "語音聊天室頁": {
+        "parameters": {
+            "displayAudienceNetworkDisconnectedMessage": "{{displayAudienceNetworkDisconnectedMessage}}",
+            "displayHostNetworkDisconnectedMessage": "{{displayHostNetworkDisconnectedMessage}}",
+            "displayAudienceConnectionRecoveredMessage": "{{displayAudienceConnectionRecoveredMessage}}",
+            "displayHostConnectionRecoveredMessage": "{{displayHostConnectionRecoveredMessage}}",
+            "displayMicDisconnectedText": "{{displayMicDisconnectedText}}",
+            "displayDisconnectionAlertTitle": "{{displayDisconnectionAlertTitle}}",
+            "displayDisconnectionAlertMessage": "{{displayDisconnectionAlertMessage}}",
+            "displayHostDisconnectionAlertTitle": "{{displayHostDisconnectionAlertTitle}}",
+            "displayHostDisconnectionAlertMessage": "{{displayHostDisconnectionAlertMessage}}",
+            "displayDisconnectionAlertButton": "{{displayDisconnectionAlertButton}}",
+            "displayClosingChatRoomLoadingText": "{{displayClosingChatRoomLoadingText}}",
+            "displayNoNetworkPushNotificationTitle": "{{displayNoNetworkPushNotificationTitle}}",
+            "displayNoNetworkPushNotificationContent": "{{displayNoNetworkPushNotificationContent}}",
+            "displayBecomeSpeakerPushNotificationTitle": "{{displayBecomeSpeakerPushNotificationTitle}}",
+            "displayBecomeSpeakerPushNotificationContent": "{{displayBecomeSpeakerPushNotificationContent}}"
+        }
+    }
+}

@@ -1,0 +1,396 @@
+{
+    "首登流程": {
+        "parameters": {
+            "displayPopupGuestLeft": "{{displayPopupGuestLeft}}",
+            "displayPopupGuestRight": "{{displayPopupGuestRight}}",
+            "displayPopupPremium": "{{displayPopupPremium}}"
+        }
+    },
+    "自訂導覽列": {
+        "parameters": {
+            "rightItems": {
+                "switch": "name",
+                "cases": {
+                    "Share": {
+                        "parameters": {
+                            "displayShareTitle": "{{displayShareTitle}}",
+                            "displayShareDescription": "{{displayShareDescription}}"
+                        }
+                    },
+                    "Collection": {
+                        "parameters": {
+                            "displayDialogTitle": "{{displayDialogTitle}}",
+                            "displayPositiveButton": "{{displayPositiveButton}}",
+                            "displayNegativeButton": "{{displayNegativeButton}}"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "合併表格": {
+        "parameters": {
+            "displayErrorMessage": "{{displayErrorMessage}}",
+            "displayLoadingMessage": "{{displayLoadingMessage}}",
+            "displayNoMatchDataMessage": "{{displayNoMatchDataMessage}}",
+            "displayNoFilteredDataMessage": "{{displayNoFilteredDataMessage}}",
+            "displayErrorHint": "{{displayErrorHint}}",
+            "displayNoMatchDataHint": "{{displayNoMatchDataHint}}",
+            "displayNoFilteredDataHint": "{{displayNoFilteredDataHint}}",
+            "displayRefreshButtonText": "{{displayRefreshButtonText}}"
+        }
+    },
+    "擴增表格": {
+        "parameters": {
+            "displayErrorMessage": "{{displayErrorMessage}}",
+            "displayErrorHint": "{{displayErrorHint}}",
+            "displayLoadingMessage": "{{displayLoadingMessage}}",
+            "displayNoDataMessage": "{{displayNoDataMessage}}",
+            "displayNoDataHint": "{{displayNoDataHint}}",
+            "displayRefreshButtonText": "{{displayRefreshButtonText}}"
+        }
+    },
+    "自選股": {
+        "parameters": {
+            "displayLoadingText": "{{displayLoadingText}}",
+            "displayLoadGroupsErrorMessageText": "{{displayLoadGroupsErrorMessageText}}",
+            "displayLoadGroupsErrorHintText": "{{displayLoadGroupsErrorHintText}}",
+            "displayEmptyGroupsText": "{{displayEmptyGroupsText}}",
+            "displayEditGroupsButtonText": "{{displayEditGroupsButtonText}}",
+            "displayListOutOfBounds100MessageText": "{{displayListOutOfBounds100MessageText}}",
+            "displayListOutOfBounds50MessageText": "{{displayListOutOfBounds50MessageText}}",
+            "displayListOutOfBoundsButtonText": "{{displayListOutOfBoundsButtonText}}",
+            "displayLoadingListErrorMessageText": "{{displayLoadingListErrorMessageText}}",
+            "displayLoadingListErrorHintText": "{{displayLoadingListErrorHintText}}",
+            "displayEmptyListText": "{{displayEmptyListText}}",
+            "displayEditListButtonText": "{{displayEditListButtonText}}"
+        }
+    },
+    "自選股/編輯": {
+        "parameters": {
+            "displayEditStockBtnText": "{{displayEditStockBtnText}}",
+            "displayEditGroupBtnText": "{{displayEditGroupBtnText}}",
+            "displayAddStockBtnText": "{{displayAddStockBtnText}}",
+            "displayAddGroupBtnText": "{{displayAddGroupBtnText}}",
+            "displayAddGroupDefaultNameText": "{{displayAddGroupDefaultNameText}}",
+            "displayDeleteStockBtnText": "{{displayDeleteStockBtnText}}",
+            "displayDeleteGroupBtnText": "{{displayDeleteGroupBtnText}}",
+            "displayAlertDeleteTitleText": "{{displayAlertDeleteTitleText}}",
+            "displayAlertDeleteConfirmText": "{{displayAlertDeleteConfirmText}}",
+            "displayAlertDeleteCancelText": "{{displayAlertDeleteCancelText}}",
+            "displayLoadErrorText": "{{displayLoadErrorText}}",
+            "displayNoStockMessageText": "{{displayNoStockMessageText}}",
+            "displayStockMoveAlertTitleText": "{{displayStockMoveAlertTitleText}}",
+            "displayStockMoveAlertOriginalListText": "{{displayStockMoveAlertOriginalListText}}",
+            "displayStockMoveAlertAddedText": "{{displayStockMoveAlertAddedText}}",
+            "displayStockMoveAlertCancelText": "{{displayStockMoveAlertCancelText}}",
+            "displayStockMoveAlertConfirmText": "{{displayStockMoveAlertConfirmText}}",
+            "displayGroupRenameDoneBtnText": "{{displayGroupRenameDoneBtnText}}"
+        }
+    },
+    "自選股/搜尋": {
+        "parameters": {
+            "displaySearchPlaceholder": "{{displaySearchPlaceholder}}",
+            "displayPopularHeaderText": "{{displayPopularHeaderText}}",
+            "displayHistoryHeaderText": "{{displayHistoryHeaderText}}",
+            "displayResultHeaderText": "{{displayResultHeaderText}}",
+            "displayLoadingText": "{{displayLoadingText}}",
+            "displayNoResultFoundText": "{{displayNoResultFoundText}}",
+            "displayGetResultErrorText": "{{displayGetResultErrorText}}",
+            "displayAddStockAlertTitleText": "{{displayAddStockAlertTitleText}}",
+            "displayAddStockAlertCancelText": "{{displayAddStockAlertCancelText}}",
+            "displayAddStockAlertConfirmText": "{{displayAddStockAlertConfirmText}}"
+        }
+    },
+    "個股報價": {
+        "parameters": {
+            "isCandleStickEnabled": false,
+            "isAmountEnabled": true,
+            "displayAmount": "{{displayAmount}}",
+            "displayTotalAmount": "{{displayTotalAmount}}"
+        }
+    },
+    "個股走勢": {
+        "parameters": {
+            "displayTime": "{{displayTime}}",
+            "displayPrice": "{{displayPrice}}",
+            "displayAveragePrice": "{{displayAveragePrice}}",
+            "displayVolume": "{{displayVolume}}",
+            "displayNoDataMessage": "{{displayNoDataMessage}}",
+            "displayLoading": "{{displayLoading}}",
+            "displayLiquidate": "{{displayLiquidate}}",
+            "displayReadError": "{{displayReadError}}"
+        }
+    },
+    "K線切換器": {
+        "parameters": {
+            "displayKLineConfigTitle": "{{displayKLineConfigTitle}}",
+            "displayKLineConfigCancel": "{{displayKLineConfigCancel}}",
+            "displayKLineConfigConfirm": "{{displayKLineConfigConfirm}}"
+        }
+    },
+    "K線圖表": {
+        "parameters": {
+            "displayOpen": "{{displayOpen}}",
+            "displayHigh": "{{displayHigh}}",
+            "displayLow": "{{displayLow}}",
+            "displayClose": "{{displayClose}}",
+            "displayBollingerUpper": "{{displayBollingerUpper}}",
+            "displayBollingerMid": "{{displayBollingerMid}}",
+            "displayBollingerLower": "{{displayBollingerLower}}",
+            "displayNoDataMessage": "{{displayNoDataMessage}}",
+            "displayLoading": "{{displayLoading}}",
+            "displayLiquidate": "{{displayLiquidate}}",
+            "displayReadError": "{{displayReadError}}"
+        }
+    },
+    "K線副圖": {
+        "updateParameters": {
+            "charts": [
+                {
+                    "type": "TradeVolume",
+                    "displayTitle": "成交量"
+                },
+                {
+                    "type": "KD",
+                    "displayTitle": "KD"
+                },
+                {
+                    "type": "KDJ",
+                    "displayTitle": "KDJ"
+                },
+                {
+                    "type": "MACD",
+                    "displayTitle": "MACD"
+                },
+                {
+                    "type": "RSI",
+                    "displayTitle": "RSI"
+                },
+                {
+                    "type": "Bias",
+                    "displayTitle": "乖離率"
+                },
+                {
+                    "type": "TwentyBIAS",
+                    "displayTitle": "乖離率(20日)"
+                },
+                {
+                    "type": "SixtyBIAS",
+                    "displayTitle": "乖離率(60日)"
+                },
+                {
+                    "type": "ForeignInvestment",
+                    "displayTitle": "外資"
+                },
+                {
+                    "type": "InvestmentTrust",
+                    "displayTitle": "投信"
+                },
+                {
+                    "type": "Dealer",
+                    "displayTitle": "自營商"
+                },
+                {
+                    "type": "DealerHedging",
+                    "displayTitle": "自營商(避險)"
+                },
+                {
+                    "type": "DealerOwn",
+                    "displayTitle": "自營商(自有)"
+                },
+                {
+                    "type": "InstitutionalInvestors",
+                    "displayTitle": "自營商"
+                },
+                {
+                    "type": "Financing",
+                    "displayTitle": "融資"
+                },
+                {
+                    "type": "MaintenanceMargin",
+                    "displayTitle": "融資維持率"
+                },
+                {
+                    "type": "Marriage",
+                    "displayTitle": "融券"
+                },
+                {
+                    "type": "FinancingAndMarriageRation",
+                    "displayTitle": "券資比"
+                },
+                {
+                    "type": "DebBalance",
+                    "displayTitle": "借券賣"
+                },
+                {
+                    "type": "MainForceNetOfBuySell",
+                    "displayTitle": "主力買賣超"
+                },
+                {
+                    "type": "Bscnt",
+                    "displayTitle": "買賣家數超"
+                },
+                {
+                    "type": "DayTrade",
+                    "displayTitle": "當沖"
+                },
+                {
+                    "type": "Scr",
+                    "displayTitle": "籌碼集中"
+                },
+                {
+                    "type": "LargeHoldingRatioMoreThan1000",
+                    "displayTitle": "大戶(1000張以上)持股比率"
+                },
+                {
+                    "type": "LargeHoldingRatioMoreThan400",
+                    "displayTitle": "大戶(400張以上)持股比率"
+                },
+                {
+                    "type": "RetailHoldingRatioLessThan100",
+                    "displayTitle": "散戶(100張以下)持股比率"
+                },
+                {
+                    "type": "InvestmentTrustConcentration",
+                    "displayTitle": "內資買盤集中度"
+                },
+                {
+                    "type": "MainForceConcentration",
+                    "displayTitle": "主力買盤集中度"
+                },
+                {
+                    "type": "ComprehensiveBrokerPoint",
+                    "displayTitle": "綜合分點"
+                },
+                {
+                    "type": "TradeVolumeWithMV",
+                    "displayTitle": "成交量"
+                }
+            ]
+        },
+        "parameters": {
+            "displayChooseSubChartTitleText": "{{displayChooseSubChartTitleText}}",
+            "displayChooseSubChartConfirmText": "{{displayChooseSubChartConfirmText}}",
+            "displayChooseSubChartCancelText": "{{displayChooseSubChartCancelText}}",
+            "displayEmptyText": "{{displayEmptyText}}",
+            "displayLoadingText": "{{displayLoadingText}}",
+            "displayErrorText": "{{displayErrorText}}",
+            "displayPreparingText": "{{displayPreparingText}}"
+        }
+    },
+    "用戶資訊列": {
+        "parameters": {
+            "displayNickname": "{{displayNickname}}",
+            "displayAccount": "{{displayAccount}}",
+            "displayAccessLevel": "{{displayAccessLevel}}",
+            "displayPremium": "{{displayPremium}}",
+            "displayStandard": "{{displayStandard}}",
+            "displayGuest": "{{displayGuest}}",
+            "displayExpirationDate": "{{displayExpirationDate}}",
+            "displayUpgradeToPremium": "{{displayUpgradeToPremium}}"
+        }
+    },
+    "用戶設定頁": {
+        "parameters": {
+            "displayNickname": "{{displayNickname}}",
+            "displayAccount": "{{displayAccount}}",
+            "displayGuest": "{{displayGuest}}",
+            "displayExpirationDate": "{{displayExpirationDate}}",
+            "displayChangeImage": "{{displayChangeImage}}",
+            "displayTakePhoto": "{{displayTakePhoto}}",
+            "displayChooseFromAlbum": "{{displayChooseFromAlbum}}",
+            "displayCancel": "{{displayCancel}}",
+            "displayUploadSuccess": "{{displayUploadSuccess}}",
+            "displayUploadFail": "{{displayUploadFail}}",
+            "displayUploadCancel": "{{displayUploadCancel}}",
+            "displayUploadingProfileImage": "{{displayUploadingProfileImage}}"
+        }
+    },
+    "新手導覽": {
+        "parameters": {
+            "displayStart": "{{displayStart}}",
+            "displayNext": "{{displayNext}}",
+            "displaySkipAll": "{{displaySkipAll}}"
+        }
+    },
+    "刪除帳號頁": {
+        "parameters": {
+            "displayBoundEmailAddressText": "{{displayBoundEmailAddressText}}",
+            "displayCautionText": "{{displayCautionText}}",
+            "displayCautionContentText": "{{displayCautionContentText}}",
+            "displayDeleteAccountButtonText": "{{displayDeleteAccountButtonText}}"
+        }
+    },
+    "圖片頁": {
+        "parameters": {
+            "displayShare":  "{{displayShare}}",
+            "displayDownload": "{{displayDownload}}",
+            "displayPermissionDeniedMessage": "{{displayPermissionDeniedMessage}}",
+            "displaySaveSuccess": "{{displaySaveSuccess}}",
+            "displaySaveFailure": "{{displaySaveFailure}}",
+            "displayExplainRequestSavePermissionTitle": "{{displayExplainRequestSavePermissionTitle}}",
+            "displayExplainRequestSavePermissionMessage": "{{displayExplainRequestSavePermissionMessage}}",
+            "displayExplainRequestSavePermissionCancel": "{{displayExplainRequestSavePermissionCancel}}",
+            "displayExplainRequestSavePermissionConfirm": "{{displayExplainRequestSavePermissionConfirm}}"
+        }
+    },
+    "圖片編輯頁": {
+        "parameters": {
+            "displayRemove": "{{displayRemove}}"
+        }
+    },
+    "通知頁": {
+        "parameters": {
+            "displayItemTitleInfixText": "{{displayItemTitleInfixText}}",
+            "displayEmptyTitleText": "{{displayEmptyTitleText}}",
+            "displayEmptySubtitleText": "{{displayEmptySubtitleText}}",
+            "displayErrorTitleText": "{{displayErrorTitleText}}",
+            "displayErrorRefreshText": "{{displayErrorRefreshText}}"
+        }
+    },
+    "編輯暱稱頁": {
+        "parameters": {
+            "displayEditNickname":"{{displayEditNickname}} " ,
+            "displayDone": "{{displayDone}}",
+            "displayRequestSent": "{{displayRequestSent}}",
+            "displayChangeSuccess": "{{displayChangeSuccess}}",
+            "displayChangeFailed": "{{displayChangeFailed}}",
+            "displayNicknameCannotBeEmpty": "{{displayNicknameCannotBeEmpty}}",
+            "displayLoading": "{{displayLoading}}"
+        }
+    },
+    "購買頁": {
+        "parameters": {
+            "carouselImage": [
+                "carousel_01"
+              ],
+            "displayCarouselFail": "{{displayCarouselFail}}",
+            "displayMultiplePlanTitle": "{{displayMultiplePlanTitle}}",
+            "displayPurchaseInstructionsTitle": "{{displayPurchaseInstructionsTitle}}",
+            "displayAndroidPurchaseInstructionsContent": "{{displayAndroidPurchaseInstructionsContent}}",
+            "displayIOSPurchaseInstructionsContent": "{{displayIOSPurchaseInstructionsContent}}",
+            "displayTermsOfService": "{{displayTermsOfService}}",
+            "displayPrivacyPolicy": "{{displayPrivacyPolicy}}",
+            "displayRestorePurchase": "{{displayRestorePurchase}}",
+            "displayTermsOfServiceURL": "{{displayTermsOfServiceURL}}",
+            "displayPrivacyPolicyURL": "{{displayPrivacyPolicyURL}}",
+            "displayPurchaseSuccessContent": "{{displayPurchaseSuccessContent}}",
+            "displayPurchaseSuccessConfirm": "{{displayPurchaseSuccessConfirm}}",
+            "displayPurchaseFailTitle": "{{displayPurchaseFailTitle}}",
+            "displayPurchaseFailContentRestorePurchaseFail": "{{displayPurchaseFailContentRestorePurchaseFail}}",
+            "displayPurchaseFailContentPurchaseFail": "{{displayPurchaseFailContentPurchaseFail}}",
+            "displayPurchaseFailContentPurchaseUpdateAuthFail": "{{displayPurchaseFailContentPurchaseUpdateAuthFail}}",
+            "displayPurchaseFailContentPurchaseFetchAuthFail": "{{displayPurchaseFailContentPurchaseFetchAuthFail}}",
+            "displayPurchaseFailConfirm": "{{displayPurchaseFailConfirm}}",
+            "displayRestorePurchaseContent": "{{displayRestorePurchaseContent}}",
+            "displayRestorePurchaseCancel": "{{displayRestorePurchaseCancel}}",
+            "displayRestorePurchaseConfirm": "{{displayRestorePurchaseConfirm}}"
+        }
+    },
+    "產品資訊": {
+        "parameters": {
+            "isTaxIdShown": true
+        }
+    }
+}

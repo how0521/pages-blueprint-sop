@@ -1,0 +1,72 @@
+{
+    "篩選列": {
+        "parameters": {
+            "displayTitle": "{{displayTitleFilterRow}}",
+            "displayNoFilter": "{{displayNoFilter}}"
+        }
+    },
+    "單一圖片": {
+        "parameters": {
+            "displayLoading": "{{displayLoading}}",
+            "displayError":"{{displayError}}"
+        }
+    },
+    "Bar_Line_圖表": {
+        "parameters": {
+            "displayLoadingHint":"{{displayLoadingHint}}",
+            "displayErrorHint":"{{displayErrorHint2}}",
+            "displayEmptyDataHint":"{{displayEmptyDataHint}}"
+        }
+    },
+    "篩選頁": {
+        "parameters": {
+            "displayPriceChangeTitle": "{{displayPriceChangeTitle}}",
+            "displayRise": "{{displayRise}}",
+            "displayFall": "{{displayFall}}",
+            "displayPreviousDayVolumeTitle": "{{displayPreviousDayVolumeTitle}}",
+            "displayPreviousDayVolumeList": [
+                "{{displayPreviousDayVolumeList1}}",
+                "{{displayPreviousDayVolumeList2}}",
+                "{{displayPreviousDayVolumeList3}}",
+                "{{displayPreviousDayVolumeList4}}"
+            ],
+            "displayPriceTitle": "{{displayPriceTitle}}",
+            "displayNoFilterCondition": "{{displayNoFilterCondition}}",
+            "displayMarketCap": "{{displayMarketCap}}",
+            "displayMarketCapCalibrationList": [
+                "{{displayMarketCapCalibrationList1}}",
+                "{{displayMarketCapCalibrationList2}}",
+                "{{displayMarketCapCalibrationList3}}",
+                "{{displayMarketCapCalibrationList4}}",
+                "{{displayMarketCapCalibrationList5}}",
+                "{{displayMarketCapCalibrationList6}}"
+            ],
+            "displayRevenueAnnualGrowthRateTitle": "{{displayRevenueAnnualGrowthRateTitle}}",
+            "displayEPSGrowthRateTitle": "{{displayEPSGrowthRateTitle}}"
+        }
+    },
+    "購買頁": {
+        "parameters": {
+            "displayPurchaseGuestTitle": "{{displayPurchaseGuestTitle}}",
+            "displayPurchaseGuestContent": "{{displayPurchaseGuestContent}}",
+            "displayPurchaseGuestRight": "{{displayPurchaseGuestRight}}",
+            "displayPurchaseGuestLeft": "{{displayPurchaseGuestLeft}}"
+        }
+    },
+    "頁籤分頁容器": {
+        "parameters": {
+            "displayPurchaseTrialTitle": "{{displayPurchaseTrialTitle}}",
+            "displayPurchaseTrialContent": "{{displayPurchaseTrialContent}}",
+            "displayPurchaseTrialRight": "{{displayPurchaseTrialRight}}",
+            "displayPurchaseTrialLeft": "{{displayPurchaseTrialLeft}}"
+        }
+    },
+    "靜態容器": {
+        "parameters": {
+            "displayPurchaseTrialTitle": "{{displayPurchaseTrialTitle}}",
+            "displayPurchaseTrialContent": "{{displayPurchaseTrialContent}}",
+            "displayPurchaseTrialRight": "{{displayPurchaseTrialRight}}",
+            "displayPurchaseTrialLeft": "{{displayPurchaseTrialLeft}}"
+        }
+    }
+}

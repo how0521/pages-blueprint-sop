@@ -1,0 +1,8 @@
+{
+  "社團聊天室": {
+    "parameters": {
+      "displayPresidentLabelText": "社長",
+      "displayAdminLabelText": "幹部"
+    }
+  }
+}

@@ -3,6 +3,7 @@ import Header from './components/Header';
 import SOPNavigator from './components/SOPNavigator';
 import AdminPanel from './components/AdminPanel';
 import ChangelogView from './components/ChangelogView';
+import MigrateTool from './components/MigrateTool';
 
 const GIST_FILE = 'rules.json';
 const PUBLIC_GIST_ID = '1966a795b97f9716c32316c52fcc974f';
@@ -107,7 +108,7 @@ const DEFAULT_RULES = [
 
 export default function App() {
   // 'navigator' | 'changelog' | 'admin'
-  const [view, setView] = useState('navigator');
+  const [view, setView] = useState('migrate');
 
   const [isDark, setIsDark] = useState(() => {
     try {
@@ -329,7 +330,14 @@ export default function App() {
         onToggleTheme={() => setIsDark(v => !v)}
       />
       <main className="max-w-4xl mx-auto px-4 py-8">
-        {view === 'admin' ? (
+        <div className={view === 'navigator' ? '' : 'hidden'}>
+          <SOPNavigator rules={rules} settings={settings} />
+        </div>
+        <div className={view === 'migrate' ? '' : 'hidden'}>
+          <MigrateTool />
+        </div>
+        {view === 'changelog' && <ChangelogView rules={rules} />}
+        {view === 'admin' && (
           <AdminPanel
             rules={rules}
             settings={settings}
@@ -343,10 +351,6 @@ export default function App() {
             onLoadFromGist={loadFromGist}
             onCreateGist={createGist}
           />
-        ) : view === 'changelog' ? (
-          <ChangelogView rules={rules} />
-        ) : (
-          <SOPNavigator rules={rules} settings={settings} />
         )}
       </main>
     </div>

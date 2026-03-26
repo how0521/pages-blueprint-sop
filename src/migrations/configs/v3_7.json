@@ -1,0 +1,39 @@
+{
+  "自訂導覽列": {
+    "updateParameters": {
+      "deepLink": "",
+      "redirectMode": "navigation",
+      "deepLinkStates": [
+        {
+          "name": "stateCommKey",
+          "type": "string"
+        }
+      ]
+    },
+    "parameters": {}
+  },
+  "內容專區模板": {
+    "parameters": {
+      "displayRecommendedCourseCellButtonTitle": "{{displayRecommendedCourseCellButtonTitle}}",
+      "displayRecommendedCoursesHeaderTitle": "{{displayRecommendedCoursesHeaderTitle}}",
+      "displayPurchasedCoursesHeaderTitle": "{{displayPurchasedCoursesHeaderTitle}}",
+      "displayPurchasedCoursesUnavailableMaskMessage": "{{displayPurchasedCoursesUnavailableMaskMessage}}",
+      "displayRecommendedCourseAvailableTimeDescription": "{{displayRecommendedCourseAvailableTimeDescription}}",
+      "displayPurchasedCourseAvailableTimeToastMessage": "{{displayPurchasedCourseAvailableTimeToastMessage}}",
+      "displayLoadingCourses": "{{displayLoadingCourses}}",
+      "displayUpdatingCoursesAuthorization": "{{displayUpdatingCoursesAuthorization}}",
+      "displayFailedToLoadCourses": "{{displayFailedToLoadCourses}}",
+      "displayRefreshCourses": "{{displayRefreshCourses}}",
+      "displayNoCourses": "{{displayNoCourses}}",
+      "displayCourseInfoPopupTitle": "{{displayCourseInfoPopupTitle}}",
+      "displayCourseInfoPopupSubtitle": "{{displayCourseInfoPopupSubtitle}}",
+      "displayCourseInfoPopupTaiwanDomainButtonTitle": "{{displayCourseInfoPopupTaiwanDomainButtonTitle}}",
+      "displayCourseInfoPopupOverseaDomainButtonTitle": "{{displayCourseInfoPopupOverseaDomainButtonTitle}}",
+      "displayCourseInfoPopupCancelButtonTitle": "{{displayCourseInfoPopupCancelButtonTitle}}",
+      "displayCourseLoginPopupTitle": "{{displayCourseLoginPopupTitle}}",
+      "displayCourseLoginPopupSubtitle": "{{displayCourseLoginPopupSubtitle}}",
+      "displayCourseLoginPopupCancelButtonTitle": "{{displayCourseLoginPopupCancelButtonTitle}}",
+      "displayCourseLoginPopupConfirmButtonTitle": "{{displayCourseLoginPopupConfirmButtonTitle}}"
+    }
+  }
+}

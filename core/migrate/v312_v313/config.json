@@ -1,0 +1,56 @@
+{
+    "流水牆": {
+        "parameters": {
+            "shouldApplyFilter": false,
+            "displayNotYetOpen": {
+                "displayTitle": "市場尚未開盤",
+                "displayContent": "資料將於開盤後顯示。"
+            },
+            "displayOpenedWithNoSignalYet": {
+                "displayTitle": "目前無符合條件的訊號",
+                "displayContent": "請耐心等待。"
+            },
+            "displayClosedWithNoSignal": {
+                "displayTitle": "今日無符合條件的結果",
+                "displayContent": "請持續關注盤勢變化。"
+            },
+            "displayNoFilteredResult": {
+                "displayTitle": "找不到符合條件的結果",
+                "displayContent": "請調整篩選條件後再試一次。",
+                "displayButtonText": "重新設定條件"
+            },
+            "displayLoading": {
+                "displayTitle": "資料讀取中"
+            },
+            "displayError": {
+                "displayTitle": "資料取得失敗",
+                "displayContent": "請確認您的網路狀態後再試一次。",
+                "displayButtonText": "重新整理"
+            }
+        }
+    },
+    "個股流水牆": {
+        "parameters": {
+            "displayNotYetOpen": {
+                "displayTitle": "市場尚未開盤",
+                "displayContent": "資料將於開盤後顯示。"
+            },
+            "displayOpenedWithNoSignalYet": {
+                "displayTitle": "目前無符合條件的訊號",
+                "displayContent": "請耐心等待。"
+            },
+            "displayClosedWithNoSignal": {
+                "displayTitle": "今日無符合條件的結果",
+                "displayContent": "請持續關注盤勢變化。"
+            },
+            "displayLoading": {
+                "displayTitle": "資料讀取中"
+            },
+            "displayError": {
+                "displayTitle": "資料取得失敗",
+                "displayContent": "請確認您的網路狀態後再試一次。",
+                "displayButtonText": "重新整理"
+            }
+        }
+    }
+}

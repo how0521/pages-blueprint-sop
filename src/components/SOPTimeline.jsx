@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import {
-  ExternalLink,
   AlertTriangle,
   CheckCircle2,
   ClipboardList,
-  Link2,
   ChevronRight,
 } from 'lucide-react';
 
@@ -25,12 +23,13 @@ function ProgressBar({ value, max }) {
   );
 }
 
+
 function StepCard({ step, index, isLast, checkedItems, onCheck }) {
   const key = `${step.fromVersion}-${step.toVersion}`;
   const items = step.rule?.manualSteps ?? [];
+  const hasMigration = step.rule?.requiresMigration;
   const doneCount = items.filter(it => checkedItems[`${key}-${it.id}`]).length;
   const allDone = items.length > 0 && doneCount === items.length;
-  const hasMigration = step.rule?.requiresMigration;
 
   return (
     <div className="flex gap-4">
@@ -133,15 +132,8 @@ function StepCard({ step, index, isLast, checkedItems, onCheck }) {
             </div>
           )}
 
-          {/* No manual steps and no migration */}
-          {step.rule && items.length === 0 && !hasMigration && (
-            <div className="px-5 py-4">
-              <p className="text-sm text-gray-400 dark:text-slate-500">此升版區間無需手動調整。</p>
-            </div>
-          )}
-
-          {/* Migration-only step (has migrate but no manual steps) */}
-          {step.rule && items.length === 0 && hasMigration && (
+          {/* Rule exists but no manual steps */}
+          {step.rule && items.length === 0 && (
             <div className="px-5 py-4">
               <p className="text-sm text-gray-400 dark:text-slate-500">此升版區間無需手動調整。</p>
             </div>
@@ -159,12 +151,12 @@ export default function SOPTimeline({ steps, migrationUrl, fromVersion, toVersio
     setCheckedItems(prev => ({ ...prev, [key]: checked }));
   };
 
+  const hasMigration = steps.some(s => s.rule?.requiresMigration);
   const totalItems = steps.reduce(
     (acc, s) => acc + (s.rule?.manualSteps?.length ?? 0),
     0
-  );
+  ) + (hasMigration ? 1 : 0);
   const checkedCount = Object.values(checkedItems).filter(Boolean).length;
-  const hasMigration = steps.some(s => s.rule?.requiresMigration);
   const allDone = totalItems > 0 && checkedCount === totalItems;
 
   return (
@@ -221,29 +213,25 @@ export default function SOPTimeline({ steps, migrationUrl, fromVersion, toVersio
           <ProgressBar value={checkedCount} max={totalItems} />
         )}
 
-        {/* ▼ 整段升版只顯示一次 Migrate 工具連結 ▼ */}
+        {/* 全域唯一的 Migrate checkbox */}
         {hasMigration && (
-          <div className="mt-4 flex items-start gap-3 p-3.5 bg-amber-500/10 border border-amber-500/20 rounded-xl">
-            <div className="w-1 self-stretch rounded-full bg-amber-500 flex-shrink-0" />
-            <div className="flex-1 min-w-0">
-              <p className="text-xs text-amber-600 dark:text-amber-400 mb-1.5 font-medium">
-                步驟一：先執行一次 Migrate 工具（v{fromVersion} → v{toVersion}）
-              </p>
-              <a
-                href={migrationUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-amber-700 dark:text-amber-300 hover:text-amber-800 dark:hover:text-amber-200 font-semibold text-sm transition-colors group"
-              >
-                <Link2 size={14} className="group-hover:rotate-12 transition-transform" />
-                🔗 [點我] 前往 Migrate 工具
-                <ExternalLink size={12} className="opacity-70" />
-              </a>
-              <p className="text-xs text-amber-500/70 dark:text-amber-500/60 mt-1.5">
-                執行完畢後，再依序完成下方各步驟的手動調整項目。
-              </p>
-            </div>
-          </div>
+          <label className="flex items-start gap-3 cursor-pointer group select-none mt-4">
+            <input
+              type="checkbox"
+              checked={!!checkedItems['migrate']}
+              onChange={e => handleCheck('migrate', e.target.checked)}
+              className="mt-0.5 w-4 h-4 flex-shrink-0 accent-amber-500 cursor-pointer"
+            />
+            <span
+              className={`text-sm leading-relaxed transition-colors ${
+                checkedItems['migrate']
+                  ? 'line-through text-gray-300 dark:text-slate-600'
+                  : 'text-amber-700 dark:text-amber-400 group-hover:text-amber-900 dark:group-hover:text-amber-300'
+              }`}
+            >
+              透過 <strong>Migrate 工具</strong> 對 Blueprint 進行升版（v{fromVersion} → v{toVersion}）
+            </span>
+          </label>
         )}
       </div>
 

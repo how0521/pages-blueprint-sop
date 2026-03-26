@@ -1,0 +1,11 @@
+{
+    "Bar_Line_圖表": {
+        "updateParameters": {
+            "textFormat": {
+                "displayPattern": "%.1f",
+                "args": []
+            }
+        },
+        "parameters": {}
+    }
+}

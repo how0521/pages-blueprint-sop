@@ -97,7 +97,7 @@ export default function Header({ view, onSetView, isDark, onToggleTheme }) {
 
   const handleAdminClick = () => {
     if (isAdmin) {
-      onSetView('navigator');
+      onSetView('migrate');
     } else {
       setShowPasswordModal(true);
     }
@@ -137,19 +137,32 @@ export default function Header({ view, onSetView, isDark, onToggleTheme }) {
               </span>
             )}
 
-            {/* Changelog button (only in non-admin mode) */}
+            {/* Nav buttons (only in non-admin mode) */}
             {!isAdmin && (
-              <button
-                onClick={() => onSetView(view === 'changelog' ? 'navigator' : 'changelog')}
-                className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  view === 'changelog'
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/30'
-                    : 'bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-600 dark:text-slate-300 border border-gray-200 dark:border-slate-700'
-                }`}
-              >
-                <BookOpen size={15} className="opacity-80" />
-                <span className="hidden sm:inline">Changelog</span>
-              </button>
+              <>
+                <button
+                  onClick={() => onSetView(view === 'navigator' ? 'migrate' : 'navigator')}
+                  className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    view === 'navigator'
+                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/30'
+                      : 'bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-600 dark:text-slate-300 border border-gray-200 dark:border-slate-700'
+                  }`}
+                >
+                  <Map size={15} className="opacity-80" />
+                  <span className="hidden sm:inline">SOP 查詢</span>
+                </button>
+                <button
+                  onClick={() => onSetView(view === 'changelog' ? 'migrate' : 'changelog')}
+                  className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    view === 'changelog'
+                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/30'
+                      : 'bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-600 dark:text-slate-300 border border-gray-200 dark:border-slate-700'
+                  }`}
+                >
+                  <BookOpen size={15} className="opacity-80" />
+                  <span className="hidden sm:inline">Changelog</span>
+                </button>
+              </>
             )}
 
             {/* Theme toggle */}

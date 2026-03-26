@@ -1,0 +1,10 @@
+{
+    "社團聊天室": {
+        "parameters": {
+            "displayRedirectExternalWebsitePopupAlertTitle": "{{displayRedirectExternalWebsitePopupAlertTitle}}",
+            "displayRedirectExternalWebsitePopupAlertContent": "{{displayRedirectExternalWebsitePopupAlertContent}}",
+            "displayRedirectExternalWebsitePopupAlertCancelButtonText": "{{displayRedirectExternalWebsitePopupAlertCancelButtonText}}",
+            "displayRedirectExternalWebsitePopupAlertConfirmButtonText": "{{displayRedirectExternalWebsitePopupAlertConfirmButtonText}}"
+        }
+    }
+}

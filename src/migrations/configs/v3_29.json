@@ -1,0 +1,42 @@
+{
+    "美股四大指數資訊卡片": {
+        "parameters": {
+            "indexItems": [
+                {
+                    "name": "道瓊指數",
+                    "commKey": "#DJI"
+                },
+                {
+                    "name": "S&P500",
+                    "commKey": "#GSPC"
+                },
+                {
+                    "name": "那斯達克",
+                    "commKey": "#IXIC"
+                },
+                {
+                    "name": "費城半導體",
+                    "commKey": "#SOXX"
+                }
+            ]
+        }
+    },
+    "美股事件展示板": {
+        "parameters": {
+            "displayEconomicTabTitle": "經濟數據",
+            "displayFinancialReportTabTitle": "個股財報",
+            "displayFinancialReportEmpty": "近期暫無個股財報公佈"
+        }
+    },
+    "語音聊天室入口": {
+        "parameters": {
+            "displayRecordingReminder": "為提供回放，進入即表示同意本場次錄音"
+        }
+    },
+    "語音聊天室頁": {
+        "parameters": {
+            "displayHostEmojiBarTitle": "表情",
+            "displayEmojiGuideToastText": "{{displayEmojiGuideToastText}}"
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "Bar_Line_圖例": {
+    "updateParameters": {
+      "colors": ""
+    }
+  },
+  "包含後處理的圖表元件": {
+    "name": [
+      "合併表格",
+      "資訊表格2.0",
+      "縱向資訊看版",
+      "評價顯示器",
+      "擴增表格",
+      "區間顯示器",
+      "自選股"
+    ],
+    "updateParameters": {
+      "postProcess": {
+        "extendColumns": [
+          {
+            "alias": "A",
+            "generationMethod": {
+              "name": "CustomFormula",
+              "methodParameters": {
+                "formulaExpression": "B"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

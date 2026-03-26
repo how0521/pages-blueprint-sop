@@ -1,0 +1,61 @@
+{
+    "社團聊天室": {
+        "parameters": {
+            "searchTabConfigs": [
+                {
+                    "type": "all",
+                    "label": "全部"
+                },
+                {
+                    "type": "presidents",
+                    "label": "社長"
+                }
+            ],
+            "stateStartWeight": "stateStartWeight",
+            "stateHighlightMessageId": "stateHighlightMessageId",
+            "displayCustomerServiceErrorTitle": "取得客服連結失敗",
+            "displayCustomerServiceErrorMessage": "請重新嘗試",
+            "displayCustomerServiceCancelText": "返回",
+            "displayCustomerServiceConfirmText": "Line客服",
+            "displaySearchLoadingText": "資料讀取中",
+            "displaySearchNoResultText": "查無結果",
+            "displaySearchMinCharErrorText": "請輸入至少兩個字元以進行搜尋。",
+            "displaySearchNetworkErrorTitleText": "資料取得失敗",
+            "displaySearchNetworkErrorSubtitleText": "請確認您的網路狀態後再試一次。",
+            "displaySearchRetryButtonText": "重新整理",
+            "displaySearchNoMoreContentText": "沒有更多內容",
+            "displayBackToSearchResultText": "返回搜尋結果",
+            "displayMessageDeletedToastText": "該訊息已被刪除",
+            "displaySearchHistoryTitle": "歷史搜尋",
+            "displaySearchResultHeaderTitle": "訊息",
+            "displaySearchResultHeaderSubtitle": "(僅顯示近三個月結果)",
+            "displayLoadingEnteringText": "正在進入",
+            "displayLoadingGettingContentText": "正在取得聊天室內容",
+            "displayLoadingFinalText": "正在做最後加載",
+            "displayLoadingAlmostDoneText": "即將完成，感謝您的耐心等待",
+            "displayLoadingSlowNetworkText": "網路好像有點慢，還在努力載入聊天室",
+            "displayInitialErrorTitleText": "聊天室載入失敗",
+            "displayInitialErrorSubtitleText": "請確認您的網路狀態後再試一次。",
+            "displayInitialErrorRefreshText": "重新整理",
+            "displayNetworkNoNetworkText": "連線已中斷，請檢查網路後重試。",
+            "displayNetworkServerErrorText": "目前伺服器連線異常，請稍後再試。",
+            "displayNetworkRestoredText": "已恢復連線。",
+            "displayNetworkRetryText": "重試"
+        }
+    },
+    "美股事件展示板": {
+        "parameters": {
+            "displayMarketSectionTitle": "美股行事曆",
+            "displayEconomicSectionTitle": "重要經濟數據發布日",
+            "displayMarketEmpty": "近期無休市及提早收盤日",
+            "displayEconomicEmpty": "近期無重要經濟數據發布"
+        }
+    },
+    "自選股/編輯": {
+        "parameters": {
+            "displayDeleteGroupAlertTitleText": "刪除失敗",
+            "displayDeleteGroupAlertMessageText": "請至少保留一個自選股清單",
+            "displayDeleteGroupAlertConfirmText": "我知道了"
+        }
+    }
+}

@@ -1,0 +1,285 @@
+{
+    "作者專區": {
+        "parameters": {
+            "displayEdited": "{{displayEdited}}",
+            "displayCommentSingular": "{{displayCommentSingular}}",
+            "displayCommentPlural": "{{displayCommentPlural}}",
+            "displayReadMore": "{{displayReadMore}}",
+            "displayLike": "{{displayLike}}",
+            "displayHaHa": "{{displayHaHa}}",
+            "displayEarn": "{{displayEarn}}",
+            "displayWow": "{{displayWow}}",
+            "displayOhNo": "{{displayOhNo}}",
+            "displayReally": "{{displayReally}}",
+            "displayComment": "{{displayComment}}",
+            "displayShare": "{{displayShare}}",
+            "displayDeleteForum": "{{displayDeleteForum}}",
+            "displayReportForum": "{{displayReportForum}}",
+            "displayEditForum": "{{displayEditForum}}",
+            "displayViewEditHistory": "{{displayViewEditHistory}}",
+            "displayAdPropagate": "{{displayAdPropagate}}",
+            "displayDiscriminateAndAbuse": "{{displayDiscriminateAndAbuse}}",
+            "displaySameContent": "{{displaySameContent}}",
+            "displayOtherReason": "{{displayOtherReason}}",
+            "displayPromoteToOtherPlatform": "{{displayPromoteToOtherPlatform}}",
+            "displayInteractionWithRewards": "{{displayInteractionWithRewards}}",
+            "displayContentAndMarkedStocksNoRelevance": "{{displayContentAndMarkedStocksNoRelevance}}",
+            "displayMeaninglessQuestionContent": "{{displayMeaninglessQuestionContent}}",
+            "displaySureToDelete": "{{displaySureToDelete}}",
+            "displayCantRollbackAfterDelete": "{{displayCantRollbackAfterDelete}}",
+            "displayDeleteSuccessful": "{{displayDeleteSuccessful}}",
+            "displaySureToReport": "{{displaySureToReport}}",
+            "displayCancel": "{{displayCancel}}",
+            "displayConfirm": "{{displayConfirm}}",
+            "displayReportSuccessful": "{{displayReportSuccessful}}",
+            "displayShareText": "{{displayShareTextArticle}}",
+            "displayLoading": "{{displayLoading}}",
+            "displayFailToLoad": "{{displayFailToLoad}}",
+            "displayRefresh": "{{displayRefresh}}",
+            "displayAreaIsEmpty": "{{displayAreaIsEmpty}}",
+            "displayReportTitle": "{{displayReportTitle}}",
+            "displayTotalReactionCount": "{{displayTotalReactionCount}}"
+        }
+    },
+    "社團專區": {
+        "parameters": {
+            "displayNeedToLogin": "{{displayNeedToLogin}}",
+            "displayRegisterOrLogin": "{{displayRegisterOrLogin}}",
+            "displayPinnedPost": "{{displayPinnedPost}}",
+            "displayEdited": "{{displayEdited}}",
+            "displayCommentSingular": "{{displayCommentSingular}}",
+            "displayCommentPlural": "{{displayCommentPlural}}",
+            "displayReadMore": "{{displayReadMore}}",
+            "displayLike": "{{displayLike}}",
+            "displayHaHa": "{{displayHaHa}}",
+            "displayEarn": "{{displayEarn}}",
+            "displayWow": "{{displayWow}}",
+            "displayOhNo": "{{displayOhNo}}",
+            "displayReally": "{{displayReally}}",
+            "displayComment": "{{displayComment}}",
+            "displayShare": "{{displayShare}}",
+            "displayDeleteForum": "{{displayDeleteForum}}",
+            "displayReportForum": "{{displayReportForum}}",
+            "displayBlockUser": "{{displayBlockUser}}",
+            "displayEditForum": "{{displayEditForum}}",
+            "displayViewEditHistory": "{{displayViewEditHistory}}",
+            "displayAdPropagate": "{{displayAdPropagate}}",
+            "displayDiscriminateAndAbuse": "{{displayDiscriminateAndAbuse}}",
+            "displaySameContent": "{{displaySameContent}}",
+            "displayOtherReason": "{{displayOtherReason}}",
+            "displayPromoteToOtherPlatform": "{{displayPromoteToOtherPlatform}}",
+            "displayInteractionWithRewards": "{{displayInteractionWithRewards}}",
+            "displayContentAndMarkedStocksNoRelevance": "{{displayContentAndMarkedStocksNoRelevance}}",
+            "displayMeaninglessQuestionContent": "{{displayMeaninglessQuestionContent}}",
+            "displaySureToDelete": "{{displaySureToDelete}}",
+            "displayCantRollbackAfterDelete": "{{displayCantRollbackAfterDelete}}",
+            "displayDeleteSuccessful": "{{displayDeleteSuccessful}}",
+            "displaySureToBlockUser": "{{displaySureToBlockUser}}",
+            "displayCantSeeArticleAndCommentAfterBlock": "{{displayCantSeeArticleAndCommentAfterBlock}}",
+            "displayBlockUserSuccessful": "{{displayBlockUserSuccessful}}",
+            "displaySureToReport": "{{displaySureToReport}}",
+            "displayCancel": "{{displayCancel}}",
+            "displayConfirm": "{{displayConfirm}}",
+            "displayReportSuccessful": "{{displayReportSuccessful}}",
+            "displayShareText": "{{displayShareTextArticle}}",
+            "displayLoading": "{{displayLoading}}",
+            "displayFailToLoad": "{{displayFailToLoad}}",
+            "displayRefresh": "{{displayRefresh}}",
+            "displayAreaIsEmpty": "{{displayAreaIsEmpty}}",
+            "displayFreeTitle": "{{displayFreeTitle}}",
+            "displayFreeText": "{{displayFreeText}}",
+            "displayFreeButton": "{{displayFreeButton}}",
+            "displayReportTitle": "{{displayReportTitle}}",
+            "displayTotalReactionCount": "{{displayTotalReactionCount}}"
+        }
+    },
+    "內容專區模板": {
+        "parameters": {
+            "displayViewed" : "{{displayViewed}}",
+            "displayNoFavorites" : "{{displayNoFavorites}}",
+            "displaySaveToFavorites" : "{{displaySaveToFavorites}}",
+            "displayRemoveFromFavorites" : "{{displayRemoveFromFavorites}}",
+            "displayViewArticles" : "{{displayViewArticles}}",
+            "displayConnectionError" : "{{displayConnectionError}}",
+            "displayRefresh" : "{{displayRefresh}}",
+            "displayEmptyArticleList" : "{{displayEmptyArticleList}}",
+            "displayEmptyVideoList" : "{{displayEmptyVideoList}}",
+            "displayViewVideos" : "{{displayViewVideos}}"
+        }
+    },
+    "分享好友列": {
+        "parameters": {
+            "displayTitle": "{{分享給好友}}",
+            "displayShareText": "{{displayShareText}}"
+        }
+    },
+    "個股基本資訊": {
+        "parameters": {
+            "displayFailToLoad": "{{displayFailToLoad}}",
+            "displayRefresh": "{{displayRefresh}}"
+        }
+    },
+    "用戶設定頁": {
+        "parameters": {
+            "displayNickname": "{{displayNickname}}",
+            "displayAccount": "{{displayAccount}}",
+            "displayGuest": "{{displayGuest}}",
+            "displayExpirationDate": "{{displayExpirationDate}}",
+            "displayChangeImage": "{{displayChangeImage}}",
+            "displayTakePhoto": "{{displayTakePhoto}}",
+            "displayChooseFromAlbum": "{{displayChooseFromAlbum}}",
+            "displayCancel": "{{displayCancel}}",
+            "displayUploadSuccess": "{{displayUploadSuccess}}",
+            "displayUploadFail": "{{displayUploadFail}}",
+            "displayUploadCancel": "{{displayUploadCancel}}",
+            "displayUploadingProfileImage": "{{displayUploadingProfileImage}}"
+        }
+    },
+    "個股標籤搜尋": {
+        "parameters": {
+            "displaySearchBarHint": "{{displaySearchBarHint}}",
+            "displaySearchResultHeader": "{{displaySearchResultHeader}}",
+            "displayTagAlreadyAdded": "{{displayTagAlreadyAdded}}",
+            "displayAlertDialogOk": "{{displayAlertDialogOk}}",
+            "displayLoading": "{{displayLoading}}",
+            "displayNoNetworkError": "{{displayNoNetworkError}}",
+            "displayGetResultError": "{{displayGetResultError}}",
+            "displayRefresh": "{{displayRefresh}}",
+            "displayNoResult": "{{displayNoResult}}",
+            "displaySearchHistoryHeader": "{{displaySearchHistoryHeader}}"
+        }
+    },
+    "作者專區/看板全文頁": {
+        "parameters": {
+            "displayEdited": "{{displayEdited}}",
+            "displayCommentSingular": "{{displayCommentSingular}}",
+            "displayCommentPlural": "{{displayCommentPlural}}",
+            "displayLike": "{{displayLike}}",
+            "displayHaHa": "{{displayHaHa}}",
+            "displayEarn": "{{displayEarn}}",
+            "displayWow": "{{displayWow}}",
+            "displayOhNo": "{{displayOhNo}}",
+            "displayReally": "{{displayReally}}",
+            "displayComment": "{{displayComment}}",
+            "displayShare": "{{displayShare}}",
+            "displayDeleteForum": "{{displayDeleteForum}}",
+            "displayDeleteComment": "{{displayDeleteComment}}",
+            "displayReportForum": "{{displayReportForum}}",
+            "displayReportComment": "{{displayReportComment}}",
+            "displayBlockUser": "{{displayBlockUser}}",
+            "displayEditForum": "{{displayEditForum}}",
+            "displayViewEditHistory": "{{displayViewEditHistory}}",
+            "displayAdPropagate": "{{displayAdPropagate}}",
+            "displayDiscriminateAndAbuse": "{{displayDiscriminateAndAbuse}}",
+            "displaySameContent": "{{displaySameContent}}",
+            "displayOtherReason": "{{displayOtherReason}}",
+            "displayPromoteToOtherPlatform": "{{displayPromoteToOtherPlatform}}",
+            "displayInteractionWithRewards": "{{displayInteractionWithRewards}}",
+            "displayContentAndMarkedStocksNoRelevance": "{{displayContentAndMarkedStocksNoRelevance}}",
+            "displayMeaninglessQuestionContent": "{{displayMeaninglessQuestionContent}}",
+            "displaySureToDeleteArticle": "{{displaySureToDeleteArticle}}",
+            "displaySureToDeleteComment": "{{displaySureToDeleteComment}}",
+            "displayCantRollbackAfterDelete": "{{displayCantRollbackAfterDelete}}",
+            "displayDeleteArticleSuccessful": "{{displayDeleteArticleSuccessful}}",
+            "displayDeleteCommentSuccessful": "{{displayDeleteCommentSuccessful}}",
+            "displaySureToBlockUser": "{{displaySureToBlockUser}}",
+            "displayCantSeeArticleAndCommentAfterBlock": "{{displayCantSeeArticleAndCommentAfterBlock}}",
+            "displayBlockUserSuccessful": "{{displayBlockUserSuccessful}}",
+            "displaySureToReportArticle": "{{displaySureToReportArticle}}",
+            "displaySureToReportUser": "{{displaySureToReportUser}}",
+            "displayReportArticleSuccessful": "{{displayReportArticleSuccessful}}",
+            "displayReportUserSuccessful": "{{displayReportUserSuccessful}}",
+            "displayCancel": "{{displayCancel}}",
+            "displayConfirm": "{{displayConfirm}}",
+            "displayShareText": "{{displayShareTextArticle}}",
+            "displayOldToNew": "{{displayOldToNew}}",
+            "displayNewToOld": "{{displayNewToOld}}",
+            "displayMessageHasBeenDeleted": "{{displayMessageHasBeenDeleted}}",
+            "displayHideReply": "{{displayHideReply}}",
+            "displayViewOtherReply": "{{displayViewOtherReply}}",
+            "displayReply": "{{displayReply}}",
+            "displayNoMoreComment": "{{displayNoMoreComment}}",
+            "displayNoCommentYet": "{{displayNoCommentYet}}",
+            "displayReplyingTo": "{{displayReplyingTo}}",
+            "displayTalkAboutYourOpinion": "{{displayTalkAboutYourOpinion}}",
+            "displayFailToLoad": "{{displayFailToLoad}}",
+            "displayRefresh": "{{displayRefresh}}",
+            "displayReportTitle": "{{displayReportTitle}}",
+            "displayTotalReactionCount": "{{displayTotalReactionCount}}"
+        }
+    },
+    "作者專區/看板發文頁": {
+        "parameters": {
+            "displayToolbarTitle": "{{displayToolbarTitleCreate}}",
+            "displaySubmitButtonText":"{{displaySubmitButtonTextCreate}}",
+            "displaySubmittingText" : "{{displaySubmittingText}}",
+            "displayEditorTitleHint": "{{displayEditorTitleHint}}",
+            "displayEditorTitleUpToLimitHint":"{{displayEditorTitleUpToLimitHint}}",
+            "displayEditorTextHint": "{{displayEditorTextHint}}",
+            "displayPostSuccessToastText":"{{displayPostSuccessToastText}}",
+            "displayPostFailedToastText": "{{displayPostFailedToastText}}",
+            "displayEditorTagStockButtonText":"{{displayEditorTagStockButtonText}}",
+            "displayEditorAddImageButtonText": "{{displayEditorAddImageButtonText}}",
+            "displayEditorAddImageRowText":"{{displayEditorAddImageRowText}}",
+            "displayCommunityRuleButtonText":"{{displayCommunityRuleButtonText}}",
+            "displayExitDialogConfirmButtonText": "{{displayExitDialogConfirmButtonText}}",
+            "displayExitDialogCancelButtonText":"{{displayExitDialogCancelButtonText}}",
+            "displayExitDialogTitle": "{{displayExitDialogTitle}}",
+            "displayExitDialogMessage":"{{displayExitDialogMessage}}"
+        }
+    },
+    "發文編輯頁": {
+        "parameters": {
+            "displayToolbarTitle": "{{displayToolbarTitleEdit}}",
+            "displaySubmitButtonText":"{{displaySubmitButtonTextEdit}}",
+            "displaySubmittingText": "{{displaySubmittingText}}",
+            "displayEditorTitleHint": "{{displayEditorTitleHint}}",
+            "displayEditorTitleUpToLimitHint":"{{displayEditorTitleUpToLimitHint}}",
+            "displayEditorTextHint": "{{displayEditorTextHint}}",
+            "displayPostSuccessToastText":"{{displayPostSuccessToastText}}",
+            "displayPostFailedToastText": "{{displayPostFailedToastText}}",
+            "displayEditorTagStockButtonText":"{{displayEditorTagStockButtonText}}",
+            "displayEditorAddImageButtonText": "{{displayEditorAddImageButtonText}}",
+            "displayEditorAddImageRowText":"{{displayEditorAddImageRowText}}",
+            "displayCommunityRuleButtonText":"{{displayCommunityRuleButtonText}}",
+            "displayExitDialogConfirmButtonText": "{{displayExitDialogConfirmButtonText}}",
+            "displayExitDialogCancelButtonText":"{{displayExitDialogCancelButtonText}}",
+            "displayExitDialogTitle": "{{displayExitDialogTitle}}",
+            "displayExitDialogMessage":"{{displayExitDialogMessage}}",
+            "displayCanNotEditStockTagToastText":"{{displayCanNotEditStockTagToastText}}"
+        }
+    },
+    "帳號管理列": {
+        "parameters": {
+            "displayAccountManagement": "{{displayAccountManagement}}"
+        }
+    },
+    "編輯暱稱頁": {
+        "parameters": {
+            "displayEditNickname":"{{displayEditNickname}} " ,
+            "displayDone": "{{displayDone}}",
+            "displayRequestSent": "{{displayRequestSent}}",
+            "displayChangeSuccess": "{{displayChangeSuccess}}",
+            "displayChangeFailed": "{{displayChangeFailed}}",
+            "displayNicknameCannotBeEmpty": "{{displayNicknameCannotBeEmpty}}",
+            "displayLoading": "{{displayLoading}}"
+        }
+    },
+    "內容專區/文章": {
+        "parameters": {
+            "displaySaveToFavorites" : "{{displaySaveToFavorites}}",
+            "displayRemoveFromFavorites" : "{{displayRemoveFromFavorites}}"
+        }
+    },
+    "內容專區/影音": {
+        "parameters": {
+            "displaySaveToFavorites" : "{{displaySaveToFavorites}}",
+            "displayRemoveFromFavorites" : "{{displayRemoveFromFavorites}}"
+        }
+    },
+    "產品資訊": {
+        "parameters": {
+            "isLogoShown": true
+        }
+    }
+}

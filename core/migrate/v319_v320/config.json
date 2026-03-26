@@ -1,0 +1,26 @@
+{
+  "社團專區": {
+    "parameters": {
+      "displayRedirectExternalWebsitePopupAlertTitle": "你即將前往外部網站",
+      "displayRedirectExternalWebsitePopupAlertContent": "此連結將開啟瀏覽器並離開App，請確認是否繼續前往?",
+      "displayRedirectExternalWebsitePopupAlertCancelButtonText": "取消",
+      "displayRedirectExternalWebsitePopupAlertConfirmButtonText": "前往"
+    }
+  },
+  "作者專區/看板全文頁": {
+    "parameters": {
+      "displayRedirectExternalWebsitePopupAlertTitle": "你即將前往外部網站",
+      "displayRedirectExternalWebsitePopupAlertContent": "此連結將開啟瀏覽器並離開App，請確認是否繼續前往?",
+      "displayRedirectExternalWebsitePopupAlertCancelButtonText": "取消",
+      "displayRedirectExternalWebsitePopupAlertConfirmButtonText": "前往"
+    }
+  },
+  "作者專區": {
+    "parameters": {
+      "displayRedirectExternalWebsitePopupAlertTitle": "你即將前往外部網站",
+      "displayRedirectExternalWebsitePopupAlertContent": "此連結將開啟瀏覽器並離開App，請確認是否繼續前往?",
+      "displayRedirectExternalWebsitePopupAlertCancelButtonText": "取消",
+      "displayRedirectExternalWebsitePopupAlertConfirmButtonText": "前往"
+    }
+  }
+}

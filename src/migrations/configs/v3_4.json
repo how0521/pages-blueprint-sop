@@ -1,0 +1,20 @@
+{
+  "合併表格": {
+    "parameters": {
+      "displayNoFilteredDataButtonText": "{{displayNoFilteredDataButtonText}}",
+      "uuidRedirectFilterPage": "7990000001"
+    }
+  },
+  "資訊展示板": {
+    "updateParameters": {
+      "contents": {
+        "numberLineImageSettings": {
+          "left": "",
+          "right": "",
+          "image": ""
+        },
+        "columnKey": ""
+      }
+    }
+  }
+}

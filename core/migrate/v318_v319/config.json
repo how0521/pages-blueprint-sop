@@ -1,0 +1,18 @@
+{
+  "購買頁": {
+    "parameters": {
+      "displayPromoCodeTitle": "優惠券",
+      "displayPromoCodeEnter": "請輸入優惠碼",
+      "displayPromoCodeApply": "套用",
+      "displayPromoCodeWrong": "優惠碼錯誤，請輸入正確的優惠碼",
+      "displayPromoCodeMemberNotAllowed": "此優惠碼不適用於此會員帳號",
+      "displayPromoCodeExpired": "優惠碼已過期",
+      "displayPromoCodeLimitBeenReached": "此優惠代碼數量有限，已兌換完畢",
+      "displayPromoCodeApplied": "已套用 %s 優惠券",
+      "displayPromoCodeError": "其他異常狀況，請聯繫客服處理",
+      "displayPromoCodeApplyFreeTrial": "已獲得免費試用",
+      "displayPromoCodeApplyIntroOffer": "已套用首期優惠",
+      "displayPromoCodeApplyLifeTimeOffer": "已套用永久優惠"
+    }
+  }
+}
