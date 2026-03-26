@@ -9,7 +9,6 @@ const GIST_FILE = 'rules.json';
 const PUBLIC_GIST_ID = '1966a795b97f9716c32316c52fcc974f';
 
 const DEFAULT_SETTINGS = {
-  migrationToolUrl: 'http://192.168.105.175:4999/migrate',
   gistId: PUBLIC_GIST_ID,
   githubToken: '',
 };

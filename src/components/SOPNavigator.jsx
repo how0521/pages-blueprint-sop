@@ -164,7 +164,6 @@ export default function SOPNavigator({ rules, settings }) {
           ) : (
             <SOPTimeline
               steps={sopSteps}
-              migrationUrl={settings.migrationToolUrl}
               fromVersion={fromVersion}
               toVersion={toVersion}
             />

@@ -74,26 +74,6 @@ function GlobalSettings({ settings, onUpdateSettings, onSyncToGist, onLoadFromGi
         <h3 className="text-gray-900 dark:text-slate-100 font-semibold">全域設定</h3>
       </div>
 
-      <div className="space-y-2">
-        <label className="block text-xs font-medium text-gray-500 dark:text-slate-400 uppercase tracking-wide">
-          Migrate 工具網址
-        </label>
-        <input
-          type="url"
-          value={form.migrationToolUrl}
-          onChange={e => setForm({ ...form, migrationToolUrl: e.target.value })}
-          placeholder="http://192.168.105.175:4999/migrate"
-          className={inputClass}
-        />
-        <div className="flex items-start gap-2 text-xs text-gray-500 dark:text-slate-500 bg-gray-50 dark:bg-slate-700/40 rounded-lg p-3">
-          <Info size={13} className="flex-shrink-0 mt-0.5 text-blue-500 dark:text-blue-400" />
-          <span>
-            當版本升版規則標記為「需 Migrate」時，SOP 中將顯示此連結。
-            此連結套用至所有有 Migrate 需求的版本步驟。
-          </span>
-        </div>
-      </div>
-
       {/* 跨裝置同步 */}
       <div className="border-t border-gray-200 dark:border-slate-700 pt-6 space-y-4">
         <div className="flex items-center gap-2">

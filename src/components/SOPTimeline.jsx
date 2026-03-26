@@ -144,7 +144,7 @@ function StepCard({ step, index, isLast, checkedItems, onCheck }) {
   );
 }
 
-export default function SOPTimeline({ steps, migrationUrl, fromVersion, toVersion }) {
+export default function SOPTimeline({ steps, fromVersion, toVersion }) {
   const [checkedItems, setCheckedItems] = useState({});
 
   const handleCheck = (key, checked) => {
