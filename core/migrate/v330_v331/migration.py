@@ -16,6 +16,8 @@ Migration from Blueprint v3.30 to v3.31
 3. 資訊表格2.0：
    - cells[].contents[] 各項目新增 verticalAlign
    - cells[].contents[] 各項目鍵名 align 改為 horizontalAlign
+4. 內容專區/影音、內容專區/短影音：新增 stateVideoService、stateVideoTitle
+   - shareDeepLinkFormat 末尾新增 &string-stateVideoService=%3$s&string-stateVideoTitle=%4$s
 """
 
 class Migration(AutoMigration):
@@ -59,6 +61,7 @@ class Migration(AutoMigration):
 
         - 自定義K線圖表（原產業K線圖表）：改名、改鍵名、升版 techLines
         - 資訊表格2.0：cells[].contents[] 各項目新增 verticalAlign、align 改為 horizontalAlign
+        - 內容專區/影音、內容專區/短影音：shareDeepLinkFormat 末尾新增 &string-stateVideoService=%3$s&string-stateVideoTitle=%4$s
         """
         try:
             for component in subcomponents:
@@ -110,6 +113,14 @@ class Migration(AutoMigration):
                                 if "align" in item and "horizontalAlign" not in item:
                                     item["horizontalAlign"] = item.pop("align")
                                     print("已將 align 改為 horizontalAlign 於 資訊表格2.0 contents 項目")
+
+                # 內容專區/影音 & 內容專區/短影音：shareDeepLinkFormat 新增後綴
+                if componentName in ("內容專區/影音", "內容專區/短影音"):
+                    SUFFIX = "&string-stateVideoService=%3$s&string-stateVideoTitle=%4$s"
+                    share_link = parameters.get("shareDeepLinkFormat", "")
+                    if share_link and not share_link.endswith(SUFFIX):
+                        parameters["shareDeepLinkFormat"] = share_link + SUFFIX
+                        print(f"已更新 {componentName} 的 shareDeepLinkFormat")
 
                 # 遞迴處理 subComponents
                 if "subComponents" in component:

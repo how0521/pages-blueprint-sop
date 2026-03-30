@@ -958,6 +958,15 @@ function findAndUpdateV3_31(subcomponents) {
       }
     }
 
+    // 內容專區/影音 & 內容專區/短影音：shareDeepLinkFormat 新增後綴
+    if (component.name === '內容專區/影音' || component.name === '內容專區/短影音') {
+      const SUFFIX = '&string-stateVideoService=%3$s&string-stateVideoTitle=%4$s';
+      const shareLink = params.shareDeepLinkFormat;
+      if (typeof shareLink === 'string' && !shareLink.endsWith(SUFFIX)) {
+        params.shareDeepLinkFormat = shareLink + SUFFIX;
+      }
+    }
+
     if (component.subComponents) findAndUpdateV3_31(component.subComponents);
   }
   return subcomponents;
