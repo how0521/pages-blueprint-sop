@@ -934,20 +934,25 @@ function findAndUpdateV3_31(subcomponents) {
 
     const params = component.parameters;
 
-    // 資訊表格2.0：contents 項目處理
+    // 資訊表格2.0：cells[].contents[] 項目處理
     if (component.name === '資訊表格2.0') {
-      const contents = params.contents;
-      if (Array.isArray(contents)) {
-        for (const item of contents) {
-          if (typeof item !== 'object' || item === null) continue;
-          // 新增 verticalAlign（若不存在）
-          if (!('verticalAlign' in item)) {
-            item.verticalAlign = 'bottom';
-          }
-          // Align 改為 horizontalAlign
-          if ('Align' in item && !('horizontalAlign' in item)) {
-            item.horizontalAlign = item.Align;
-            delete item.Align;
+      const cells = params.cells;
+      if (Array.isArray(cells)) {
+        for (const cell of cells) {
+          if (typeof cell !== 'object' || cell === null) continue;
+          const contents = cell.contents;
+          if (!Array.isArray(contents)) continue;
+          for (const item of contents) {
+            if (typeof item !== 'object' || item === null) continue;
+            // 新增 verticalAlign（若不存在）
+            if (!('verticalAlign' in item)) {
+              item.verticalAlign = 'bottom';
+            }
+            // align 改為 horizontalAlign
+            if ('align' in item && !('horizontalAlign' in item)) {
+              item.horizontalAlign = item.align;
+              delete item.align;
+            }
           }
         }
       }
