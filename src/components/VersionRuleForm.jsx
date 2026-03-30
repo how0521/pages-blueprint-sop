@@ -35,6 +35,7 @@ export default function VersionRuleForm({ initialData, mode, onSave, onCancel })
     fromVersion: initialData?.fromVersion ?? '',
     toVersion: initialData?.toVersion ?? '',
     requiresMigration: initialData?.requiresMigration ?? false,
+    migrationNotes: initialData?.migrationNotes ?? '',
     manualSteps: initialData?.manualSteps?.map(s => ({ ...s })) ?? [],
   });
   const [errors, setErrors] = useState({});
@@ -106,6 +107,7 @@ export default function VersionRuleForm({ initialData, mode, onSave, onCancel })
       fromVersion: form.fromVersion.trim(),
       toVersion: form.toVersion.trim(),
       requiresMigration: form.requiresMigration,
+      migrationNotes: form.migrationNotes.trim(),
       manualSteps: form.manualSteps.filter(s => s.description.trim()),
     });
   };
@@ -181,10 +183,24 @@ export default function VersionRuleForm({ initialData, mode, onSave, onCancel })
             description="啟用後，SOP 中此步驟將顯示 Migrate 工具連結"
           />
           {form.requiresMigration && (
-            <div className="mt-3 flex items-center gap-2 text-xs text-amber-600 dark:text-amber-400 bg-amber-500/10 border border-amber-500/20 rounded-lg px-3 py-2">
-              <AlertTriangle size={12} />
-              將在 SOP 此步驟顯示「🔗 前往 Migrate 工具」連結
-            </div>
+            <>
+              <div className="mt-3 flex items-center gap-2 text-xs text-amber-600 dark:text-amber-400 bg-amber-500/10 border border-amber-500/20 rounded-lg px-3 py-2">
+                <AlertTriangle size={12} />
+                將在 SOP 此步驟顯示「🔗 前往 Migrate 工具」連結
+              </div>
+              <div className="mt-3">
+                <label className="block text-xs font-medium text-gray-500 dark:text-slate-400 uppercase tracking-wide mb-1.5">
+                  Migrate 內容備註
+                </label>
+                <textarea
+                  value={form.migrationNotes}
+                  onChange={e => setField('migrationNotes', e.target.value)}
+                  placeholder="記錄此版本 migrate 了哪些內容..."
+                  rows={3}
+                  className="w-full bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 text-gray-900 dark:text-slate-100 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm placeholder-gray-400 dark:placeholder-slate-500 transition-colors resize-none"
+                />
+              </div>
+            </>
           )}
         </div>
 

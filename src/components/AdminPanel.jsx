@@ -15,6 +15,8 @@ import {
   Cloud,
   Loader2,
   RefreshCw,
+  Send,
+  X,
 } from 'lucide-react';
 import VersionRuleForm from './VersionRuleForm';
 import { compareVersions } from '../utils/versionUtils';
@@ -184,6 +186,76 @@ function GlobalSettings({ settings, onUpdateSettings, onSyncToGist, onLoadFromGi
   );
 }
 
+function PublishConfirmModal({ onConfirm, onCancel, isLoading, status }) {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={!isLoading ? onCancel : undefined} />
+      <div className="relative bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-slate-700 shadow-2xl w-full max-w-sm p-6 space-y-4">
+        <div className="flex items-start justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center">
+              <Send size={18} className="text-blue-500" />
+            </div>
+            <h3 className="text-gray-900 dark:text-slate-100 font-semibold">確認發佈</h3>
+          </div>
+          {!isLoading && (
+            <button
+              onClick={onCancel}
+              className="w-7 h-7 flex items-center justify-center rounded-lg text-gray-400 dark:text-slate-500 hover:text-gray-700 dark:hover:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors"
+            >
+              <X size={16} />
+            </button>
+          )}
+        </div>
+
+        {!status ? (
+          <>
+            <p className="text-sm text-gray-500 dark:text-slate-400">
+              確定要將目前所有設定發佈到 Gist 嗎？其他裝置將在重新整理後看到最新內容。
+            </p>
+            <div className="flex gap-3 pt-1">
+              <button
+                onClick={onConfirm}
+                disabled={isLoading}
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-semibold transition-colors shadow-lg shadow-blue-900/30 disabled:opacity-50"
+              >
+                {isLoading ? <Loader2 size={14} className="animate-spin" /> : <Send size={14} />}
+                {isLoading ? '發佈中…' : '確定發佈'}
+              </button>
+              <button
+                onClick={onCancel}
+                disabled={isLoading}
+                className="px-4 py-2.5 bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 text-gray-600 dark:text-slate-300 rounded-xl text-sm font-medium transition-colors disabled:opacity-50"
+              >
+                取消
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+            <div
+              className={`flex items-center gap-2 text-sm rounded-lg px-3 py-2.5 ${
+                status.type === 'ok'
+                  ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
+                  : 'bg-red-500/10 text-red-600 dark:text-red-400'
+              }`}
+            >
+              {status.type === 'ok' ? <Check size={14} /> : <AlertTriangle size={14} />}
+              <span>{status.type === 'ok' ? '發佈成功！' : status.msg}</span>
+            </div>
+            <button
+              onClick={onCancel}
+              className="w-full px-4 py-2.5 bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 text-gray-600 dark:text-slate-300 rounded-xl text-sm font-medium transition-colors"
+            >
+              關閉
+            </button>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function AdminPanel({
   rules,
   settings,
@@ -200,7 +272,26 @@ export default function AdminPanel({
   const [activeTab, setActiveTab] = useState('rules');
   const [formMode, setFormMode] = useState(null);
   const [editingRule, setEditingRule] = useState(null);
+  const [showPublishModal, setShowPublishModal] = useState(false);
+  const [publishLoading, setPublishLoading] = useState(false);
+  const [publishStatus, setPublishStatus] = useState(null);
   const fileInputRef = useRef(null);
+
+  const handlePublish = async () => {
+    setPublishLoading(true);
+    const result = await onSyncToGist(settings);
+    setPublishLoading(false);
+    if (result.ok) {
+      setPublishStatus({ type: 'ok' });
+    } else {
+      setPublishStatus({ type: 'error', msg: result.error || '發生未知錯誤' });
+    }
+  };
+
+  const handleClosePublishModal = () => {
+    setShowPublishModal(false);
+    setPublishStatus(null);
+  };
 
   const handleEdit = rule => {
     setEditingRule(rule);
@@ -247,6 +338,15 @@ export default function AdminPanel({
 
   return (
     <div className="space-y-6">
+      {showPublishModal && (
+        <PublishConfirmModal
+          onConfirm={handlePublish}
+          onCancel={handleClosePublishModal}
+          isLoading={publishLoading}
+          status={publishStatus}
+        />
+      )}
+
       {/* Admin header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
@@ -277,6 +377,15 @@ export default function AdminPanel({
             onChange={handleFileChange}
             className="hidden"
           />
+          <button
+            onClick={() => { setPublishStatus(null); setShowPublishModal(true); }}
+            disabled={!settings?.gistId || !settings?.githubToken}
+            className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-semibold transition-colors shadow-lg shadow-blue-900/30 disabled:opacity-40 disabled:cursor-not-allowed"
+            title={!settings?.gistId || !settings?.githubToken ? '請先在「全域設定」設定 GitHub Token 與 Gist ID' : ''}
+          >
+            <Send size={14} />
+            發佈
+          </button>
         </div>
       </div>
 
