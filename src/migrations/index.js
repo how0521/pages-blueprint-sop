@@ -920,6 +920,20 @@ function findAndUpdateV3_30(subcomponents) {
       migrateTechLines(params);
     }
 
+    if (component.subComponents) findAndUpdateV3_30(component.subComponents);
+  }
+  return subcomponents;
+}
+
+// ─── v3.30 → v3.31 ──────────────────────────────────────────────────────────
+function findAndUpdateV3_31(subcomponents) {
+  for (const component of subcomponents) {
+    if (typeof component !== 'object' || component === null) continue;
+    if (!('name' in component)) continue;
+    if (!('parameters' in component)) component.parameters = {};
+
+    const params = component.parameters;
+
     // 資訊表格2.0：contents 項目處理
     if (component.name === '資訊表格2.0') {
       const contents = params.contents;
@@ -939,16 +953,14 @@ function findAndUpdateV3_30(subcomponents) {
       }
     }
 
-    if (component.subComponents) findAndUpdateV3_30(component.subComponents);
+    if (component.subComponents) findAndUpdateV3_31(component.subComponents);
   }
   return subcomponents;
 }
 
-// ─── v3.30 → v3.31 ──────────────────────────────────────────────────────────
-// TODO: Port custom logic from core/migrate/v330_v331/migration.py
 function migrateToV3_31(blueprint) {
   addToBlueprint(blueprint, configV3_31);
-  // TODO: add custom findAndUpdate logic here
+  if (blueprint.pages) findAndUpdateV3_31(blueprint.pages);
   return blueprint;
 }
 
