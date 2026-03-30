@@ -3,5 +3,17 @@
         "parameters": {
             "stateHideTopRedBar": "stateHideTopRedBar"
         }
+    },
+    "內容專區/影音": {
+        "parameters": {
+            "stateVideoService": "stateVideoService",
+            "stateVideoTitle": "stateVideoTitle"
+        }
+    },
+    "內容專區/短影音": {
+        "parameters": {
+            "stateVideoService": "stateVideoService",
+            "stateVideoTitle": "stateVideoTitle"
+        }
     }
 }

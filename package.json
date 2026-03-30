@@ -7,7 +7,8 @@
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview --host",
-    "sync-migrations": "node scripts/sync-migrations.cjs"
+    "sync-migrations": "node scripts/sync-migrations.cjs",
+    "sync-and-build": "node scripts/sync-migrations.cjs && vite build"
   },
   "dependencies": {
     "jszip": "^3.10.1",
