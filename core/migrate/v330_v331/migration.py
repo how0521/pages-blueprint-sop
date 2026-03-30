@@ -15,7 +15,7 @@ Migration from Blueprint v3.30 to v3.31
    - techLines 結構升版，各項目改為含 parameters 的新格式
 3. 資訊表格2.0：
    - contents 各項目新增 verticalAlign
-   - contents 各項目鍵名 Align 改為 horizontalAlign
+   - contents 各項目鍵名 align 改為 horizontalAlign
 """
 
 class Migration(AutoMigration):
@@ -58,7 +58,7 @@ class Migration(AutoMigration):
         遞迴搜尋並更新元件
 
         - 自定義K線圖表（原產業K線圖表）：改名、改鍵名、升版 techLines
-        - 資訊表格2.0：contents 各項目新增 verticalAlign、Align 改為 horizontalAlign
+        - 資訊表格2.0：contents 各項目新增 verticalAlign、align 改為 horizontalAlign
         """
         try:
             for component in subcomponents:
@@ -100,10 +100,10 @@ class Migration(AutoMigration):
                             if "verticalAlign" not in item:
                                 item["verticalAlign"] = "bottom"
                                 print("已新增 verticalAlign 至 資訊表格2.0 contents 項目")
-                            # Align 改為 horizontalAlign
-                            if "Align" in item and "horizontalAlign" not in item:
-                                item["horizontalAlign"] = item.pop("Align")
-                                print("已將 Align 改為 horizontalAlign 於 資訊表格2.0 contents 項目")
+                            # align 改為 horizontalAlign
+                            if "align" in item and "horizontalAlign" not in item:
+                                item["horizontalAlign"] = item.pop("align")
+                                print("已將 align 改為 horizontalAlign 於 資訊表格2.0 contents 項目")
 
                 # 遞迴處理 subComponents
                 if "subComponents" in component:
