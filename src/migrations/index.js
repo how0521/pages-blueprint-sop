@@ -1,6 +1,6 @@
 /**
  * Migration registry — JavaScript port of the Python migration chain.
- * Supports v2.7 (index 16) through v3.29 (index 46).
+ * Supports v2.7 (index 16) through v3.30 (index 47).
  * Pre-v2.7 migrations are pass-throughs (not ported).
  */
 import { addToBlueprint } from './blueprintAdder.js';
@@ -23,6 +23,8 @@ import configV3_23 from './configs/v3_23.json';
 import configV3_26 from './configs/v3_26.json';
 import configV3_28 from './configs/v3_28.json';
 import configV3_29 from './configs/v3_29.json';
+import configV3_30 from './configs/v3_30.json';
+import configV3_31 from './configs/v3_31.json';
 
 // ─── Pass-through (no-op) ────────────────────────────────────────────────────
 const passThrough = (bp) => bp;
@@ -834,6 +836,122 @@ function migrateToV3_29(blueprint) {
   return addToBlueprint(blueprint, configV3_29);
 }
 
+// ─── v3.29 → v3.30 ──────────────────────────────────────────────────────────
+function migrateToV3_30(blueprint) {
+  addToBlueprint(blueprint, configV3_30);
+  if (blueprint.pages) findAndUpdateV3_30(blueprint.pages);
+  return blueprint;
+}
+
+function migrateTechLines(parameters) {
+  const techLines = parameters.techLines;
+  if (!Array.isArray(techLines)) return;
+
+  // Only migrate if old format (items without parameters key)
+  const isOldFormat = techLines.some(
+    (item) => typeof item === 'object' && item !== null && !('parameters' in item)
+  );
+  if (!isOldFormat) return;
+
+  parameters.techLines = techLines.map((item) => {
+    if (typeof item !== 'object' || item === null) return item;
+
+    if (item.type === 'ma') {
+      const { value, color } = item;
+      return {
+        type: 'ma',
+        parameters: {
+          value,
+          color,
+          displayPattern: `${value}MA %s`,
+          valueColumn: '收盤價',
+          formatDigit: 1,
+        },
+      };
+    }
+
+    if (item.type === 'atmosphere') {
+      return {
+        type: 'extraSource',
+        parameters: {
+          color: item.color || 'functional2',
+          displayPattern: '氣氛值 %s',
+          chartType: 'line',
+          formatDigit: 2,
+          usesSecondaryAxis: true,
+          source: {
+            name: 'dtno',
+            sourceParameters: {
+              dtnoNum: '126621272',
+              paramStr: 'MTPeriod=0;DTMode=0;DTRange=250;DTOrder=1;MajorTable=M9DK;',
+              filterNumber: '0',
+            },
+          },
+          valueColumn: '氣氛值(韭菜叔叔)',
+          primaryKey: '日期',
+          dateFormat: 'yyyyMMdd',
+        },
+      };
+    }
+
+    return item;
+  });
+}
+
+function findAndUpdateV3_30(subcomponents) {
+  for (const component of subcomponents) {
+    if (typeof component !== 'object' || component === null) continue;
+    if (!('name' in component)) continue;
+    if (!('parameters' in component)) component.parameters = {};
+
+    const params = component.parameters;
+
+    // 產業K線圖表 → 自定義K線圖表
+    if (component.name === '產業K線圖表') {
+      component.name = '自定義K線圖表';
+
+      // stateIndustryKey 鍵名改為 stateTargetKey（值不變）
+      if ('stateIndustryKey' in params && !('stateTargetKey' in params)) {
+        params.stateTargetKey = params.stateIndustryKey;
+        delete params.stateIndustryKey;
+      }
+
+      // techLines 升版
+      migrateTechLines(params);
+    }
+
+    // 資訊表格2.0：contents 項目處理
+    if (component.name === '資訊表格2.0') {
+      const contents = params.contents;
+      if (Array.isArray(contents)) {
+        for (const item of contents) {
+          if (typeof item !== 'object' || item === null) continue;
+          // 新增 verticalAlign（若不存在）
+          if (!('verticalAlign' in item)) {
+            item.verticalAlign = 'bottom';
+          }
+          // Align 改為 horizontalAlign
+          if ('Align' in item && !('horizontalAlign' in item)) {
+            item.horizontalAlign = item.Align;
+            delete item.Align;
+          }
+        }
+      }
+    }
+
+    if (component.subComponents) findAndUpdateV3_30(component.subComponents);
+  }
+  return subcomponents;
+}
+
+// ─── v3.30 → v3.31 ──────────────────────────────────────────────────────────
+// TODO: Port custom logic from core/migrate/v330_v331/migration.py
+function migrateToV3_31(blueprint) {
+  addToBlueprint(blueprint, configV3_31);
+  // TODO: add custom findAndUpdate logic here
+  return blueprint;
+}
+
 // ─── Version dictionary (matches Python's version_dict) ──────────────────────
 export const versionDict = {
   '1.0': 1, '1.1': 2, '1.2': 3, '1.3': 4, '1.4': 5, '1.5': 6, '1.6': 7,
@@ -843,7 +961,8 @@ export const versionDict = {
   '3.6': 23, '3.7': 24, '3.8': 25, '3.9': 26, '3.10': 27, '3.11': 28,
   '3.12': 29, '3.13': 30, '3.14': 31, '3.15': 32, '3.16': 33, '3.17': 34,
   '3.18': 35, '3.19': 36, '3.20': 37, '3.21': 38, '3.22': 39, '3.23': 40,
-  '3.24': 41, '3.25': 42, '3.26': 43, '3.27': 44, '3.28': 45, '3.29': 46,
+  '3.24': 41, '3.25': 42, '3.26': 43, '3.27': 44, '3.28': 45, '3.29': 46, '3.30': 47,
+  '3.31': 48,
 };
 
 // ─── autoMigrations array (0-indexed, 47 entries, matches Python's list) ─────
@@ -897,4 +1016,6 @@ export const autoMigrations = [
   migrateToV3_27, // 44 (v3.26 → v3.27, pass-through)
   migrateToV3_28, // 45 (v3.27 → v3.28)
   migrateToV3_29, // 46 (v3.28 → v3.29)
+  migrateToV3_30, // 47 (v3.29 → v3.30)
+  migrateToV3_31,  // 48 (v3.30 → v3.31)
 ];
