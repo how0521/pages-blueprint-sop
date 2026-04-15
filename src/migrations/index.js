@@ -25,6 +25,7 @@ import configV3_28 from './configs/v3_28.json';
 import configV3_29 from './configs/v3_29.json';
 import configV3_30 from './configs/v3_30.json';
 import configV3_31 from './configs/v3_31.json';
+import configV3_32 from './configs/v3_32.json';
 
 // ─── Pass-through (no-op) ────────────────────────────────────────────────────
 const passThrough = (bp) => bp;
@@ -978,6 +979,11 @@ function migrateToV3_31(blueprint) {
   return blueprint;
 }
 
+// ─── v3.31 → v3.32 (config only) ──────────────────────────────────────────────────────────
+function migrateToV3_32(blueprint) {
+  return addToBlueprint(blueprint, configV3_32);
+}
+
 // ─── Version dictionary (matches Python's version_dict) ──────────────────────
 export const versionDict = {
   '1.0': 1, '1.1': 2, '1.2': 3, '1.3': 4, '1.4': 5, '1.5': 6, '1.6': 7,
@@ -989,6 +995,7 @@ export const versionDict = {
   '3.18': 35, '3.19': 36, '3.20': 37, '3.21': 38, '3.22': 39, '3.23': 40,
   '3.24': 41, '3.25': 42, '3.26': 43, '3.27': 44, '3.28': 45, '3.29': 46, '3.30': 47,
   '3.31': 48,
+  '3.32': 49,
 };
 
 // ─── autoMigrations array (0-indexed, 47 entries, matches Python's list) ─────
@@ -1044,4 +1051,5 @@ export const autoMigrations = [
   migrateToV3_29, // 46 (v3.28 → v3.29)
   migrateToV3_30, // 47 (v3.29 → v3.30)
   migrateToV3_31,  // 48 (v3.30 → v3.31)
+  migrateToV3_32,  // 49 (v3.31 → v3.32)
 ];

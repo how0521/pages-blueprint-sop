@@ -15,5 +15,13 @@
             "stateVideoService": "stateVideoService",
             "stateVideoTitle": "stateVideoTitle"
         }
+    },
+    "語音聊天室入口": {
+        "parameters": {
+            "displayCreateRoomSubtitle": "{{displayCreateRoomSubtitle}}",
+            "displayCreateRoomAccessTypeTitle": "{{displayCreateRoomAccessTypeTitle}}",
+            "displayCreateRoomVipAccess": "{{displayCreateRoomVipAccess}}",
+            "displayCreateRoomAllAccess": "{{displayCreateRoomAllAccess}}"
+        }
     }
 }

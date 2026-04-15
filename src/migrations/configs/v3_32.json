@@ -1,0 +1,24 @@
+{
+    "社團列表": {
+        "parameters": {
+            "displayOtherSectionTitle": "{{displayOtherSectionTitle}}"
+        }
+    },
+    "內容專區/文章": {
+        "parameters": {
+            "displayLoadingText": "{{displayLoadingText}}",
+            "displayClientErrorTitle": "{{displayClientErrorTitle}}",
+            "displayClientErrorSubtitle": "{{displayClientErrorSubtitle}}",
+            "displayClientErrorButtonText": "{{displayClientErrorButtonText}}",
+            "displayServerErrorTitle": "{{displayServerErrorTitle}}",
+            "displayServerErrorSubtitle": "{{displayServerErrorSubtitle}}",
+            "displayServerErrorButtonText": "{{displayServerErrorButtonText}}",
+            "displayNetworkErrorTitle": "{{displayNetworkErrorTitle}}",
+            "displayNetworkErrorSubtitle": "{{displayNetworkErrorSubtitle}}",
+            "displayNetworkErrorButtonText": "{{displayNetworkErrorButtonText}}",
+            "displayMaskTitle": "{{displayMaskTitle}}",
+            "displayMaskDescription": "{{displayMaskDescription}}",
+            "displayLastUpdatePrefix": "{{displayLastUpdatePrefix}}"
+        }
+    }
+}
