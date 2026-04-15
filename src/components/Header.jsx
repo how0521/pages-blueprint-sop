@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Map, Settings, ShieldCheck, BookOpen, Sun, Moon, Eye, EyeOff } from 'lucide-react';
+import { Map, Settings, ShieldCheck, BookOpen, Sun, Moon, Eye, EyeOff, Languages } from 'lucide-react';
 
 const ADMIN_PASSWORD = 'cmoney1234';
 
@@ -161,6 +161,17 @@ export default function Header({ view, onSetView, isDark, onToggleTheme }) {
                 >
                   <BookOpen size={15} className="opacity-80" />
                   <span className="hidden sm:inline">Changelog</span>
+                </button>
+                <button
+                  onClick={() => onSetView(view === 'i18n' ? 'migrate' : 'i18n')}
+                  className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    view === 'i18n'
+                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/30'
+                      : 'bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-600 dark:text-slate-300 border border-gray-200 dark:border-slate-700'
+                  }`}
+                >
+                  <Languages size={15} className="opacity-80" />
+                  <span className="hidden sm:inline">語言包</span>
                 </button>
               </>
             )}

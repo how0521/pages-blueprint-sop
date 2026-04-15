@@ -4,6 +4,7 @@ import SOPNavigator from './components/SOPNavigator';
 import AdminPanel from './components/AdminPanel';
 import ChangelogView from './components/ChangelogView';
 import MigrateTool from './components/MigrateTool';
+import I18nTool from './components/I18nTool';
 
 const GIST_FILE = 'rules.json';
 const PUBLIC_GIST_ID = '1966a795b97f9716c32316c52fcc974f';
@@ -334,6 +335,9 @@ export default function App() {
         </div>
         <div className={view === 'migrate' ? '' : 'hidden'}>
           <MigrateTool />
+        </div>
+        <div className={view === 'i18n' ? '' : 'hidden'}>
+          <I18nTool />
         </div>
         {view === 'changelog' && <ChangelogView rules={rules} />}
         {view === 'admin' && (
