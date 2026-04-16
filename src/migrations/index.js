@@ -984,6 +984,83 @@ function migrateToV3_32(blueprint) {
   return addToBlueprint(blueprint, configV3_32);
 }
 
+// ─── v3.32 → v3.33 ──────────────────────────────────────────────────────────
+const _INDEX_OF_SORT_COMPONENTS = new Set(['自選股', '合併表格', 'Bar_Line_圖表', '擴增表格']);
+
+const _POPUP_DEFAULTS = {
+  displayCourseInfoPopupTitle: '您所在的地區？',
+  displayCourseInfoPopupSubtitle: '將根據地區為您提供此課程的詳細資訊與購買管道',
+  displayCourseInfoPopupTaiwanDomainButtonTitle: '台灣',
+  displayCourseInfoPopupOverseaDomainButtonTitle: '台灣以外',
+  displayCourseInfoPopupCancelButtonTitle: '取消',
+};
+
+const _POPUP_KEYS = Object.keys(_POPUP_DEFAULTS);
+
+function renameKeyRecursive(obj, oldKey, newKey) {
+  if (typeof obj !== 'object' || obj === null) return false;
+  let renamed = false;
+  if (Array.isArray(obj)) {
+    for (const item of obj) {
+      if (renameKeyRecursive(item, oldKey, newKey)) renamed = true;
+    }
+  } else {
+    if (oldKey in obj && !(newKey in obj)) {
+      obj[newKey] = obj[oldKey];
+      delete obj[oldKey];
+      renamed = true;
+    }
+    for (const v of Object.values(obj)) {
+      if (renameKeyRecursive(v, oldKey, newKey)) renamed = true;
+    }
+  }
+  return renamed;
+}
+
+function wrapCourseInfoPopup(params) {
+  // 已包裝過則略過
+  if ('displayCourseInfoPopupContent' in params) return;
+
+  const popupContent = {};
+  for (const key of _POPUP_KEYS) {
+    if (key in params) {
+      popupContent[key] = params[key];
+      delete params[key];
+    } else {
+      popupContent[key] = _POPUP_DEFAULTS[key];
+    }
+  }
+  params.displayCourseInfoPopupContent = popupContent;
+}
+
+function findAndUpdateV3_33(subcomponents) {
+  for (const component of subcomponents) {
+    if (typeof component !== 'object' || component === null) continue;
+    if (!('name' in component)) continue;
+    if (!('parameters' in component)) component.parameters = {};
+
+    const params = component.parameters;
+
+    // 1. indexOfSortTypeLoop → indexOfSort
+    if (_INDEX_OF_SORT_COMPONENTS.has(component.name)) {
+      renameKeyRecursive(params, 'indexOfSortTypeLoop', 'indexOfSort');
+    }
+
+    // 2. 內容專區模板：包裝 displayCourseInfoPopupContent
+    if (component.name === '內容專區模板') {
+      wrapCourseInfoPopup(params);
+    }
+
+    if (component.subComponents) findAndUpdateV3_33(component.subComponents);
+  }
+  return subcomponents;
+}
+
+function migrateToV3_33(blueprint) {
+  if (blueprint.pages) findAndUpdateV3_33(blueprint.pages);
+  return blueprint;
+}
+
 // ─── Version dictionary (matches Python's version_dict) ──────────────────────
 export const versionDict = {
   '1.0': 1, '1.1': 2, '1.2': 3, '1.3': 4, '1.4': 5, '1.5': 6, '1.6': 7,
@@ -996,6 +1073,7 @@ export const versionDict = {
   '3.24': 41, '3.25': 42, '3.26': 43, '3.27': 44, '3.28': 45, '3.29': 46, '3.30': 47,
   '3.31': 48,
   '3.32': 49,
+  '3.33': 50,
 };
 
 // ─── autoMigrations array (0-indexed, 47 entries, matches Python's list) ─────
@@ -1052,4 +1130,5 @@ export const autoMigrations = [
   migrateToV3_30, // 47 (v3.29 → v3.30)
   migrateToV3_31,  // 48 (v3.30 → v3.31)
   migrateToV3_32,  // 49 (v3.31 → v3.32)
+  migrateToV3_33,  // 50 (v3.32 → v3.33)
 ];
