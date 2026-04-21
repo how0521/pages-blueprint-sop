@@ -615,5 +615,22 @@
   "displayStreamEnededBrodcasterLeft": "Broadcaster has ended the stream",
   "displayNoFavorites": "No favorites yet",
   "displayLoginButtonText": "Log In",
-  "displayGuestText": "Guest"
+  "displayGuestText": "Guest",
+  "displayOtherSectionTitle": "Others",
+  "displayClientErrorTitle": "Article Not Found",
+  "displayClientErrorSubtitle": "This article doesn't exist or has been removed",
+  "displayClientErrorButtonText": "Refresh",
+  "displayServerErrorTitle": "Server Error",
+  "displayServerErrorSubtitle": "Please try again later",
+  "displayServerErrorButtonText": "Refresh",
+  "displayNetworkErrorTitle": "Network Error",
+  "displayNetworkErrorSubtitle": "Please check your network connection and try again",
+  "displayNetworkErrorButtonText": "Refresh",
+  "displayMaskTitle": "Subscribe to Read",
+  "displayMaskDescription": "This is a premium article. Subscribe to read the full content",
+  "displayLastUpdatePrefix": "Last updated: ",
+  "displayCourseInfoPopupContent": "",
+  "displayName": "Name",
+  "displayNameColor": "Title Color",
+  "displayValueColor": "Value Color"
 }

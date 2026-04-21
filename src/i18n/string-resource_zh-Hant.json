@@ -615,5 +615,22 @@
   "displayStreamEnededBrodcasterLeft": "主播已結束直播",
   "displayNoFavorites": "還沒有任何收藏",
   "displayLoginButtonText": "登入",
-  "displayGuestText": "訪客登入"
+  "displayGuestText": "訪客登入",
+  "displayOtherSectionTitle": "其他",
+  "displayClientErrorTitle": "文章不存在",
+  "displayClientErrorSubtitle": "此文章不存在或已下架",
+  "displayClientErrorButtonText": "重新整理",
+  "displayServerErrorTitle": "伺服器錯誤",
+  "displayServerErrorSubtitle": "請稍後再試",
+  "displayServerErrorButtonText": "重新整理",
+  "displayNetworkErrorTitle": "網路連線失敗",
+  "displayNetworkErrorSubtitle": "請確認網路連線後再試",
+  "displayNetworkErrorButtonText": "重新整理",
+  "displayMaskTitle": "訂閱後即可閱讀",
+  "displayMaskDescription": "此為付費文章，訂閱即可閱讀完整內容",
+  "displayLastUpdatePrefix": "最後更新：",
+  "displayCourseInfoPopupContent": "",
+  "displayName": "名稱",
+  "displayNameColor": "標題顏色",
+  "displayValueColor": "數值顏色"
 }

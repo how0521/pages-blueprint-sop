@@ -615,5 +615,22 @@
   "displayStreamEnededBrodcasterLeft": "主播已结束直播",
   "displayNoFavorites": "还没有任何收藏",
   "displayLoginButtonText": "登入",
-  "displayGuestText": "访客登入"
+  "displayGuestText": "访客登入",
+  "displayOtherSectionTitle": "其他",
+  "displayClientErrorTitle": "文章不存在",
+  "displayClientErrorSubtitle": "此文章不存在或已下架",
+  "displayClientErrorButtonText": "刷新",
+  "displayServerErrorTitle": "服务器错误",
+  "displayServerErrorSubtitle": "请稍后再试",
+  "displayServerErrorButtonText": "刷新",
+  "displayNetworkErrorTitle": "网络连接失败",
+  "displayNetworkErrorSubtitle": "请确认网络连接后再试",
+  "displayNetworkErrorButtonText": "刷新",
+  "displayMaskTitle": "订阅后即可阅读",
+  "displayMaskDescription": "此为付费文章，订阅即可阅读完整内容",
+  "displayLastUpdatePrefix": "最后更新：",
+  "displayCourseInfoPopupContent": "",
+  "displayName": "名称",
+  "displayNameColor": "标题颜色",
+  "displayValueColor": "数值颜色"
 }
