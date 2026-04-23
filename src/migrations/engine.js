@@ -5,9 +5,15 @@
 import JSZip from 'jszip';
 import { autoMigrations, versionDict } from './index.js';
 
+const MAC_SYSTEM_NAMES = new Set(['.DS_Store', '.Spotlight-V100', '.fseventsd', '.Trashes']);
+
 function isMacMetadata(relativePath) {
   const parts = relativePath.split('/');
-  return parts.includes('__MACOSX') || parts.some(p => p.startsWith('._'));
+  return (
+    parts.includes('__MACOSX') ||
+    parts.some(p => p.startsWith('._')) ||
+    parts.some(p => MAC_SYSTEM_NAMES.has(p))
+  );
 }
 
 export async function migrateBlueprint(zipFile, targetVersion) {
