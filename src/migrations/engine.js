@@ -5,6 +5,11 @@
 import JSZip from 'jszip';
 import { autoMigrations, versionDict } from './index.js';
 
+function isMacMetadata(relativePath) {
+  const parts = relativePath.split('/');
+  return parts.includes('__MACOSX') || parts.some(p => p.startsWith('._'));
+}
+
 export async function migrateBlueprint(zipFile, targetVersion) {
   const logs = [];
   const log = (msg) => { logs.push(msg); };
@@ -14,11 +19,13 @@ export async function migrateBlueprint(zipFile, targetVersion) {
 
     const zip = await JSZip.loadAsync(zipFile);
 
-    // Find blueprint.json inside the ZIP
+    // Find blueprint.json inside the ZIP (skip __MACOSX metadata)
     let blueprintEntry = null;
     let blueprintPath = null;
     zip.forEach((relativePath, entry) => {
-      if (!entry.dir && relativePath.toLowerCase().endsWith('blueprint.json')) {
+      if (entry.dir) return;
+      if (isMacMetadata(relativePath)) return;
+      if (relativePath.toLowerCase().endsWith('blueprint.json')) {
         blueprintEntry = entry;
         blueprintPath = relativePath;
       }
@@ -86,6 +93,7 @@ export async function migrateBlueprint(zipFile, targetVersion) {
 
     for (const { relativePath, entry } of fileEntries) {
       if (entry.dir) continue;
+      if (isMacMetadata(relativePath)) continue;
       const filename = relativePath.split('/').pop();
       if (relativePath === blueprintPath) {
         newZip.file(filename, JSON.stringify(data, null, 4));
