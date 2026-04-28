@@ -1,6 +1,6 @@
 {
   "data": {
-    "version": "3.31.0",
+    "version": "3.33.0",
     "global": {
       "theme": [
         {
@@ -518,7 +518,7 @@
                   },
                   {
                     "description": "排序起始位置",
-                    "key": "indexOfSortTypeLoop",
+                    "key": "indexOfSort",
                     "type": "number",
                     "enums": [],
                     "required": false,
@@ -927,7 +927,7 @@
           }
         ],
         "category": "自選股",
-        "img": "https://devpages.cmoney.tw/api/img/6243a18128777d7b508b31382ebc6e17bb35c26c.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/139e7bda7e6c8cba4ae76033ea910588defce494.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -1327,7 +1327,7 @@
           }
         ],
         "category": "自選股",
-        "img": "https://devpages.cmoney.tw/api/img/c2f63ff8f730ce3a09e0cd89826386931ac412e4.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/c7e6a3f73f1dcd181eacd47f5871706bc62a98ae.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -1476,7 +1476,7 @@
           }
         ],
         "category": "自選股",
-        "img": "https://devpages.cmoney.tw/api/img/524e92a11730c7a2e2cd44f4f56811790c029ce6.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/b62a4d96f20c5da7011b738e8795bc51bad7918e.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -1562,7 +1562,7 @@
           }
         ],
         "category": "自選股",
-        "img": "https://devpages.cmoney.tw/api/img/cb35d3820a8a328160aa49a906f7c55cf5e65db6.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/397afbf56eab6661e8b5cc6cd8b9c2dda158fff2.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -1600,7 +1600,7 @@
           }
         ],
         "category": "自選股",
-        "img": "https://devpages.cmoney.tw/api/img/05ed8e55668dd2fef3ec09d3d5e5c00485668530.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/4c2347beb6b6484d961a636eb743eb030e8abd6f.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -1631,7 +1631,7 @@
           }
         ],
         "category": "導覽列",
-        "img": "https://devpages.cmoney.tw/api/img/b94a18bc91b5971e925426ebc02150ea0ef53f5e.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/0236b5b30ef08fbc24bf212978c36add3fe9290a.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -1701,7 +1701,7 @@
           }
         ],
         "category": "導覽列",
-        "img": "https://devpages.cmoney.tw/api/img/032a50132f25358b887c035318cf093cd209d7da.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/7fb1418f558e98cf752e48552716fcd46f49ac93.jpg",
         "trial": [
           {
             "description": "試用機制限制",
@@ -1976,7 +1976,7 @@
           }
         ],
         "category": "導覽列",
-        "img": "https://devpages.cmoney.tw/api/img/aa4ca401f9ee93844bce69698069dfd400c24b15.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/8bc4dab04034565a052ba65f973d586e1a47199c.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -2056,7 +2056,7 @@
           }
         ],
         "category": "導覽列",
-        "img": "https://devpages.cmoney.tw/api/img/49878eeda74c6c2ff2b28ea7f8558f90299e4334.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/233f1954efa5aafa26a797fc3fdb060680671255.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -2087,7 +2087,7 @@
           }
         ],
         "category": "導覽列",
-        "img": "https://devpages.cmoney.tw/api/img/18f9588e48e81007b0ec25457e6e961e20491bac.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/bc5601022a62e1741948ac8b259bf8b40ca1965b.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -2121,7 +2121,7 @@
           }
         ],
         "category": "導覽列",
-        "img": "https://devpages.cmoney.tw/api/img/8dc2d173926e37e8c431f77db7b7d7210d37e3a7.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/024d8c35150beb29d27013a1d4fda966f5c52bdf.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -2160,7 +2160,7 @@
           }
         ],
         "category": "導覽列",
-        "img": "https://devpages.cmoney.tw/api/img/2483734163d315342746c9ea944e597aa11abe0b.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/d8c9afcfd4214ce6ab2699a6464279be6987a196.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -2208,7 +2208,7 @@
           }
         ],
         "category": "導覽列",
-        "img": "https://devpages.cmoney.tw/api/img/4650ec792e0ca9c1d180cce9409fe48d7ede830c.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/d487d86733cc0fe10588bbc58003b23050c93c21.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -2257,7 +2257,7 @@
           }
         ],
         "category": "導覽列",
-        "img": "https://devpages.cmoney.tw/api/img/541bcf75fecfa18489ebfc507fe4f58a76f5e487.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/909174889f6fa284a92505aba5884f0291b80ba5.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -2298,7 +2298,7 @@
           }
         ],
         "category": "導覽列",
-        "img": "https://devpages.cmoney.tw/api/img/7141df9448adb6c3dd56c1e86cfcd6dcab9025ca.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/f3c8a70c43b1f35ecb45dbaf3493c45333b75cc2.jpg",
         "trial": [
           {
             "description": "試用機制限制",
@@ -2656,7 +2656,7 @@
           }
         ],
         "category": "導覽列",
-        "img": "https://devpages.cmoney.tw/api/img/3243a73a103b0eb77594f83562bbd66677ba0124.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/5c1b4355fb88dc66eae6fd91680ed9eb8b73bc8a.jpg",
         "trial": [
           {
             "description": "試用機制限制",
@@ -2959,7 +2959,7 @@
           }
         ],
         "category": "策略",
-        "img": "https://devpages.cmoney.tw/api/img/a3a1e3f9c03e283b842b47cc22dd249c66a5860e.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/5d4f646fc8a71d6421f4c36582986ff52590dd9a.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -3257,8 +3257,8 @@
                     "arrayObject": []
                   },
                   {
-                    "description": "排序起始位置",
-                    "key": "indexOfSortTypeLoop",
+                    "description": "排序起始位置（Standard Column: sortTypeLoop 步數；Stacked Column: sortSettings 陣列索引）",
+                    "key": "indexOfSort",
                     "type": "number",
                     "enums": [],
                     "required": false,
@@ -3763,7 +3763,7 @@
           }
         ],
         "category": "策略",
-        "img": "https://devpages.cmoney.tw/api/img/fa5019f1830f9f3331030d42fde742902ecbb96a.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/2fa925a8bd45d835b1f35d85e3d03d24c47e7eef.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4002,7 +4002,7 @@
           }
         ],
         "category": "策略",
-        "img": "https://devpages.cmoney.tw/api/img/cb35d3820a8a328160aa49a906f7c55cf5e65db6.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/397afbf56eab6661e8b5cc6cd8b9c2dda158fff2.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4095,7 +4095,7 @@
           }
         ],
         "category": "策略",
-        "img": "https://devpages.cmoney.tw/api/img/d517e128bba406564597d1c94c825582425e09af.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/ee52ba41ac88bd4521da53c4f66158429777d36e.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4126,7 +4126,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/ab20e301cd17f723fd1a1b6218a4c547589d2a98.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/4568419b5f6aaa24826d74f2f853e996c8f87ba3.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4157,7 +4157,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/438db5a25af7d4638caca0797bbd24ec1ad7d069.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/718e795c8d63c79bc06925a01b85764509a91de4.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4197,7 +4197,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/397bc227f766f461e0c7e2554442c30c9eb772bc.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/f5e629a687cc09a2ed38754801a9ac21e9fde205.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4247,7 +4247,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/af032c59ac6b130b80c40d831569e385fdaad11d.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/4cc528c751935b99b27b25e56ac81d819cbfab95.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4306,7 +4306,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/9e2276f4154906ae45a2ee6705b262ad02d270d9.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/a6cffaacbe13234c180f06fe2e4bd3d083ae6fcd.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4316,7 +4316,7 @@
         "style": [],
         "parameters": [],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/f7859539b8280ad5e5ec3ae7a0d99faa3e359dfb.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/b07aa3214555cd2e83fe62dd676be603e418d70a.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4347,7 +4347,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/ab20e301cd17f723fd1a1b6218a4c547589d2a98.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/4568419b5f6aaa24826d74f2f853e996c8f87ba3.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4371,7 +4371,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/72912b1ab500cb7030b4dbbabcaf94bf2b8554c5.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/3d0c3e5e82846b8123eac54ad52465ea54b7dcee.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4396,7 +4396,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/bdeb8fa4b5d34f4e89870b943f03229b492dd460.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/a5a65a1d075a909df19c5fdfbbc6d264fc7c64cb.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4406,7 +4406,7 @@
         "style": [],
         "parameters": [],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/c7f5913b3bee6d462f93a35fcc286ff65a372c0f.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/3a66a13d33126e764b65b5f574d9ab9dd1af0e98.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4416,7 +4416,7 @@
         "style": [],
         "parameters": [],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/f3310c77afee93a32a3330bf042781952fa5e3e7.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/17e0908842989ad77b8694f9b845d8e89a92087d.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4447,7 +4447,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/f6d46871d2d38dbdbae0a0665def8c2e84c77e91.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/401623999554b8f2e9c3a2af5bef7aef8531d365.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4478,7 +4478,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/1389c054a3ed1f0d473a7854943185d5bf647f45.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/8011618a12c124004acb28e45bb67d4765384395.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4509,7 +4509,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/a9cea57208a204f4561215869c083f6fb615e2e8.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/a1c26c054e4f770addbf6f1b62a8eb38498d496f.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4540,7 +4540,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/0f48e1e9c13ca747cff2b969c7fe36a16f8dd12e.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/ab7fa3c114759e93954e322816135294d3d7ce56.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4699,7 +4699,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/17bc357eee4657ea39b6f6d831622a39bf759d97.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/6f9289d3680996119892ac3b623471d8a75e91bc.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4842,7 +4842,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/6d43337f6b27e1ea47a7390114369a7902786458.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/3673e29e2a6fb80605c3e05939c14d0ab773e049.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -4943,7 +4943,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/67fb57383d3a72521026b45eb8e93ab3263a5062.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/2d70688c7722299e657ff37728b0fd121dd8797d.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -5180,7 +5180,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/7ab174f1cf91e95ff2053191a934fa2861f2c87d.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/7cf4d0472c27bdc4d85558394d240fbbabfa5961.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -5349,7 +5349,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/1046257c8617b45fca9579d041f2ab1b546f4732.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/1096970570975b7727ed02ec02e53cca96af0ac5.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -5563,7 +5563,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/78daa53b22f5deef690175a6f94d3b955bdd5cf7.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/9f02064b8403366a28db3d15ebf8e754279a2414.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -5839,7 +5839,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/00b99316ac6a0b662f0973df2d4e8be91ef6c910.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/414381c144148315984d1e79df00ddf901c25753.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -5887,7 +5887,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/39ad11b09c7afe986f2fd306f5d8e782828777dd.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/da4f8b524d96a6e373c511d1add491eb3c4ccaba.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -6018,7 +6018,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/065f270b0b536acae8b50ba668b3c46771aaf716.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/2a65e0d5c68ba222ec8f728110d4469c1fff71f3.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -6103,7 +6103,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/bc7cf4368eb86a8a8d7048257e845034e08a994c.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/8cfba5c9ba1e56039e6c286f004dde8a0740e62b.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -6304,7 +6304,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/0053520023dfe3b0815a6f4cfc8d520ca054c0a1.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/3db4fde8f41a97e0004cf1d677788bcf1ba61989.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -6325,7 +6325,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/da767c09b58ed914b9ea43646e4ddb5338985585.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/977d564e98a19fd2020cc9f28671970f41ffcf1e.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -6346,7 +6346,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/cadac52e719e11d7e5650f9c5f428c103b9d950d.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/92a0b5dfaaddcdb6882d5620cd558d59874dc270.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -6386,7 +6386,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/2c5b92219a6f1901679286732ff220bd9b1ce031.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/2fd4de0eb29e92733a8d73c1744f035666819fd6.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -6496,7 +6496,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/cb35d3820a8a328160aa49a906f7c55cf5e65db6.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/397afbf56eab6661e8b5cc6cd8b9c2dda158fff2.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -6610,7 +6610,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/bb27f4da4da497c106db77fd0560082c3b6f476a.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/df0e4d4ce6f208b129f9cb10bf1d720ffe280de3.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -6620,7 +6620,7 @@
         "style": [],
         "parameters": [],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/d91beaf6a1d1c322a93f1370188b72e180313d1b.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/14904061bc437fed41a1c8117afb4f050e79bf98.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -6857,7 +6857,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/7ab174f1cf91e95ff2053191a934fa2861f2c87d.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/7cf4d0472c27bdc4d85558394d240fbbabfa5961.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -7016,7 +7016,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/17bc357eee4657ea39b6f6d831622a39bf759d97.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/6f9289d3680996119892ac3b623471d8a75e91bc.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -7159,7 +7159,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/0da9ab41c62848980d2556a28509d7287da2d344.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/a66dab617b05850ca9b3e80f29315014c23351bb.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -7260,7 +7260,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/83fad9a05e280396f5a64cb23fd6a25a191b82ec.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/e2df41f2b2bfb9f32b9df00c9fdfac0cc6a2d91d.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -7429,7 +7429,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/1046257c8617b45fca9579d041f2ab1b546f4732.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/1096970570975b7727ed02ec02e53cca96af0ac5.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -7450,7 +7450,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/cb35d3820a8a328160aa49a906f7c55cf5e65db6.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/397afbf56eab6661e8b5cc6cd8b9c2dda158fff2.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -7471,7 +7471,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/a973b2edca0e3159ae92b69c6bd5feea50eb3131.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/e3a801c05485d15699913427087b42dbba510c51.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -7492,7 +7492,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/a973b2edca0e3159ae92b69c6bd5feea50eb3131.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/e3a801c05485d15699913427087b42dbba510c51.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -7513,7 +7513,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/a973b2edca0e3159ae92b69c6bd5feea50eb3131.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/e3a801c05485d15699913427087b42dbba510c51.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -7534,7 +7534,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/bb27f4da4da497c106db77fd0560082c3b6f476a.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/df0e4d4ce6f208b129f9cb10bf1d720ffe280de3.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -7555,7 +7555,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/bb27f4da4da497c106db77fd0560082c3b6f476a.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/df0e4d4ce6f208b129f9cb10bf1d720ffe280de3.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -7769,7 +7769,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/78daa53b22f5deef690175a6f94d3b955bdd5cf7.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/9f02064b8403366a28db3d15ebf8e754279a2414.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -7790,7 +7790,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/bb27f4da4da497c106db77fd0560082c3b6f476a.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/df0e4d4ce6f208b129f9cb10bf1d720ffe280de3.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -7811,7 +7811,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/bb27f4da4da497c106db77fd0560082c3b6f476a.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/df0e4d4ce6f208b129f9cb10bf1d720ffe280de3.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -7832,7 +7832,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/a973b2edca0e3159ae92b69c6bd5feea50eb3131.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/e3a801c05485d15699913427087b42dbba510c51.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -7853,7 +7853,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/a973b2edca0e3159ae92b69c6bd5feea50eb3131.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/e3a801c05485d15699913427087b42dbba510c51.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -8090,7 +8090,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/92214e19959ad78c4fa1bf344e9205028525bcab.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/b5d2cfc385d4adad0f71e724645be2c4db47547a.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -8306,7 +8306,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/21256930789badd8b9ca4569b65d480f95be6981.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/92f3b3d56a576b829c4984d199c1d8e8a4a59dc9.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -8526,7 +8526,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/0d2f5315f78df7479794c41a910fd797dce0e523.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/636fb6a808845fdc081c69565324aa2ce7c77f8c.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -9841,7 +9841,7 @@
               },
               {
                 "description": "排序方式索引值: 0=原始資料, 1=升冪, 2=降冪",
-                "key": "indexOfSortTypeLoop",
+                "key": "indexOfSort",
                 "type": "number",
                 "enums": [],
                 "required": true,
@@ -9947,7 +9947,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/8b5d033b6d4df08a5644212966ce09d341ad6aab.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/ef73ed55dbbee0da7d38f270395b4325a2ce200c.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -10032,7 +10032,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/f03195d5b4f34b942ed659284e492cc7f26696d1.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/96d1b05ea0938b967637d8f53b8cb0ee2874e35c.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -10391,7 +10391,7 @@
                   },
                   {
                     "description": "排序起始位置",
-                    "key": "indexOfSortTypeLoop",
+                    "key": "indexOfSort",
                     "type": "number",
                     "enums": [],
                     "required": false,
@@ -10460,7 +10460,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/e371c32dc272711508f3bd62cf070fa0fdaf2ad2.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/26f52b5694efce38eb6733c4d321a5f7b7f15478.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -10572,7 +10572,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/f0e4da90c7db6bfa425141e01d13b95e28440241.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/085993837f0a3b24a84e51ac283c398010e1e2aa.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -10686,7 +10686,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/ce015d11183e8855ab87cef60e6c1cffa196f85c.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/cfcf9d4e18f62d2ffb8ea5fa1c59ce91720542d3.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -10752,7 +10752,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/ce015d11183e8855ab87cef60e6c1cffa196f85c.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/cfcf9d4e18f62d2ffb8ea5fa1c59ce91720542d3.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -11180,7 +11180,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/a992be8269fa6733d57cc5a1b1ea9c9d7e793650.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/08cf4589d0229a4f6f24dae11bc2f9b76e77994f.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -11544,7 +11544,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/65552bc90ebb049fde361208dea361a7085fcc7c.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/13259dac03e097ca823293efea6b82e79db60664.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -11564,7 +11564,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/f774392d40c691ef9a502c85964ff18a04490029.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/163ac216ea09efcef88aa4276c7cd230f0393419.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -11721,7 +11721,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/cb35d3820a8a328160aa49a906f7c55cf5e65db6.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/397afbf56eab6661e8b5cc6cd8b9c2dda158fff2.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -11988,7 +11988,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/d87589fefcd6054c8abef35059b246e0391c2d26.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/45e61ddb241da86653b295556c417b3802c0ef1e.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -12324,7 +12324,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/2c5b92219a6f1901679286732ff220bd9b1ce031.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/2fd4de0eb29e92733a8d73c1744f035666819fd6.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -12607,7 +12607,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/dde552d91832c9be3555d6aa2cb83053336d9a57.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/c99b8007852db7249f0c5512f3449158b6b854da.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -12628,7 +12628,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/391b733814828bc36d5d10bb68fa55cd4ea4811a.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/08eca73004df4b1768612e14af0e8b74f171fce0.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -12657,7 +12657,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/4ce581c813c203b3a68e9e3d3972eac52ef3ecbb.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/fd833f2fb13a5fb8f3020c7b3d6848d617888cec.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -12789,7 +12789,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/7cc6e4acfde48d22565117a056780eaa0a647f1a.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/051ca82d5416c0ffd1a0a2c3a97de1a988958ccf.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -12818,7 +12818,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/f955dd7afde863e88550072ae31a1a01eab9d968.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/6ed2cc4d3db2bed87394398a78c9590af34c394f.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -13164,7 +13164,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/7cc6e4acfde48d22565117a056780eaa0a647f1a.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/051ca82d5416c0ffd1a0a2c3a97de1a988958ccf.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -13527,7 +13527,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/79d8ebb3fe43346e8c7527b6d47a7255c43860d7.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/e1882da386ce8f67626b5fd5c0c9eed73304b152.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -13593,7 +13593,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/c0c34f40529b9119db1420b71639dfa46867521c.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/580181b9ec371c0db84573a5e504c4a675677c51.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -13686,7 +13686,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/dcc350dd55cbec06f7ebf9ff66a5f79e4a595fce.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/c7f11734240532caa4ca4dbfaf6f6a060f368cb1.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -13751,7 +13751,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/73981cc8fdabda517def7c6f774780ec5a8e7d53.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/6e4a688f08ad1ce88a44b2ac598a16326c720605.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -13908,7 +13908,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/88810062e747543e7523d97fd1263147ab7949a0.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/4bca7a7d0589aca6538f70932219c109c99ea923.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -13937,7 +13937,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/5e2822800c75a74ed2ee0387d5bbf7dc46154f99.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/63c9a3506c17e80ab8604c107d36acda49c9c05d.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -14074,7 +14074,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/037d5c02d1d4df79912c8421bdc6a5b56b5de2cc.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/a673656310434c38f88c1007edea5c1db8d16169.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -14212,7 +14212,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/71d95901471dcaebc34962f7798980660f88e1e0.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/65fdc4ab8a48cbdac489fa1f90cc8a3f9164f410.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -14333,7 +14333,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/9be6bf190313399b3a7c6dbae7dc62d828e675f6.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/b42e1fb0dc7c77282a76ce198b851c5dce876c5b.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -14436,7 +14436,7 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/e43f070c909b9c0aba00bf28b91f3c12df19a249.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/c80eb57416296df4c15841ae83075dde9852ca6f.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -14451,6 +14451,15 @@
             "type": "string",
             "enums": [],
             "required": true,
+            "object": [],
+            "arrayObject": []
+          },
+          {
+            "description": "[狀態] 圖表手勢",
+            "key": "stateChartGesture",
+            "type": "string",
+            "enums": [],
+            "required": false,
             "object": [],
             "arrayObject": []
           },
@@ -14662,7 +14671,232 @@
           }
         ],
         "category": "交易",
-        "img": "https://devpages.cmoney.tw/api/img/3fcdb1ab0bb5e6537d880738d97fa374f99e66d7.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/59c41ba3a04eab7db8151e5cba5dbd97b8468978.jpg",
+        "trial": [],
+        "theme": [],
+        "testCases": []
+      },
+      {
+        "name": "自定義K線副圖",
+        "style": [],
+        "parameters": [
+          {
+            "description": "[收狀態] 代號",
+            "key": "stateTargetKey",
+            "type": "string",
+            "enums": [],
+            "required": true,
+            "object": [],
+            "arrayObject": []
+          },
+          {
+            "description": "[狀態] 圖表手勢",
+            "key": "stateChartGesture",
+            "type": "string",
+            "enums": [],
+            "required": false,
+            "object": [],
+            "arrayObject": []
+          },
+          {
+            "description": "預設顯示根數",
+            "key": "defaultVisibleCount",
+            "type": "number",
+            "default": 60,
+            "enums": [],
+            "required": false,
+            "object": [],
+            "arrayObject": []
+          },
+          {
+            "description": "最多顯示根數",
+            "key": "maximumDisplayCount",
+            "type": "number",
+            "default": 250,
+            "enums": [],
+            "required": false,
+            "object": [],
+            "arrayObject": []
+          },
+          {
+            "description": "Y軸標籤數量",
+            "key": "yAxisLabelCount",
+            "type": "number",
+            "default": 3,
+            "enums": [],
+            "required": false,
+            "object": [],
+            "arrayObject": []
+          },
+          {
+            "description": "副圖選項陣列",
+            "key": "subChartOptions",
+            "type": "arrayObject",
+            "enums": [],
+            "required": true,
+            "arrayObject": [
+              {
+                "description": "選項顯示名稱",
+                "key": "displayName",
+                "type": "string",
+                "enums": [],
+                "required": true,
+                "object": [],
+                "arrayObject": []
+              },
+              {
+                "description": "資料源陣列",
+                "key": "dataSources",
+                "type": "arrayObject",
+                "enums": [],
+                "required": true,
+                "arrayObject": [
+                  {
+                    "description": "資料源名稱",
+                    "key": "name",
+                    "type": "string",
+                    "enums": [],
+                    "required": false,
+                    "object": [],
+                    "arrayObject": []
+                  },
+                  {
+                    "description": "資料源參數",
+                    "key": "sourceParameters",
+                    "type": "json",
+                    "enums": [],
+                    "required": false,
+                    "object": [],
+                    "arrayObject": []
+                  },
+                  {
+                    "description": "主鍵欄位名稱",
+                    "key": "primaryKey",
+                    "type": "string",
+                    "enums": [],
+                    "required": false,
+                    "object": [],
+                    "arrayObject": []
+                  },
+                  {
+                    "description": "原始日期格式",
+                    "key": "dateFormat",
+                    "type": "string",
+                    "enums": [],
+                    "required": false,
+                    "object": [],
+                    "arrayObject": []
+                  }
+                ],
+                "object": []
+              },
+              {
+                "description": "畫線陣列",
+                "key": "lines",
+                "type": "arrayObject",
+                "enums": [],
+                "required": true,
+                "arrayObject": [
+                  {
+                    "description": "數值欄位名稱",
+                    "key": "valueColumn",
+                    "type": "string",
+                    "enums": [],
+                    "required": false,
+                    "object": [],
+                    "arrayObject": []
+                  },
+                  {
+                    "description": "查價標題顏色 key",
+                    "key": "displayNameColor",
+                    "type": "string",
+                    "enums": [],
+                    "required": false,
+                    "object": [],
+                    "arrayObject": []
+                  },
+                  {
+                    "description": "查價數值顏色 key",
+                    "key": "displayValueColor",
+                    "type": "string",
+                    "enums": [],
+                    "required": false,
+                    "object": [],
+                    "arrayObject": []
+                  },
+                  {
+                    "description": "查價顯示格式",
+                    "key": "displayPattern",
+                    "type": "string",
+                    "enums": [],
+                    "required": false,
+                    "object": [],
+                    "arrayObject": []
+                  },
+                  {
+                    "description": "小數位數",
+                    "key": "formatDigit",
+                    "type": "number",
+                    "enums": [],
+                    "required": false,
+                    "object": [],
+                    "arrayObject": []
+                  },
+                  {
+                    "description": "線條顏色 key",
+                    "key": "color",
+                    "type": "string",
+                    "enums": [],
+                    "required": false,
+                    "object": [],
+                    "arrayObject": []
+                  },
+                  {
+                    "description": "顏色區間設定",
+                    "key": "colorRanges",
+                    "type": "arrayObject",
+                    "enums": [],
+                    "required": false,
+                    "arrayObject": [
+                      {
+                        "description": "最小值（包含）",
+                        "key": "min",
+                        "type": "number",
+                        "enums": [],
+                        "required": false,
+                        "object": [],
+                        "arrayObject": []
+                      },
+                      {
+                        "description": "最大值（不含）",
+                        "key": "max",
+                        "type": "number",
+                        "enums": [],
+                        "required": false,
+                        "object": [],
+                        "arrayObject": []
+                      },
+                      {
+                        "description": "顏色 key",
+                        "key": "color",
+                        "type": "string",
+                        "enums": [],
+                        "required": true,
+                        "object": [],
+                        "arrayObject": []
+                      }
+                    ],
+                    "object": []
+                  }
+                ],
+                "object": []
+              }
+            ],
+            "object": []
+          }
+        ],
+        "category": "交易",
+        "img": "https://devpages.cmoney.tw/api/img/3696cca9e76e64210e4a4d9953090d8aed1ed4dc.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -14765,7 +14999,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/244067f26a7bbf13532dea60db161628ebba3224.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/dc55c0e4e0d10ba847465bd5a553d81d6664f0fa.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -14843,7 +15077,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/3fd050e0ca1d2e63f99b6febb824c732620792f9.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/4b412db2dd7facaa1ac7e296aee693659329d425.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -14921,7 +15155,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/11bbe4cd48930b062ee2c4cd296f0c042d6aadf3.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/03924791cf6fcb7d8e7462c60728689d1a4f8d8d.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -14959,7 +15193,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/6d1a2d16b8f680783ff0b7bcb7389565b4e0685c.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/dff3d35919c432f2f1993e4f12779528fb8e2045.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -15070,7 +15304,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/34d16336696592e2f0a714e7847147a4a937cc85.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/1e41b2d173dd7ea237aaa37b76e752685a26a643.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -15180,7 +15414,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/cfde0eee295f756fd2d820f107cf3883aea6f5f9.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/c89b7cb5b840b72bb3991275aedd585642a085aa.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -15227,7 +15461,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/302af2990af20a0f5fbf47daa917dd9cca446a4f.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/52dc4a2d6eb7d3594e59a00c5d7a8dff6e0a19e1.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -15265,7 +15499,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/11e910feb84204cdce634fd8d3e54c1819fa4320.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/d041ebb3974a23a92bc294bc04fdf91f5337b774.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -15339,7 +15573,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/7cb282d5baf55ef5ed1fa0f467de72e4eeee2fad.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/538d2ccfd7d9d13f8b2663b1541a3aac4e1621b2.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -15370,7 +15604,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/3f81d3343351110cbc70b1c3b107bb724a8ed237.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/8e87944fc20e6acc04426cefbf4bb7b26ea90d17.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -15427,7 +15661,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/45c26b94275fc5b02f924ecb20a1dabf80c7e204.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/655a06d11a1539bfd3134290539f8284925ebb61.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -15447,7 +15681,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/9208c5ef12a9083318fea9efda006efc333fbe59.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/160c9a62481927b9431afe58c1207c8e8faecc6b.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -15468,7 +15702,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/0486b4696af7d1395a938bd3e5c9f4cf62925ebe.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/fa58462e994fec19faad90348e4029ad261e868d.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -15524,7 +15758,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/c9394d8c51ba5b2351b6147fb8499ff5725d2b6e.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/8dcc9ce4d5450c3c3ce2944c9be04f2a84c28191.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -15658,7 +15892,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/2c5b92219a6f1901679286732ff220bd9b1ce031.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/2fd4de0eb29e92733a8d73c1744f035666819fd6.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -15688,7 +15922,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/d517e128bba406564597d1c94c825582425e09af.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/ee52ba41ac88bd4521da53c4f66158429777d36e.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -15717,7 +15951,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/2c5b92219a6f1901679286732ff220bd9b1ce031.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/2fd4de0eb29e92733a8d73c1744f035666819fd6.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -15764,7 +15998,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/3d749e98f925a73713e7d6cb2c8a9b65b45fcc16.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/69012ffa884caa5b3c8baf1ef6e56f8e6b2d61e3.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -15820,7 +16054,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/4f2570d7b6831015e81bc4a683caad7dd62431e7.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/99ce491d64ab6f761f1a16ea5643bbee78ae8b67.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -15840,7 +16074,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/cb35d3820a8a328160aa49a906f7c55cf5e65db6.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/397afbf56eab6661e8b5cc6cd8b9c2dda158fff2.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -15850,7 +16084,7 @@
         "style": [],
         "parameters": [],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/c4d2c05290a39307d042878b7e03c933398b0720.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/16615b3ed77baa33be39e03c7589ad880918a6c5.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -16231,7 +16465,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/012ed45dc1e569c32dc715daf6fd89159fe9edc4.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/c3fa533ad1117796e8c78b1722a8bb23aaf6f337.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -16314,7 +16548,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/21f8edd66a314eb732db69e72c99894aa79ca506.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/8e0253bc33247d4e7d50f77b8f692cad15a1e05d.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -16389,7 +16623,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/cb35d3820a8a328160aa49a906f7c55cf5e65db6.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/397afbf56eab6661e8b5cc6cd8b9c2dda158fff2.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -16463,7 +16697,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/03aeb07921163dd375de86828cffa0ff96856c12.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/e5c6950ad6451bb53791cd3e1f261c93f6233b69.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -16492,7 +16726,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/3b78955987c9518df583e2a0d7d2202108b2d783.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/ac311a5dd0a227e6a281404254e50810e1f7999b.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -16558,7 +16792,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/a0b6f8ba4671f332c03f760796725b1c896c03ed.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/a88d56fb88ea796dd5eac05309006f4f98f790d2.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -16766,7 +17000,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/edb36d470569f918c9818dd04034e42a20fb532a.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/f1e8afb6d7319bc979fc143c5967190be4b7494c.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -16822,7 +17056,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/29ed6ef099169b4f93baa482511be4b71eef401c.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/49c4705eccc9cb373446318b79e182e842716dbc.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -16860,7 +17094,7 @@
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/bb27f4da4da497c106db77fd0560082c3b6f476a.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/df0e4d4ce6f208b129f9cb10bf1d720ffe280de3.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -17304,7 +17538,7 @@
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/24bc1339e11140acd9a3f7e87b8a1aa2a2edcbd2.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/18e4d1d69d119f088f3698ad12c3742ba089f137.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -17802,7 +18036,7 @@
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/53670b4a1ae06a40511d0fc890aa0a95e2b6d1fd.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/3cbaf0c2f5369bf450e21b285e72bf7fa9d9e330.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -18539,7 +18773,7 @@
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/a80fb8e32b7bf49baff0bfa938846e57d098d24c.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/b99aa561c05fa1e92fa5dbfc424468f46e2c2deb.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -18847,7 +19081,7 @@
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/4fb6e7ac186c456540b5336966849dcca35126b7.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/8be440f751dfaacc55aff53ecff78662039d75fd.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -18894,7 +19128,7 @@
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/1c47a8335e8a0f72cd0105903f95c00f2e9fdc23.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/d236b4543028a19661bad9d18336ccbeb350c85a.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -18940,15 +19174,6 @@
             "arrayObject": []
           },
           {
-            "description": "[送狀態]鎖頭吐司",
-            "key": "stateShowLockedToast",
-            "type": "string",
-            "enums": [],
-            "required": true,
-            "object": [],
-            "arrayObject": []
-          },
-          {
             "description": "跳轉看板頁面的 UUID",
             "key": "uuidRedirectByBoard",
             "type": "string",
@@ -18967,53 +19192,26 @@
             "arrayObject": []
           },
           {
-            "description": "看板未上鎖徽章圖示資源名稱",
-            "key": "boardUnlockedBadgeIconRes",
-            "type": "string",
+            "description": "Badge icon 對應表，根據 authType + subjectId 組合匹配決定 icon",
+            "key": "authorizationConfigs",
+            "type": "arrayObject",
             "enums": [],
             "required": false,
-            "object": [],
-            "arrayObject": []
+            "arrayObject": [],
+            "object": []
           },
           {
-            "description": "看板上鎖徽章圖示資源名稱",
-            "key": "boardLockedBadgeIconRes",
-            "type": "string",
+            "description": "分類配置列表，決定看板/聊天室的排版分組",
+            "key": "sections",
+            "type": "arrayObject",
             "enums": [],
             "required": false,
-            "object": [],
-            "arrayObject": []
+            "arrayObject": [],
+            "object": []
           },
           {
-            "description": "聊天室未上鎖徽章圖示資源名稱",
-            "key": "chatroomUnlockedBadgeIconRes",
-            "type": "string",
-            "enums": [],
-            "required": false,
-            "object": [],
-            "arrayObject": []
-          },
-          {
-            "description": "聊天室上鎖徽章圖示資源名稱",
-            "key": "chatroomLockedBadgeIconRes",
-            "type": "string",
-            "enums": [],
-            "required": false,
-            "object": [],
-            "arrayObject": []
-          },
-          {
-            "description": "看板區塊標題",
-            "key": "displayBoardSectionTitle",
-            "type": "string",
-            "enums": [],
-            "required": true,
-            "object": [],
-            "arrayObject": []
-          },
-          {
-            "description": "聊天室區塊標題",
-            "key": "displayChatroomSectionTitle",
+            "description": "未被分類到的項目所屬的區塊標題",
+            "key": "displayOtherSectionTitle",
             "type": "string",
             "enums": [],
             "required": true,
@@ -19058,7 +19256,7 @@
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/a5b840f93b7048213e9ad6d95154eea70d102251.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/21fa963219730b807f5e6b16a5418487d489b9ab.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -19888,7 +20086,7 @@
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/8a0ce3a513ed67cc94bf32e81ae8e89e4584121e.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/1b0ddf1248c0cfa28017921883c04104c8d63975.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -20718,10 +20916,19 @@
             "required": false,
             "object": [],
             "arrayObject": []
+          },
+          {
+            "description": "訂閱跳轉設定，根據 authType + subjectId 匹配決定遮罩圖片與跳轉 uuid redirect",
+            "key": "subscribeUuidRedirectConfigs",
+            "type": "arrayObject",
+            "enums": [],
+            "required": false,
+            "arrayObject": [],
+            "object": []
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/cb35d3820a8a328160aa49a906f7c55cf5e65db6.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/397afbf56eab6661e8b5cc6cd8b9c2dda158fff2.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -21556,7 +21763,7 @@
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/69912b9ebf47965310603e7e4824361b7ad06eb9.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/91867dcbec88c893cdd9994682aef1cd0257e6da.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -21993,7 +22200,7 @@
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/f380199cd7dfdd06afc9ba6aa314ad9f3b62bf89.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/5318ab22e64882e378a0aed0dd2506e04ea87708.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -22379,7 +22586,7 @@
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/f62f8f366b5692200cf2cc12eceb7bfb29764054.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/5b50531f3b3cdcc6bfb1269c176f5ac58eac6b96.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -22999,7 +23206,7 @@
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/c4cad0d1d1bf9d771383c66f3bb3af81990a2f0c.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/e470e5c2ac2409202ddeab072ecce46dae5ee5fc.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -23619,7 +23826,7 @@
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/c4cad0d1d1bf9d771383c66f3bb3af81990a2f0c.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/e470e5c2ac2409202ddeab072ecce46dae5ee5fc.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -23756,7 +23963,7 @@
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/cb35d3820a8a328160aa49a906f7c55cf5e65db6.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/397afbf56eab6661e8b5cc6cd8b9c2dda158fff2.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -23949,7 +24156,7 @@
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/b41cc2313285fdc2a4992084b35632d9f1b5f5a9.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/7dbe793ac59151726465849228163c50d9e60b4a.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -24052,7 +24259,7 @@
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/cb35d3820a8a328160aa49a906f7c55cf5e65db6.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/397afbf56eab6661e8b5cc6cd8b9c2dda158fff2.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -24102,7 +24309,7 @@
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/cb35d3820a8a328160aa49a906f7c55cf5e65db6.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/397afbf56eab6661e8b5cc6cd8b9c2dda158fff2.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -24446,7 +24653,7 @@
           }
         ],
         "category": "社團",
-        "img": "https://devpages.cmoney.tw/api/img/a973b2edca0e3159ae92b69c6bd5feea50eb3131.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/e3a801c05485d15699913427087b42dbba510c51.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -24812,48 +25019,58 @@
             "arrayObject": []
           },
           {
-            "description": "您所在的地區？",
-            "key": "displayCourseInfoPopupTitle",
-            "type": "string",
+            "description": "地區選擇彈窗設定，為空則跳過彈窗直接前往台灣購買頁",
+            "key": "displayCourseInfoPopupContent",
+            "type": "object",
             "enums": [],
-            "required": true,
-            "object": [],
-            "arrayObject": []
-          },
-          {
-            "description": "將根據地區為您提供此課程的詳細資訊與購買管道",
-            "key": "displayCourseInfoPopupSubtitle",
-            "type": "string",
-            "enums": [],
-            "required": true,
-            "object": [],
-            "arrayObject": []
-          },
-          {
-            "description": "台灣",
-            "key": "displayCourseInfoPopupTaiwanDomainButtonTitle",
-            "type": "string",
-            "enums": [],
-            "required": true,
-            "object": [],
-            "arrayObject": []
-          },
-          {
-            "description": "台灣以外",
-            "key": "displayCourseInfoPopupOverseaDomainButtonTitle",
-            "type": "string",
-            "enums": [],
-            "required": true,
-            "object": [],
-            "arrayObject": []
-          },
-          {
-            "description": "取消",
-            "key": "displayCourseInfoPopupCancelButtonTitle",
-            "type": "string",
-            "enums": [],
-            "required": true,
-            "object": [],
+            "required": false,
+            "object": [
+              {
+                "description": "您所在的地區？",
+                "key": "displayCourseInfoPopupTitle",
+                "type": "string",
+                "enums": [],
+                "required": true,
+                "object": [],
+                "arrayObject": []
+              },
+              {
+                "description": "將根據地區為您提供此課程的詳細資訊與購買管道",
+                "key": "displayCourseInfoPopupSubtitle",
+                "type": "string",
+                "enums": [],
+                "required": true,
+                "object": [],
+                "arrayObject": []
+              },
+              {
+                "description": "台灣",
+                "key": "displayCourseInfoPopupTaiwanDomainButtonTitle",
+                "type": "string",
+                "enums": [],
+                "required": true,
+                "object": [],
+                "arrayObject": []
+              },
+              {
+                "description": "台灣以外",
+                "key": "displayCourseInfoPopupOverseaDomainButtonTitle",
+                "type": "string",
+                "enums": [],
+                "required": true,
+                "object": [],
+                "arrayObject": []
+              },
+              {
+                "description": "取消",
+                "key": "displayCourseInfoPopupCancelButtonTitle",
+                "type": "string",
+                "enums": [],
+                "required": true,
+                "object": [],
+                "arrayObject": []
+              }
+            ],
             "arrayObject": []
           },
           {
@@ -24894,7 +25111,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/0f46fda8bcf2297296107323c53eb98a15cd8656.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/6935c5716e92b9e1da6a640c67c4c8d7258d8e4b.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -24949,10 +25166,127 @@
             "required": true,
             "object": [],
             "arrayObject": []
+          },
+          {
+            "description": "載入中文字",
+            "key": "displayLoadingText",
+            "type": "string",
+            "enums": [],
+            "required": true,
+            "object": [],
+            "arrayObject": []
+          },
+          {
+            "description": "文章不存在或已下架的錯誤標題",
+            "key": "displayClientErrorTitle",
+            "type": "string",
+            "enums": [],
+            "required": true,
+            "object": [],
+            "arrayObject": []
+          },
+          {
+            "description": "文章不存在或已下架的錯誤描述",
+            "key": "displayClientErrorSubtitle",
+            "type": "string",
+            "enums": [],
+            "required": true,
+            "object": [],
+            "arrayObject": []
+          },
+          {
+            "description": "文章不存在或已下架的按鈕文字",
+            "key": "displayClientErrorButtonText",
+            "type": "string",
+            "enums": [],
+            "required": true,
+            "object": [],
+            "arrayObject": []
+          },
+          {
+            "description": "伺服器錯誤標題",
+            "key": "displayServerErrorTitle",
+            "type": "string",
+            "enums": [],
+            "required": true,
+            "object": [],
+            "arrayObject": []
+          },
+          {
+            "description": "伺服器錯誤描述",
+            "key": "displayServerErrorSubtitle",
+            "type": "string",
+            "enums": [],
+            "required": true,
+            "object": [],
+            "arrayObject": []
+          },
+          {
+            "description": "伺服器錯誤按鈕文字",
+            "key": "displayServerErrorButtonText",
+            "type": "string",
+            "enums": [],
+            "required": true,
+            "object": [],
+            "arrayObject": []
+          },
+          {
+            "description": "網路錯誤標題",
+            "key": "displayNetworkErrorTitle",
+            "type": "string",
+            "enums": [],
+            "required": true,
+            "object": [],
+            "arrayObject": []
+          },
+          {
+            "description": "網路錯誤描述",
+            "key": "displayNetworkErrorSubtitle",
+            "type": "string",
+            "enums": [],
+            "required": true,
+            "object": [],
+            "arrayObject": []
+          },
+          {
+            "description": "網路錯誤按鈕文字",
+            "key": "displayNetworkErrorButtonText",
+            "type": "string",
+            "enums": [],
+            "required": true,
+            "object": [],
+            "arrayObject": []
+          },
+          {
+            "description": "付費文章遮罩標題",
+            "key": "displayMaskTitle",
+            "type": "string",
+            "enums": [],
+            "required": true,
+            "object": [],
+            "arrayObject": []
+          },
+          {
+            "description": "付費文章遮罩描述",
+            "key": "displayMaskDescription",
+            "type": "string",
+            "enums": [],
+            "required": true,
+            "object": [],
+            "arrayObject": []
+          },
+          {
+            "description": "最後更新時間前綴文字",
+            "key": "displayLastUpdatePrefix",
+            "type": "string",
+            "enums": [],
+            "required": true,
+            "object": [],
+            "arrayObject": []
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/0ee90009cbd98e08822e5b933980dc0463bf8678.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/3910e58554b01f955e41aaa3f6be45a1ef9b33c5.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -25028,7 +25362,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/f804201c0006bd7133c50cf11f462695e36d1ff5.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/10bc8bdead469bc67bc2547f77e316a22cf33bad.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -25094,7 +25428,7 @@
           }
         ],
         "category": "用戶",
-        "img": "https://devpages.cmoney.tw/api/img/9947fefce4fda2d3806b4525637fc49dd1007507.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/47abc27df8e0823622b68c25015b1d0fc1806a60.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -25115,7 +25449,7 @@
           }
         ],
         "category": "到價通知",
-        "img": "https://devpages.cmoney.tw/api/img/47c9b57b1567a653dddef028162a8b0c9812d17b.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/f3504eba25e689890529b7faeac61066c1347b2e.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -25136,7 +25470,7 @@
           }
         ],
         "category": "到價通知",
-        "img": "https://devpages.cmoney.tw/api/img/7bcae58fc9d6fdc12dd78ce99f7662ce53c54dc7.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/a192f76e5e4cc6c05ce5d8a06cdc47e4bbb473de.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -25175,7 +25509,7 @@
           }
         ],
         "category": "到價通知",
-        "img": "https://devpages.cmoney.tw/api/img/163ffd15a341d6cb339319ced9e42cd040df2a53.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/d08a521909075fe9844769a4bc69e0012d297c75.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -25224,7 +25558,7 @@
           }
         ],
         "category": "到價通知",
-        "img": "https://devpages.cmoney.tw/api/img/cb35d3820a8a328160aa49a906f7c55cf5e65db6.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/397afbf56eab6661e8b5cc6cd8b9c2dda158fff2.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -25404,7 +25738,7 @@
           }
         ],
         "category": "狀態",
-        "img": "https://devpages.cmoney.tw/api/img/2c5b92219a6f1901679286732ff220bd9b1ce031.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/2fd4de0eb29e92733a8d73c1744f035666819fd6.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -25554,7 +25888,7 @@
           }
         ],
         "category": "K線",
-        "img": "https://devpages.cmoney.tw/api/img/8db5a134e23e4a189d5340bd6037216125582b7f.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/9fc781148440ef2431fad180edb36de4fba6dda5.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -25795,7 +26129,7 @@
           }
         ],
         "category": "K線",
-        "img": "https://devpages.cmoney.tw/api/img/9d0ac3c5eaca94e147b1eda4fc19431b0cf9638b.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/756ac798f395bd75c502b1b21e62f560ebeb3bef.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -25990,7 +26324,7 @@
           }
         ],
         "category": "K線",
-        "img": "https://devpages.cmoney.tw/api/img/691969e01927304ef7ee85cbc539ac7402dc552b.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/f6305e35d7f4fc317640e75a5338cb4b4f7367f2.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -26066,7 +26400,7 @@
           }
         ],
         "category": "K線",
-        "img": "https://devpages.cmoney.tw/api/img/14a916d9558759b00d278c8f9ed8015d89b93373.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/3ee2a2f1c48873c34550d3c61f76674e0c7fddc8.jpg",
         "trial": [],
         "theme": [],
         "testCases": []
@@ -26141,7 +26475,7 @@
           }
         ],
         "category": "登入",
-        "img": "https://devpages.cmoney.tw/api/img/2c5b92219a6f1901679286732ff220bd9b1ce031.jpg",
+        "img": "https://devpages.cmoney.tw/api/img/2fd4de0eb29e92733a8d73c1744f035666819fd6.jpg",
         "trial": [],
         "theme": [],
         "testCases": []

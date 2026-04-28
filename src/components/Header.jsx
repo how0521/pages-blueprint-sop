@@ -119,10 +119,10 @@ export default function Header({ view, onSetView, isDark, onToggleTheme }) {
             </div>
             <div>
               <h1 className="text-gray-900 dark:text-slate-100 font-bold text-base leading-tight tracking-tight">
-                PAGEs Blueprint 升版 SOP 導航站
+                PAGEs Blueprint DevKit
               </h1>
               <p className="text-gray-500 dark:text-slate-500 text-xs leading-none mt-0.5">
-                版本升級流程管理系統
+                Blueprint 工具站
                 <span className="ml-1.5 text-gray-400 dark:text-slate-600">v{__APP_VERSION__}</span>
               </p>
             </div>
