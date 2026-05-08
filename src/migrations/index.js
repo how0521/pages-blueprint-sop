@@ -1068,9 +1068,26 @@ const migrateToV3_34 = passThrough;
 // ─── v3.34 → v3.35 (pass-through) ───────────────────────────────────────────
 const migrateToV3_35 = passThrough;
 
-// ─── v3.35 → v3.36 (config only) ──────────────────────────────────────────────────────────
+// ─── v3.35 → v3.36 ──────────────────────────────────────────────────────────
 function migrateToV3_36(blueprint) {
-  return addToBlueprint(blueprint, configV3_36);
+  addToBlueprint(blueprint, configV3_36);
+  if (blueprint.pages) findAndUpdateV3_36(blueprint.pages);
+  return blueprint;
+}
+
+function findAndUpdateV3_36(subcomponents) {
+  for (const component of subcomponents) {
+    if (typeof component !== 'object' || component === null) continue;
+    if (!('name' in component)) continue;
+    if (!('parameters' in component)) component.parameters = {};
+
+    if (component.name === '影音直播列表') {
+      delete component.parameters.streamEndedBroadcasterLeft;
+    }
+
+    if (component.subComponents) findAndUpdateV3_36(component.subComponents);
+  }
+  return subcomponents;
 }
 
 // ─── Version dictionary (matches Python's version_dict) ──────────────────────

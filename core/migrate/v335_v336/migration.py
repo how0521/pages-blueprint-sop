@@ -34,10 +34,26 @@ class Migration(AutoMigration):
         blueprint_adder = BlueprintAdder()
         result = blueprint_adder.add_to_blueprint(blueprint, config=config)
 
+        if result.get('pages'):
+            self.find_component_and_update(result['pages'], config)
+
         return result
 
     def targetVersion(self) -> str:
         return "3.36.0"
 
     def find_component_and_update(self, subcomponents: list, config: dict) -> list:
-        pass
+        for component in subcomponents:
+            if not isinstance(component, dict):
+                continue
+            if 'name' not in component:
+                continue
+
+            if component['name'] == '影音直播列表':
+                params = component.get('parameters', {})
+                params.pop('streamEndedBroadcasterLeft', None)
+
+            if 'subComponents' in component:
+                self.find_component_and_update(component['subComponents'], config)
+
+        return subcomponents

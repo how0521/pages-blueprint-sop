@@ -678,6 +678,6 @@
     "displayVipPermissionTagText": "VIP",
     "displaySwitchingPermissionTagText": "Switching",
     "displayPermissionAlreadyVipToastMessage": "This live stream is already VIP, permission cannot be changed",
-    "displayStreamEndedBroadcasterLeft": "The host has left the live stream",
+    "displayStreamEndedBroadcasterLeft": "The host has ended the chat. The live stream is closed.",
     "displayLimitedTimeEndedText": "Limited-time broadcast ended"
 }

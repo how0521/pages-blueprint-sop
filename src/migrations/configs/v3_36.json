@@ -79,7 +79,11 @@
     "影音直播列表": {
         "parameters": {
             "displayStreamEndedBroadcasterLeft": "{{displayStreamEndedBroadcasterLeft}}",
-            "displayLimitedTimeEndedText": "{{displayLimitedTimeEndedText}}"
+            "displayLimitedTimeEndedText": "{{displayLimitedTimeEndedText}}",
+            "statePromoteScenario": "statePromoteScenario",
+            "promoteScenarioKickedOut": "vls_kicked_out",
+            "promoteScenarioNativeVipItemTapped": "vls_native_vip_tapped",
+            "promoteScenarioSwitchedItemTapped": "vls_switched_item_tapped"
         }
     }
 }

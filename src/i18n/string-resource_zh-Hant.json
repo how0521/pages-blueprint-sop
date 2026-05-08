@@ -678,6 +678,6 @@
     "displayVipPermissionTagText": "VIP",
     "displaySwitchingPermissionTagText": "切換中",
     "displayPermissionAlreadyVipToastMessage": "本場直播已是 VIP 場，無法變更權限",
-    "displayStreamEndedBroadcasterLeft": "直播主已離開直播間",
+    "displayStreamEndedBroadcasterLeft": "主持人已結束聊天，直播已關閉。",
     "displayLimitedTimeEndedText": "限時公開已結束"
 }
