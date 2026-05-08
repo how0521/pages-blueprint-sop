@@ -1,0 +1,85 @@
+{
+    "美股總體事件頁": {
+        "parameters": {
+            "displayEstimate": "{{displayEstimate}}",
+            "displayActual": "{{displayActual}}",
+            "displayPrevious": "{{displayPrevious}}",
+            "displayYesterday": "{{displayYesterday}}",
+            "displayToday": "{{displayToday}}",
+            "displayTomorrow": "{{displayTomorrow}}",
+            "displayErrorRetry": "{{displayErrorRetry}}"
+        }
+    },
+    "美股個股財報事件頁": {
+        "parameters": {
+            "displayYesterday": "{{displayYesterday}}",
+            "displayToday": "{{displayToday}}",
+            "displayTomorrow": "{{displayTomorrow}}",
+            "displayFilterNoLimit": "{{displayFilterNoLimit}}",
+            "displayFilterMajorIndex": "{{displayFilterMajorIndex}}",
+            "displayFilterWatchlist": "{{displayFilterWatchlist}}",
+            "displayIndexDowJones": "{{displayIndexDowJones}}",
+            "displayIndexSP500": "{{displayIndexSP500}}",
+            "displayIndexNasdaq": "{{displayIndexNasdaq}}",
+            "displayIndexPhilaSemi": "{{displayIndexPhilaSemi}}",
+            "displayErrorRetry": "{{displayErrorRetry}}"
+        }
+    },
+    "購買頁": {
+        "parameters": {
+            "displayBottomSheetPromoCode": "{{displayBottomSheetPromoCode}}",
+            "displayBottomSheetCopied": "{{displayBottomSheetCopied}}",
+            "displayBottomSheetCancel": "{{displayBottomSheetCancel}}",
+            "displayBottomSheetUpgrade": "{{displayBottomSheetUpgrade}}",
+            "displayBottomSheetToast": "{{displayBottomSheetToast}}"
+        }
+    },
+    "推播通知彈窗": {
+        "parameters": {
+            "displaySubtitle": "{{displaySubtitle}}",
+            "displayCTAButtonTitle": "{{displayCTAButtonTitle}}"
+        }
+    },
+    "推播通知底部彈窗": {
+        "parameters": {
+            "displaySoftReminderTitle": "{{displaySoftReminderTitle}}",
+            "displaySoftReminderPrimaryButtonTitle": "{{displaySoftReminderPrimaryButtonTitle}}",
+            "displaySoftReminderSecondaryButtonTitle": "{{displaySoftReminderSecondaryButtonTitle}}",
+            "displayFinalConfirmationTitle": "{{displayFinalConfirmationTitle}}",
+            "displayFinalConfirmationPrimaryButtonTitle": "{{displayFinalConfirmationPrimaryButtonTitle}}",
+            "displayFinalConfirmationSecondaryButtonTitle": "{{displayFinalConfirmationSecondaryButtonTitle}}",
+            "displayToastMessage": "{{displayToastMessage}}"
+        }
+    },
+    "語音聊天室頁": {
+        "parameters": {
+            "displayNetworkQualityDetectingMessage": "{{displayNetworkQualityDetectingMessage}}",
+            "displayNetworkQualityGoodMessage": "{{displayNetworkQualityGoodMessage}}",
+            "displayNetworkQualityPoorMessage": "{{displayNetworkQualityPoorMessage}}",
+            "displayNetworkQualityCriticalMessage": "{{displayNetworkQualityCriticalMessage}}"
+        }
+    },
+    "影音直播收看頁": {
+        "parameters": {
+            "displayPermissionMenuTitle": "{{displayPermissionMenuTitle}}",
+            "displayFreeOptionTitle": "{{displayFreeOptionTitle}}",
+            "displayVipOptionTitle": "{{displayVipOptionTitle}}",
+            "displayPermissionChangePopupTitle": "{{displayPermissionChangePopupTitle}}",
+            "displayPermissionChangePopupContent": "{{displayPermissionChangePopupContent}}",
+            "displayPermissionChangeCancelButtonTitle": "{{displayPermissionChangeCancelButtonTitle}}",
+            "displayPermissionChangeConfirmButtonTitle": "{{displayPermissionChangeConfirmButtonTitle}}",
+            "displayPermissionSwitchSuccessToastMessage": "{{displayPermissionSwitchSuccessToastMessage}}",
+            "displayPermissionSwitchFailureToastMessage": "{{displayPermissionSwitchFailureToastMessage}}",
+            "displayFreePermissionTagText": "{{displayFreePermissionTagText}}",
+            "displayVipPermissionTagText": "{{displayVipPermissionTagText}}",
+            "displaySwitchingPermissionTagText": "{{displaySwitchingPermissionTagText}}",
+            "displayPermissionAlreadyVipToastMessage": "{{displayPermissionAlreadyVipToastMessage}}"
+        }
+    },
+    "影音直播列表": {
+        "parameters": {
+            "displayStreamEndedBroadcasterLeft": "{{displayStreamEndedBroadcasterLeft}}",
+            "displayLimitedTimeEndedText": "{{displayLimitedTimeEndedText}}"
+        }
+    }
+}
