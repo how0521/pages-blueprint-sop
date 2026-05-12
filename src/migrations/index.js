@@ -1090,6 +1090,9 @@ function findAndUpdateV3_36(subcomponents) {
   return subcomponents;
 }
 
+// ─── v3.36 → v3.37 (pass-through) ──────────────────────────────────────────────────────────
+const migrateToV3_37 = passThrough;
+
 // ─── Version dictionary (matches Python's version_dict) ──────────────────────
 export const versionDict = {
   '1.0': 1, '1.1': 2, '1.2': 3, '1.3': 4, '1.4': 5, '1.5': 6, '1.6': 7,
@@ -1106,6 +1109,7 @@ export const versionDict = {
   '3.34': 51,
   '3.35': 52,
   '3.36': 53,
+  '3.37': 54,
 };
 
 // ─── autoMigrations array (0-indexed, 47 entries, matches Python's list) ─────
@@ -1166,4 +1170,5 @@ export const autoMigrations = [
   migrateToV3_34,  // 51 (v3.33 → v3.34, pass-through)
   migrateToV3_35,  // 52 (v3.34 → v3.35, pass-through)
   migrateToV3_36,  // 53 (v3.35 → v3.36)
+  migrateToV3_37,  // 54 (v3.36 → v3.37)
 ];
