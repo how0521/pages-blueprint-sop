@@ -19,9 +19,9 @@
 
 ## 執行步驟
 
-### 步驟 1：讀取 config 並提取 display 參數
+### 步驟 1：產出需翻譯的 key 清單並寫入 i18n-delta.json
 
-執行以下 Python，找出所有 `key` 以 `display` 開頭的參數：
+執行以下 Python，同時完成「提取 display 參數」與「找出需補翻譯的 key」兩件事，結果寫入 `i18n-delta.json`（避免 Windows 終端編碼亂碼影響後續翻譯）：
 
 ```python
 import json
@@ -44,15 +44,6 @@ def find_display_params(obj):
 params = find_display_params(data)
 seen = set()
 unique = [p for p in params if not (p['key'] in seen or seen.add(p['key']))]
-print(f'Total display params: {len(unique)}')
-```
-
-### 步驟 2：找出需要補翻譯的 key（delta）
-
-載入現有的三個字典，找出「不存在」或「任一語言值為空字串」的 key，兩種都要補：
-
-```python
-import json
 
 with open('src/i18n/string-resource_zh-Hant.json', 'r', encoding='utf-8') as f:
     existing_zh_hant = json.load(f)
@@ -69,14 +60,24 @@ def needs_translation(key):
     return missing or empty
 
 new_params = [p for p in unique if needs_translation(p['key'])]
-print(f'New keys to translate: {len(new_params)}')
-for p in new_params:
-    print(f"  {p['key']} | {p['description']} | default={p['default']}")
+
+with open('i18n-delta.json', 'w', encoding='utf-8') as f:
+    json.dump(new_params, f, ensure_ascii=False, indent=2)
+
+print(f'Total display params: {len(unique)}')
+print(f'Keys needing translation: {len(new_params)}')
+print('Written to i18n-delta.json')
 ```
+
+### 步驟 2：讀取 i18n-delta.json
+
+使用 **Read tool**（不是 Bash）讀取 `i18n-delta.json`，取得需翻譯的 key 清單（含 description 和 default）。
+
+若 `new_params` 為空，告知用戶「字典已是最新，無需更新」並結束。
 
 ### 步驟 3：根據 description 產出翻譯
 
-針對每個新 key，**根據其 description 和 key 名稱語義**，產出三種語言的翻譯：
+針對每個 key，**根據其 description 和 key 名稱語義**，產出三種語言的翻譯：
 
 - **zh-Hant**：繁體中文，參考 description 中的中文描述產出簡短 UI 文案
 - **zh-Hans**：簡體中文，從繁體轉換（載入→加载、確認→确认、取消→取消、搜尋→搜索、重新整理→刷新、收合→收起等）
@@ -88,6 +89,7 @@ for p in new_params:
 - 標有 `[多語系]`、`[iOS]`、`[Android]` 的只是說明，翻譯時忽略這些標記
 - 按鈕文字要簡短（「確定」不是「確認按鈕」）
 - %s、{chatroomName} 等佔位符要原樣保留
+- **空字串 key 也要補翻譯**：若某個 key 已存在字典但值為空字串（`""`），視同缺漏，必須補上翻譯
 
 ### 步驟 4：更新三個字典檔案
 
@@ -123,10 +125,11 @@ print(f'zh-Hans: {len(zh_hans)} keys')
 print(f'en: {len(en)} keys')
 ```
 
-### 步驟 5：確認並 commit
+### 步驟 5：清理暫存檔並 commit
 
 1. 顯示新增的翻譯給用戶確認（列出每個新 key 的三語翻譯）
-2. 用戶確認後，commit 並推上 GitHub：
+2. 刪除暫存的 `i18n-delta.json`
+3. 用戶確認後，commit 並推上 GitHub：
 
 ```bash
 git add src/i18n/
@@ -136,7 +139,5 @@ git push origin main
 
 ## 注意事項
 
-- 若 `new_params` 為空（沒有新 key 且沒有空值），告知用戶「字典已是最新，無需更新」
-- **空字串 key 也要補翻譯**：若某個 key 已存在字典但值為空字串（`""`），視同缺漏，必須補上翻譯
 - config 檔案名稱若包含版本號（如 `3.32.0-pages.config.json`），commit message 中的 `<CONFIG_VERSION>` 使用 `3.32.0`
 - 翻譯完成後同時更新 config 檔案（複製新版到根目錄，舊版可保留）
