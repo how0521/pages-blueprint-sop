@@ -80,7 +80,7 @@
         "parameters": {
             "displayStreamEndedBroadcasterLeft": "{{displayStreamEndedBroadcasterLeft}}",
             "displayLimitedTimeEndedText": "{{displayLimitedTimeEndedText}}",
-            "statePromoteScenario": "statePromoteScenario",
+            "statePromoScenario": "statePromoScenario",
             "promoteScenarioKickedOut": "vls_kicked_out",
             "promoteScenarioNativeVipItemTapped": "vls_native_vip_tapped",
             "promoteScenarioSwitchedItemTapped": "vls_switched_item_tapped"
