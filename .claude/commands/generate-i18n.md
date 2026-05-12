@@ -61,8 +61,14 @@ with open('src/i18n/string-resource_zh-Hans.json', 'r', encoding='utf-8') as f:
 with open('src/i18n/string-resource_en.json', 'r', encoding='utf-8') as f:
     existing_en = json.load(f)
 
-existing_keys = set(existing_zh_hant) | set(existing_zh_hans) | set(existing_en)
-new_params = [p for p in unique if p['key'] not in existing_keys]
+def needs_translation(key):
+    missing = key not in existing_zh_hant or key not in existing_zh_hans or key not in existing_en
+    empty = (existing_zh_hant.get(key, '') == '' or
+             existing_zh_hans.get(key, '') == '' or
+             existing_en.get(key, '') == '')
+    return missing or empty
+
+new_params = [p for p in unique if needs_translation(p['key'])]
 print(f'New keys to translate: {len(new_params)}')
 for p in new_params:
     print(f"  {p['key']} | {p['description']} | default={p['default']}")
