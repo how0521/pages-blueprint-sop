@@ -47,9 +47,9 @@ unique = [p for p in params if not (p['key'] in seen or seen.add(p['key']))]
 print(f'Total display params: {len(unique)}')
 ```
 
-### 步驟 2：找出新增的 key（delta）
+### 步驟 2：找出需要補翻譯的 key（delta）
 
-載入現有的三個字典，比對哪些 key 是新的：
+載入現有的三個字典，找出「不存在」或「任一語言值為空字串」的 key，兩種都要補：
 
 ```python
 import json
@@ -136,6 +136,7 @@ git push origin main
 
 ## 注意事項
 
-- 若 `new_params` 為空（沒有新 key），告知用戶「字典已是最新，無需更新」
+- 若 `new_params` 為空（沒有新 key 且沒有空值），告知用戶「字典已是最新，無需更新」
+- **空字串 key 也要補翻譯**：若某個 key 已存在字典但值為空字串（`""`），視同缺漏，必須補上翻譯
 - config 檔案名稱若包含版本號（如 `3.32.0-pages.config.json`），commit message 中的 `<CONFIG_VERSION>` 使用 `3.32.0`
 - 翻譯完成後同時更新 config 檔案（複製新版到根目錄，舊版可保留）
