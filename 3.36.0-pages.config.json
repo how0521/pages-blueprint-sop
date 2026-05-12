@@ -16775,7 +16775,7 @@
           },
           {
             "description": "[收狀態] 升級引導情境 scenario key",
-            "key": "statePromoteScenario",
+            "key": "statePromoScenario",
             "type": "string",
             "enums": [],
             "required": true,
@@ -25273,7 +25273,7 @@
           },
           {
             "description": "[送狀態] 升級引導情境 state key",
-            "key": "statePromoteScenario",
+            "key": "statePromoScenario",
             "type": "string",
             "enums": [],
             "required": true,
