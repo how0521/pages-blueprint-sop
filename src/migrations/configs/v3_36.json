@@ -27,6 +27,7 @@
     },
     "購買頁": {
         "parameters": {
+            "statePromoScenario": "statePromoScenario",
             "displayBottomSheetPromoCode": "{{displayBottomSheetPromoCode}}",
             "displayBottomSheetCopied": "{{displayBottomSheetCopied}}",
             "displayBottomSheetCancel": "{{displayBottomSheetCancel}}",
