@@ -97,7 +97,7 @@ export default function I18nTool() {
         const content = JSON.parse(await entry.async('string'));
         const missing = [];
         for (const key of blueprintKeys) {
-          if (!(key in content)) {
+          if (!(key in content) || content[key] === '') {
             const dict = DICTIONARIES[langCode];
             missing.push({ key, autoValue: dict?.[key] ?? '' });
           }
