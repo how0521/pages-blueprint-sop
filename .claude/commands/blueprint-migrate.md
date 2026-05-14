@@ -130,11 +130,19 @@ for comp_data in prev_migration.values():
         if key.startswith('display'):
             prev_display_keys.add(key)
 
-# 讀取現有語言包
+# 讀取現有語言包（三語）
 with open('src/i18n/string-resource_zh-Hant.json', 'r', encoding='utf-8') as f:
-    existing_i18n = json.load(f)
+    existing_zh_hant = json.load(f)
+with open('src/i18n/string-resource_zh-Hans.json', 'r', encoding='utf-8') as f:
+    existing_zh_hans = json.load(f)
+with open('src/i18n/string-resource_en.json', 'r', encoding='utf-8') as f:
+    existing_en = json.load(f)
 
-existing_keys = set(existing_i18n.keys())
+def needs_i18n(key):
+    for d in [existing_zh_hant, existing_zh_hans, existing_en]:
+        if key not in d or d.get(key, '') == '':
+            return True
+    return False
 
 # 找出所有 display 參數及其所屬元件
 def find_display_params_by_component(data):
@@ -155,7 +163,7 @@ def find_display_params_by_component(data):
 
 comp_params = find_display_params_by_component(new_data)
 
-# 找出新增的 display key（不在舊版 migration config 中，也不在語言包中）
+# 找出需補語言包的 display key（任一語言缺少或為空字串）
 new_config = {}
 new_i18n_keys = []
 
@@ -163,7 +171,7 @@ for comp_name, params in comp_params.items():
     new_params = {}
     for p in params:
         key = p['key']
-        if key not in existing_keys:
+        if needs_i18n(key):
             new_params[key] = '{{' + key + '}}'
             new_i18n_keys.append(p)
     if new_params:
