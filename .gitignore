@@ -5,3 +5,5 @@ dist
 **/__pycache__/
 *.pyc
 *.zip
+i18n-check.json
+i18n-delta.json

@@ -37,42 +37,31 @@ def recursive_add(json, config):
             }
     """
     # 如果 config 中有 'switch'，則進行條件新增
-    if 'switch' in config.keys():
-        print(f"switch: {config['switch']}")
-        # 取得 switch 的 key 和對應的 cases
+    if 'switch' in config:
         nameKey = config['switch']
         cases = config['cases']
-        # 進行 switch-case 判斷
-        if nameKey in json.keys():
+        if nameKey in json:
             caseKey = json[nameKey]
-            if caseKey in cases.keys():
-                print(f"case: {caseKey}")
+            if caseKey in cases:
                 case = cases[caseKey]
                 if isinstance(case, dict) and isinstance(json, dict):
                     recursive_add(json, case)
     else:
-        # 如果 config 中沒有 'switch'，則進行一般的新增
-        for key in config.keys():
-            print(f"key: {key}")
-            # 如果 key 存在於 json 中，且 config 的值為字典
-            if key in json.keys():
+        for key in config:
+            if key in json:
                 if isinstance(config[key], dict):
                     if isinstance(json[key], dict):
-                        print(f"into: {key}")
-                        # 遞迴進入下一層
                         recursive_add(json[key], config[key])
                     if isinstance(json[key], list):
                         for i in range(len(json[key])):
                             recursive_add(json[key][i], config[key])
                 else:
-                    # 如果 config 的值不是字典，則直接新增或覆蓋 json 的 key
                     json[key] = config[key]
             else:
                 if isinstance(config[key], dict):
                     json[key] = {}
                     recursive_add(json[key], config[key])
                 else:
-                    # 如果 key 不存在於 json 中，則新增 key
                     json[key] = config[key]
 
 
@@ -200,11 +189,10 @@ class BlueprintAdder:
 
                 # 確認 component['name'] 是否在 config 中
                 componentName = component['name']
-                if componentName in config.keys():
+                if componentName in config:
                     if 'parameters' in config[componentName]:
                         componentParameters = component['parameters']
                         parameters = config[componentName]['parameters']
-                        print(f"Adding to component: {componentName}")
                         recursive_add(componentParameters, parameters)
 
                 # 遞迴處理子元件（subComponents），如果有的話

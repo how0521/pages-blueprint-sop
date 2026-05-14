@@ -1,6 +1,6 @@
 /**
  * Migration registry — JavaScript port of the Python migration chain.
- * Supports v2.7 (index 16) through v3.30 (index 47).
+ * Supports v2.7 (index 16) through v3.38 (index 55).
  * Pre-v2.7 migrations are pass-throughs (not ported).
  */
 import { addToBlueprint } from './blueprintAdder.js';
@@ -724,13 +724,6 @@ function findAndUpdateV3_24(subcomponents, pageCounter) {
 
     if (component.name === '首登流程') {
       component.name = '頁面流程';
-      const componentId = component;
-      if (!pageCounter.has) pageCounter[componentId] = 0;
-      // Use a string key since JS object references aren't stable across calls
-      // Use a WeakMap-like approach with a counter index instead
-      if (typeof pageCounter._count === 'undefined') pageCounter._count = 0;
-      pageCounter._count++;
-      const counterId = pageCounter._count;
       let localCount = 0;
 
       if (Array.isArray(params.showPages)) {

@@ -55,8 +55,14 @@ console.log('📋 即將 commit 以下檔案：');
 lines.forEach(f => console.log(`   ${f}`));
 console.log(`\n💬 Commit message：${msg}\n`);
 
+const STAGE_PATHS = [
+  'core/migrate/',
+  'src/migrations/',
+  'src/i18n/',
+];
+
 try {
-  run('git add -A');
+  for (const p of STAGE_PATHS) run(`git add "${p}"`);
   run(`git commit -m "${msg}\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"`);
   run('git push');
   console.log('🚀 已推上 GitHub，CI 將自動部署。');
