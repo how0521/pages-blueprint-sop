@@ -8,7 +8,7 @@
 /blueprint-migrate <from_version> <to_version> [page_config_file]
 ```
 
-例如：`/blueprint-migrate 332 333 3.33.0-pages.config.json` 會建立從 v3.32 到 v3.33 的遷移，並自動填入 config.json 與更新語言包。
+例如：`/blueprint-migrate 337 338` 會自動從 API 抓取 3.38.0 的 config，建立從 v3.37 到 v3.38 的遷移，並自動填入 config.json 與更新語言包。
 
 ## 參數
 
@@ -17,7 +17,7 @@
 請解析參數，格式為：`<from_version> <to_version> [page_config_file]`
 - from_version：來源版本號（例如 329 代表 3.29）
 - to_version：目標版本號（例如 330 代表 3.30）
-- page_config_file（選填）：新版本的 pages.config.json 檔案名稱。**若用戶未提供，請詢問用戶提供後再繼續，不可跳過此步驟。**
+- page_config_file（選填）：若提供則直接使用該檔案，**不提供則自動從 API 抓取**
 
 ## 執行步驟
 
@@ -29,6 +29,7 @@
   - TO_VERSION = 330
   - FROM_FULL = 3.29（第一位是 major，其餘是 minor）
   - TO_FULL = 3.30
+  - TO_FULL_VERSION = 3.30.0（用於 API URL 與檔名）
   - BRANCH_NAME = feat/v329_v330
   - FOLDER_NAME = v329_v330
 
@@ -97,18 +98,38 @@ class Migration(AutoMigration):
         return "<TO_FULL>.0"
 
     def find_component_and_update(self, subcomponents: list, config: dict) -> list:
-        """
-        遞迴搜尋並更新元件
-
-        NOTE: No custom migration logic is needed for v<FROM_FULL> to v<TO_FULL>,
-        so this method simply passes through without modifications.
-        """
         pass
 ```
 
-### 步驟 4：自動填入 config.json（需要 page_config 檔案）
+### 步驟 4：取得 pages.config.json
 
-**若用戶未提供 page_config_file，請在此步驟停下並詢問用戶提供。**
+**優先使用用戶提供的檔案**（若參數有指定）；否則從 API 自動抓取：
+
+```python
+import urllib.request, ssl, json
+
+# 自動從 API 抓取
+url = "https://pages.cmoney.tw/api/config/<TO_FULL_VERSION>"
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
+try:
+    with urllib.request.urlopen(url, context=ctx, timeout=15) as r:
+        data = json.loads(r.read())
+    filename = "<TO_FULL_VERSION>-pages.config.json"
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    print(f"已從 API 抓取並儲存至 {filename}")
+except Exception as e:
+    print(f"抓取失敗：{e}")
+```
+
+若抓取失敗，告知用戶手動提供 `<TO_FULL_VERSION>-pages.config.json` 後再繼續。
+
+成功後將 `PAGE_CONFIG_FILE` 設為 `<TO_FULL_VERSION>-pages.config.json`。
+
+### 步驟 5：自動填入 config.json（依賴步驟 4 的 config 檔）
 
 執行以下 Python，找出新版本相比舊版本新增的 display 參數與元件：
 
@@ -116,7 +137,7 @@ class Migration(AutoMigration):
 import json
 
 # 讀取新版 config
-with open('<PAGE_CONFIG_FILE>', 'r', encoding='utf-8-sig') as f:
+with open('<PAGE_CONFIG_FILE>', 'r', encoding='utf-8') as f:
     new_data = json.load(f)
 
 # 讀取舊版 migration config（上一個版本的 src/migrations/configs/v3_<FROM_MINOR>.json）
@@ -185,9 +206,9 @@ for p in new_i18n_keys:
 
 將輸出結果寫入 `core/migrate/v<FROM_VERSION>_v<TO_VERSION>/config.json`。
 
-### 步驟 5：更新語言包（i18n）
+### 步驟 6：更新語言包（i18n）
 
-根據步驟 4 找出的新 i18n keys，**根據 description 和 key 名稱語義**產出三語翻譯：
+根據步驟 5 找出的新 i18n keys，**根據 description 和 key 名稱語義**產出三語翻譯：
 
 - **zh-Hant**：繁體中文，參考 description 中的中文描述產出簡短 UI 文案
 - **zh-Hans**：簡體中文（載入→加载、確認→确认、重新整理→刷新、收合→收起 等）
@@ -198,11 +219,11 @@ for p in new_i18n_keys:
 - 有 `default` 值的 key 優先以 default 作為 zh-Hant 內容
 - `[多語系]`、`[iOS]`、`[Android]` 標記翻譯時忽略
 - %s、{placeholder} 等佔位符原樣保留
-- 為「配置型」參數（description 含「為空則」、「設定」等）翻譯為空字串 ""
+- 為「配置型」參數（description 含「為空則」）翻譯為空字串 ""
 
 將新翻譯 merge 進 `src/i18n/string-resource_zh-Hant.json`、`string-resource_zh-Hans.json`、`string-resource_en.json`（舊 key 不動）。
 
-### 步驟 6：同步至 JS 遷移引擎
+### 步驟 7：同步至 JS 遷移引擎
 
 ```bash
 npm run sync-migrations
@@ -210,7 +231,7 @@ npm run sync-migrations
 
 確認輸出正常（應顯示新版本已加入）。
 
-### 步驟 7：Commit 並推上 GitHub
+### 步驟 8：Commit 並推上 GitHub
 
 ```bash
 git add core/migrate/v<FROM_VERSION>_v<TO_VERSION>/ src/migrations/ src/i18n/
@@ -218,7 +239,7 @@ git commit -m "feat: 新增 v<FROM_FULL> → v<TO_FULL> 遷移"
 git push -u origin feat/v<FROM_VERSION>_v<TO_VERSION>
 ```
 
-### 步驟 8：詢問後續操作
+### 步驟 9：詢問後續操作
 
 完成後，詢問用戶：
 1. 是否需要在 `config.json` 中補充或調整參數？
@@ -228,7 +249,7 @@ git push -u origin feat/v<FROM_VERSION>_v<TO_VERSION>
 ## 注意事項
 
 - 版本號格式：輸入 `329` 代表 `3.29`，第一位是 major，其餘是 minor
-- **page_config 檔案為必要輸入**，若用戶未提供請直接詢問，不可跳過自動填入流程
+- **pages.config.json 預設自動從 API 抓取**，API URL 格式：`https://pages.cmoney.tw/api/config/<TO_FULL_VERSION>`（如 `3.38.0`）；若 API 不可用才需手動提供
 - `config.json` 只含 **該版本新增** 的 display 參數（非語言包的 state 參數也應加入，格式為 `"key": "key"`）
 - 嵌套在 arrayObject 內的參數可能需要自訂 migration.py 邏輯，而非 config.json 注入
 - `migration.py` 有自訂邏輯時，`find_component_and_update` 必須在 `run()` 中被呼叫（取消 `result["pages"] = self.find_component_and_update(...)` 的註解）
