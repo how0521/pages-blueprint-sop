@@ -52,14 +52,20 @@ with open('src/i18n/string-resource_zh-Hans.json', 'r', encoding='utf-8') as f:
 with open('src/i18n/string-resource_en.json', 'r', encoding='utf-8') as f:
     existing_en = json.load(f)
 
-def needs_translation(key):
+def is_config_type(description):
+    # 描述含「為空則」代表空字串本身就是正確值，不需要翻譯
+    return '為空則' in description
+
+def needs_translation(key, description=''):
+    if is_config_type(description):
+        return False
     missing = key not in existing_zh_hant or key not in existing_zh_hans or key not in existing_en
     empty = (existing_zh_hant.get(key, '') == '' or
              existing_zh_hans.get(key, '') == '' or
              existing_en.get(key, '') == '')
     return missing or empty
 
-new_params = [p for p in unique if needs_translation(p['key'])]
+new_params = [p for p in unique if needs_translation(p['key'], p.get('description', ''))]
 
 with open('i18n-delta.json', 'w', encoding='utf-8') as f:
     json.dump(new_params, f, ensure_ascii=False, indent=2)
@@ -90,6 +96,7 @@ print('Written to i18n-delta.json')
 - 按鈕文字要簡短（「確定」不是「確認按鈕」）
 - %s、{chatroomName} 等佔位符要原樣保留
 - **delta 裡所有 key 都要翻譯**，包括字典內已存在但值為空字串（`""`）的 key，空字串不是翻譯
+- description 含「為空則」的配置型參數已在步驟 1 自動排除，不會出現在 delta 裡
 
 ### 步驟 4：更新三個字典檔案
 
