@@ -9,7 +9,7 @@ export default defineConfig({
   define: {
     __APP_VERSION__: JSON.stringify(pkg.version),
   },
-  base: '/pages-blueprint-sop/',
+  base: '/pages-blueprint-devkit/',
   server: {
     host: '0.0.0.0',
     port: 4999

@@ -49,7 +49,7 @@ npm install
 npm run dev
 ```
 
-開啟瀏覽器前往 `http://localhost:4999/pages-blueprint-sop/`
+開啟瀏覽器前往 `http://localhost:4999/pages-blueprint-devkit/`
 
 ### 建置
 
@@ -67,7 +67,7 @@ npm run build
 
 部署完成後網站位址：
 ```
-https://<your-github-username>.github.io/pages-blueprint-sop/
+https://<your-github-username>.github.io/pages-blueprint-devkit/
 ```
 
 ---
