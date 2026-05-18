@@ -1,0 +1,30 @@
+{
+    "美股四大指數資訊卡片": {
+        "parameters": {
+            "displayLoadingText": "{{displayLoadingText}}",
+            "displayErrorText": "{{displayErrorText}}"
+        }
+    },
+    "影音直播列表": {
+        "parameters": {
+            "displayWaitingForBroadcastStart": "{{displayWaitingForBroadcastStart}}",
+            "displayStreamEndedAuthorLeft": "{{displayStreamEndedAuthorLeft}}"
+        }
+    },
+    "基本列": {
+        "parameters": {
+            "openExternalBrowser": ""
+        }
+    },
+    "單一圖片": {
+        "parameters": {
+            "openExternalBrowser": ""
+        }
+    },
+    "影音直播收看頁": {
+        "parameters": {
+            "broadcastClosedImageResourceName": "",
+            "broadcastInterruptedImageResourceName": ""
+        }
+    }
+}

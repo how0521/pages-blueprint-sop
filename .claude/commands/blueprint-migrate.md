@@ -206,9 +206,11 @@ for p in new_i18n_keys:
 
 將輸出結果寫入 `core/migrate/v<FROM_VERSION>_v<TO_VERSION>/config.json`。
 
+> **規則：前綴為 `display` 的參數，在 config.json 中一律填入 `{{key}}` 格式**（例如 `displayTitle` → `"{{displayTitle}}"`），無論該 key 是否已存在於 i18n。新增 display 參數時，必須同步確認 i18n 三語已包含該 key；若缺少則在步驟 6 補齊。
+
 ### 步驟 6：更新語言包（i18n）
 
-根據步驟 5 找出的新 i18n keys，**根據 description 和 key 名稱語義**產出三語翻譯：
+根據步驟 5 找出的**i18n 缺漏 key**（任一語言缺少或為空的 display key），**根據 description 和 key 名稱語義**產出三語翻譯：
 
 - **zh-Hant**：繁體中文，參考 description 中的中文描述產出簡短 UI 文案
 - **zh-Hans**：簡體中文（載入→加载、確認→确认、重新整理→刷新、收合→收起 等）
@@ -251,6 +253,7 @@ git push -u origin feat/v<FROM_VERSION>_v<TO_VERSION>
 - 版本號格式：輸入 `329` 代表 `3.29`，第一位是 major，其餘是 minor
 - **pages.config.json 預設自動從 API 抓取**，API URL 格式：`https://pages.cmoney.tw/api/config/<TO_FULL_VERSION>`（如 `3.38.0`）；若 API 不可用才需手動提供
 - `config.json` 只含 **該版本新增** 的 display 參數（非語言包的 state 參數也應加入，格式為 `"key": "key"`）
+- **display 參數的值一律為 `{{key}}` 格式**（例如 `"displayTitle": "{{displayTitle}}"`），並確保 i18n 三語都有該 key；缺少的 key 必須在步驟 6 補齊
 - 嵌套在 arrayObject 內的參數可能需要自訂 migration.py 邏輯，而非 config.json 注入
 - `migration.py` 有自訂邏輯時，`find_component_and_update` 必須在 `run()` 中被呼叫（取消 `result["pages"] = self.find_component_and_update(...)` 的註解）
 - sync-migrations 腳本會自動偵測類型（config-only / passthrough / custom）並輸出提示

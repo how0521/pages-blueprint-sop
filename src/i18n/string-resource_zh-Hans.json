@@ -685,5 +685,7 @@
   "displayNotFoundErrorTitle": "找不到内容",
   "displayNotFoundErrorDescription": "此内容不存在或已移除",
   "displayInvalidFormatErrorTitle": "文件无法打开",
-  "displayInvalidFormatErrorDescription": "文件格式有误，请稍后再试"
+  "displayInvalidFormatErrorDescription": "文件格式有误，请稍后再试",
+  "displayWaitingForBroadcastStart": "等待开播中...",
+  "displayStreamEndedAuthorLeft": "主播已结束直播"
 }
