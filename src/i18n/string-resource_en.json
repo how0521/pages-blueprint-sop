@@ -685,5 +685,7 @@
   "displayNotFoundErrorTitle": "Content Not Found",
   "displayNotFoundErrorDescription": "This content doesn't exist or has been removed",
   "displayInvalidFormatErrorTitle": "Unable to Open File",
-  "displayInvalidFormatErrorDescription": "File format error, please try again later"
+  "displayInvalidFormatErrorDescription": "File format error, please try again later",
+  "displayWaitingForBroadcastStart": "Waiting for broadcast to start...",
+  "displayStreamEndedAuthorLeft": "The broadcaster has ended the stream"
 }
