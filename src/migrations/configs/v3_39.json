@@ -23,8 +23,8 @@
     },
     "影音直播收看頁": {
         "parameters": {
-            "broadcastClosedImageResourceName": "",
-            "broadcastInterruptedImageResourceName": ""
+            "broadcastClosedImageResourceName": "launch_background",
+            "broadcastInterruptedImageResourceName": "launch_background"
         }
     }
 }
