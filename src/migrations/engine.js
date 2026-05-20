@@ -3,7 +3,9 @@
  * Replaces the Flask /migrate API call.
  */
 import JSZip from 'jszip';
-import { autoMigrations, versionDict } from './index.js';
+import { autoMigrations, versionDict, migrateToV3_39 } from './index.js';
+
+const V3_39_INDEX = 56;
 
 const MAC_SYSTEM_NAMES = new Set(['.DS_Store', '.Spotlight-V100', '.fseventsd', '.Trashes']);
 
@@ -16,7 +18,7 @@ function isMacMetadata(relativePath) {
   );
 }
 
-export async function migrateBlueprint(zipFile, targetVersion) {
+export async function migrateBlueprint(zipFile, targetVersion, options = {}) {
   const logs = [];
   const log = (msg) => { logs.push(msg); };
 
@@ -82,7 +84,11 @@ export async function migrateBlueprint(zipFile, targetVersion) {
     let data = blueprint;
     for (let i = fromNum - 1; i <= toNum; i++) {
       if (i >= 0 && i < autoMigrations.length) {
-        data = autoMigrations[i](data);
+        if (i === V3_39_INDEX) {
+          data = migrateToV3_39(data, options.market || 'TW');
+        } else {
+          data = autoMigrations[i](data);
+        }
       }
     }
 
