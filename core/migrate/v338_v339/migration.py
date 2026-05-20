@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 
 from core.auto_migration import AutoMigration
 from core.feature.blueprint_adder import BlueprintAdder
@@ -34,7 +35,35 @@ class Migration(AutoMigration):
         blueprint_adder = BlueprintAdder()
         result = blueprint_adder.add_to_blueprint(blueprint, config=config)
 
+        market = self._ask_market()
+        target_name = "USAddInfoDtno" if market == "US" else "TWAddInfoDtno"
+        self._rename_add_info_dtno(result.get("pages", []), target_name)
+
         return result
+
+    def _ask_market(self) -> str:
+        if not sys.stdin.isatty():
+            return "TW"
+        while True:
+            answer = input("請問產品是台股還是美股？(輸入 TW 或 US): ").strip().upper()
+            if answer in ("TW", "US"):
+                return answer
+            print("請輸入 TW（台股）或 US（美股）")
+
+    def _rename_add_info_dtno(self, subcomponents: list, target_name: str) -> None:
+        for component in subcomponents:
+            if not isinstance(component, dict):
+                continue
+            params = component.get("parameters", {})
+            source = params.get("source")
+            if isinstance(source, dict) and source.get("name") == "AddInfoDtno":
+                source["name"] = target_name
+            elif isinstance(source, list):
+                for item in source:
+                    if isinstance(item, dict) and item.get("name") == "AddInfoDtno":
+                        item["name"] = target_name
+            if "subComponents" in component:
+                self._rename_add_info_dtno(component["subComponents"], target_name)
 
     def targetVersion(self) -> str:
         return "3.39.0"

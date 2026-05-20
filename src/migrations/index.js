@@ -1093,9 +1093,32 @@ function migrateToV3_38(blueprint) {
   return addToBlueprint(blueprint, configV3_38);
 }
 
-// ─── v3.38 → v3.39 (config only) ──────────────────────────────────────────────────────────
-function migrateToV3_39(blueprint) {
-  return addToBlueprint(blueprint, configV3_39);
+// ─── v3.38 → v3.39 ──────────────────────────────────────────────────────────
+export function migrateToV3_39(blueprint, market = 'TW') {
+  addToBlueprint(blueprint, configV3_39);
+  if (blueprint.pages) findAndUpdateV3_39(blueprint.pages, market);
+  return blueprint;
+}
+
+function findAndUpdateV3_39(subcomponents, market) {
+  const targetName = market === 'US' ? 'USAddInfoDtno' : 'TWAddInfoDtno';
+  for (const component of subcomponents) {
+    if (typeof component !== 'object' || component === null) continue;
+    if (!('parameters' in component)) continue;
+
+    const source = component.parameters.source;
+    if (typeof source === 'object' && source !== null && !Array.isArray(source)) {
+      if (source.name === 'AddInfoDtno') source.name = targetName;
+    } else if (Array.isArray(source)) {
+      for (const item of source) {
+        if (typeof item === 'object' && item !== null && item.name === 'AddInfoDtno') {
+          item.name = targetName;
+        }
+      }
+    }
+
+    if (component.subComponents) findAndUpdateV3_39(component.subComponents, market);
+  }
 }
 
 // ─── Version dictionary (matches Python's version_dict) ──────────────────────
@@ -1179,5 +1202,5 @@ export const autoMigrations = [
   migrateToV3_36,  // 53 (v3.35 → v3.36)
   migrateToV3_37,  // 54 (v3.36 → v3.37)
   migrateToV3_38,  // 55 (v3.37 → v3.38)
-  migrateToV3_39,  // 56 (v3.38 → v3.39)
+  (bp) => migrateToV3_39(bp),  // 56 (v3.38 → v3.39, market 由 engine 直接呼叫)
 ];

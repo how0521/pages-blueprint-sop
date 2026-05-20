@@ -19,6 +19,7 @@ const LATEST_VERSION = VERSION_LIST[VERSION_LIST.length - 1];
 export default function MigrateTool() {
   const [file, setFile] = useState(null);
   const [targetVersion, setTargetVersion] = useState(LATEST_VERSION);
+  const [market, setMarket] = useState('TW');
   const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success' | 'error'
   const [log, setLog] = useState('');
   const [downloadUrl, setDownloadUrl] = useState('');
@@ -48,7 +49,7 @@ export default function MigrateTool() {
     setLog('');
     setDownloadUrl('');
 
-    const result = await migrateBlueprint(file, targetVersion);
+    const result = await migrateBlueprint(file, targetVersion, { market });
     setLog(result.log || '');
 
     if (result.success && result.blob) {
@@ -92,6 +93,30 @@ export default function MigrateTool() {
             ))}
           </select>
         </div>
+
+        {/* Market selector — only shown when migration includes v3.39 */}
+        {versionDict[targetVersion] >= versionDict['3.39'] && (
+          <div className="space-y-2">
+            <label className="block text-sm font-medium text-gray-700 dark:text-slate-300">
+              請問產品是台股還是美股？
+            </label>
+            <div className="flex gap-6">
+              {[{ value: 'TW', label: '台股' }, { value: 'US', label: '美股' }].map(({ value, label }) => (
+                <label key={value} className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="market"
+                    value={value}
+                    checked={market === value}
+                    onChange={() => setMarket(value)}
+                    className="accent-blue-600"
+                  />
+                  <span className="text-sm text-gray-700 dark:text-slate-300">{label}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* File upload */}
         <div className="space-y-1.5">
